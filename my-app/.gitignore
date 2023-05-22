@@ -4,10 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-.vscode
-/.vscode
-./.vscode
-.vscode/
+
 
 
 # testing
@@ -26,3 +23,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+#delete files
+.vscode
+
