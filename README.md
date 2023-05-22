@@ -4,8 +4,7 @@
   <img src="https://createdbybenlinn.com/Original-on-Transparent.png" alt="Header Image" />
 </p>
 
-<h2 align="center">Languages and Tools used for this Project</h2>  
-
+<h2 align="center">Languages and Tools used for this Project</h2>
 
   <p align="center">
   <a href="https://skillicons.dev">
@@ -13,7 +12,7 @@
  </a>
 </p>
  
-  
+
 
 <h2 align="center"font-size: 24px;">Ben Linn</h2>
                                    
