@@ -1,14 +1,16 @@
 import React from 'react';
-import Header from '../Header/Header';
-import Main from '../Main/Main';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Main from './components/Main/Main';
+import SavedNews from './components/SavedNews/SavedNews';
 
 function App() {
   return (
-    <div className='App'>
-      <Header />
-      <Main />
-    </div>
+    <Router>
+      <Switch>
+        <Route path='/' exact component={Main} />
+        <Route path='/saved-news' component={SavedNews} />
+      </Switch>
+    </Router>
   );
 }
 

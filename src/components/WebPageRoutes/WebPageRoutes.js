@@ -1,15 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Main from './Main/Main'; // Main is in the same directory as Routes.js
-import About from './About/About'; // About is in the same directory as Routes.js
+import { Switch, Route } from 'react-router-dom';
+import './WebPageRoutes.css';
+import Main from './Main';
+import SavedNews from './SavedNews';
 
-const App = () => (
-  <Router>
+function WebPageRoutes() {
+  return (
     <Switch>
-      <Route exact path='/' component={Main} />
-      <Route path='/about' component={About} />
+      <Route exact path='/'>
+        <Main />
+      </Route>
+      <Route path='/saved-news'>
+        <SavedNews />
+      </Route>
+      //Add more routes as needed
     </Switch>
-  </Router>
-);
+  );
+}
 
-export default App;
+export default WebPageRoutes;
