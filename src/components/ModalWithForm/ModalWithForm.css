@@ -3,47 +3,47 @@
   position: absolute;
   width: 480px;
   height: 559px;
-  left: 20px;
-  top: 20px;
   background: #FFFFFF;
   border: 1px solid #CFCFCF;
   border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.form {
-  position: relative;
-  width: 400px;
-  margin: 40px auto;
+.modal_open {
+  /* Add your styles for the open modal here */
 }
 
-.form__input {
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__title {
+  /* Style your title here */
+}
+
+.modal__input {
   box-sizing: border-box;
   width: 400px;
   height: 60px;
-  margin-bottom: 20px;
-  padding-left: 15px;
   background: #FFFFFF;
   border: 1px solid #CFCFCF;
   border-radius: 30px;
+  margin-bottom: 20px;
 }
 
-.form__button {
-  width: 72px;
-  height: 20px;
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  color: #000000;
-  cursor: pointer;
-  background-color: #2F71E5;
-  /* Active button color */
-  border: none;
-  border-radius: 10px;
+.modal__button-submit {
+  /* Style your submit button here */
 }
 
-.form__button:hover {
-  background-color: #4a90e2;
-  /* Color change on hover */
+.modal__button-submit-valid {
+  /* Add additional styles for a valid submit button here */
+}
+
+.modal__button-close {
+  /* Style your close button here */
 }

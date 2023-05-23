@@ -1,53 +1,50 @@
 import React, { useState } from 'react';
 import './ModalWithForm.css';
 
-const ModalWithForm = () => {
+const ModalWithForm = ({ isOpen, onClose }) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [modalIsOpen, setModalIsOpen] = useState(false); // control the modal visibility
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setModalIsOpen(false); // close the modal after submitting the form
   };
 
-  const handleOpenModal = () => {
-    setModalIsOpen(true); // open the modal
+  const handleCloseOnOverlayClick = (event) => {
+    if (event.target === event.currentTarget) {
+      onClose();
+    }
   };
-
-  // Check if the modal is open before rendering
-  if (!modalIsOpen) {
-    return <button onClick={handleOpenModal}>Sign up</button>;
-  }
 
   return (
-    <div className='modal'>
-      <form onSubmit={handleSubmit} className='form'>
+    <div className={`modal ${isOpen ? 'modal_open' : ''}`} onClick={handleCloseOnOverlayClick}>
+      <form onSubmit={handleSubmit} className='modal__form'>
+        <h2 className='modal__title'>Sign Up</h2>
         <input
-          className='form__input'
+          className='modal__input'
           type='text'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder='Username'
         />
         <input
-          className='form__input'
+          className='modal__input'
           type='email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder='Email'
         />
         <input
-          className='form__input'
+          className='modal__input'
           type='password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder='Password'
         />
-        <button className='form__button' type='submit'>
+        <button className='modal__button-submit' type='submit'>
           Sign Up
         </button>
+        <button className='modal__button-close' type='button' onClick={onClose}></button>
       </form>
     </div>
   );
