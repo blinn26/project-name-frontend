@@ -14,7 +14,16 @@
   /* Styles for your text element go here */
 }
 
-.footer__links {
-  font-style: italic;
-  /* Styles for your links element go here */
+.footer__button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.footer__button-link:hover {
+  background-color: #0056b3;
 }
