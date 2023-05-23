@@ -60,9 +60,7 @@ const ModalWithForm = ({ isOpen, onClose }) => {
             Sign In
           </Link>
         </p>
-        <button className='modal__button-close' type='button' onClick={onClose}>
-          Close
-        </button>
+        <button className='modal__button-close' type='button' onClick={onClose}></button>
       </form>
     </div>
   );
