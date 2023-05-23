@@ -1,0 +1,15 @@
+.search-form {
+  justify-content: center;
+  display: flex;
+  /* Styles for the search form container */
+}
+
+.search-form__input {
+  color: black;
+  /* Styles for the search form input field */
+}
+
+.search-form__button {
+  color: blue;
+  /* Styles for the search form submit button */
+}

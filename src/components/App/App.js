@@ -4,14 +4,18 @@ import Header from '../Header/Header';
 import Main from '../Main/Main';
 import SavedNews from '../SavedNews/SavedNews';
 import Footer from '../Footer/Footer';
+import Navigation from '../Navigation/Navigation';
+import About from '../About/About';
 
 function App() {
   return (
     <>
       <Header />
+      <Navigation />
       <Routes>
         <Route path='/' element={<Main />} exact />
         <Route path='/saved-news' element={<SavedNews />} />
+        <Route path='/about' element={<About />} />
       </Routes>
       <Footer />
     </>

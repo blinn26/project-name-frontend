@@ -5,20 +5,7 @@
   /* Styles for your footer block go here */
 }
 
-.footer__content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* Styles for your content element go here */
-}
 
-.footer__title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* Styles for your title element go here */
-}
 
 .footer__text {
   font-size: 20px;

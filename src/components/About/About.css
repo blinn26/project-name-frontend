@@ -1,0 +1,15 @@
+.about {
+  font-size: 20px;
+
+  /* Styles for the about container */
+}
+
+.about__title {
+  margin-bottom: 20px;
+  /* Styles for the about title */
+}
+
+.about__text {
+  margin-bottom: 20px;
+  /* Styles for the about text */
+}
