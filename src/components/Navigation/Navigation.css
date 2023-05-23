@@ -1,0 +1,11 @@
+.navigation {
+  color: blueviolet;
+  /* Styles for your navigation block go here */
+}
+
+.navigation__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* Styles for your list element go here */
+}
