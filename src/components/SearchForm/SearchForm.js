@@ -4,21 +4,19 @@ import './SearchForm.css';
 const SearchForm = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(searchTerm);
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Perform search with searchTerm
   };
 
   return (
     <form onSubmit={handleSubmit} className='search-form'>
-      <input
-        className='search-form__input'
-        type='text'
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder='Search for news'
-      />
-      <button className='search-form__button' type='submit'>
+      <input type='text' value={searchTerm} onChange={handleChange} className='search-form__input' />
+      <button type='submit' className='search-form__button'>
         Search
       </button>
     </form>

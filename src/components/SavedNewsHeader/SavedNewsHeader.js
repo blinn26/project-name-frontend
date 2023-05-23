@@ -1,8 +1,8 @@
 import React from 'react';
-import './SavedNews.css';
+import './SavedNewsHeader.css';
 
-function SavedNews() {
-  return <div className='saved-news'>//Your implementation here</div>;
-}
+const SavedNewsHeader = () => {
+  return <div className='saved-news-header'>{/* Additional content goes here */}</div>;
+};
 
-export default SavedNews;
+export default SavedNewsHeader;

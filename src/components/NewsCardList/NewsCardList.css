@@ -1,9 +1,9 @@
-.news-card-list {
+.news-card__list {
   font-family: 'Courier New', Courier, monospace;
   /* Styles for your news card list block go here */
 }
 
-.news-card-list__card {
+.news-card__title {
   margin-bottom: 20px;
   /* Styles for your card element go here */
 }

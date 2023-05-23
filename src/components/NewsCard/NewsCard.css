@@ -1,15 +1,11 @@
-/* .news-card {
-
+.news-card {
+  font-style: italic;
 }
 
 .news-card__title {
-  
+  color: chartreuse;
 }
 
-.news-card__image {
-  
+.news-card__info {
+  font-style: normal;
 }
-
-.news-card__content {
-  
-} */
