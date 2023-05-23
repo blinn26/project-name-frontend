@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './Home';
-import About from './About';
+import Main from './Main/Main'; // Main is in the same directory as Routes.js
+import About from './About/About'; // About is in the same directory as Routes.js
 
 const App = () => (
   <Router>
     <Switch>
-      <Route exact path='/' component={Home} />
+      <Route exact path='/' component={Main} />
       <Route path='/about' component={About} />
     </Switch>
   </Router>
