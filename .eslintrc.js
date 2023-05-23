@@ -3,6 +3,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
   extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:@typescript-eslint/recommended'],
   overrides: [],
@@ -17,6 +18,6 @@ module.exports = {
     'no-duplicate-imports': 'warn',
     '@typescript-eslint/no-unused-vars': 'warn',
     'react/prop-types': 'off',
-    'react/no-unescaped-entities': ['error', { forbid: ['>', '}'] }], // Add this line
+    'react/no-unescaped-entities': ['error', { forbid: ['>', '}'] }],
   },
 };

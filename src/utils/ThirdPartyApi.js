@@ -1,1 +1,12 @@
-https://newsapi.org/v2/top-headlines?country=us&apiKey=2d8aaebdf4e54754bea929b51cca0254
+// ThirdPartyApi.js
+const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
+const BASE_URL = 'https://newsapi.org/v2/top-headlines';
+
+export const fetchNews = async () => {
+  const response = await fetch(`${BASE_URL}?country=us&apiKey=${API_KEY}`);
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  const data = await response.json();
+  return data;
+};
