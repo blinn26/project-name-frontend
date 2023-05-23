@@ -1,6 +1,9 @@
 .modal {
   box-sizing: border-box;
-  position: absolute;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 480px;
   height: 559px;
   background: #FFFFFF;
@@ -9,10 +12,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
 .modal_open {
-  /* Add your styles for the open modal here */
+  visibility: visible;
+  opacity: 1;
 }
 
 .modal__form {
@@ -23,6 +30,7 @@
 }
 
 .modal__title {
+  color: yellow;
   /* Style your title here */
 }
 
@@ -37,13 +45,11 @@
 }
 
 .modal__button-submit {
+  color: gren;
   /* Style your submit button here */
 }
 
 .modal__button-submit-valid {
+  color: blue;
   /* Add additional styles for a valid submit button here */
-}
-
-.modal__button-close {
-  /* Style your close button here */
 }

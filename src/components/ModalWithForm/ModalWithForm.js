@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './ModalWithForm.css';
 
 const ModalWithForm = ({ isOpen, onClose }) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Validation for confirming password can be done here
   };
 
   const handleCloseOnOverlayClick = (event) => {
@@ -41,10 +44,25 @@ const ModalWithForm = ({ isOpen, onClose }) => {
           onChange={(e) => setPassword(e.target.value)}
           placeholder='Password'
         />
+        <input
+          className='modal__input'
+          type='password'
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          placeholder='Confirm Password'
+        />
         <button className='modal__button-submit' type='submit'>
           Sign Up
         </button>
-        <button className='modal__button-close' type='button' onClick={onClose}></button>
+        <p>
+          <span className='or-text'>or</span>{' '}
+          <Link to='/signin' className='signin-link' onClick={onClose}>
+            Sign In
+          </Link>
+        </p>
+        <button className='modal__button-close' type='button' onClick={onClose}>
+          Close
+        </button>
       </form>
     </div>
   );

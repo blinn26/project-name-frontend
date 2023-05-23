@@ -3,7 +3,7 @@ import { fetchNews } from '../../utils/ThirdPartyApi';
 import NewsCardList from '../NewsCardList/NewsCardList';
 import './Main.css';
 
-const Main = () => {
+const Main = ({ onModalOpen }) => {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
@@ -19,6 +19,7 @@ const Main = () => {
   return (
     <div className='main'>
       <h1 className='main__title'>Welcome to our News Site</h1>
+      <button onClick={onModalOpen}>Open Modal</button>
       <NewsCardList news={news} />
     </div>
   );
