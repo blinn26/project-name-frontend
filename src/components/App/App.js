@@ -1,15 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Main from './components/Main/Main';
-import SavedNews from './components/SavedNews/SavedNews';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from '../Header/Header';
+import Main from '../Main/Main';
+import SavedNews from '../SavedNews/SavedNews';
 
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route path='/' exact component={Main} />
-        <Route path='/saved-news' component={SavedNews} />
-      </Switch>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Main />} />
+        <Route path='/saved-news' element={<SavedNews />} />
+      </Routes>
     </Router>
   );
 }

@@ -12,5 +12,10 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint'],
-  rules: {},
+  rules: {
+    'react/jsx-no-comment-textnodes': 'off',
+    'no-duplicate-imports': 'warn',
+    '@typescript-eslint/no-unused-vars': 'warn',
+    'react/prop-types': 'off',
+  },
 };
