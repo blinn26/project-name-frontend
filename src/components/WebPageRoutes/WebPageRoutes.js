@@ -1,20 +1,15 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import './WebPageRoutes.css';
-import Main from './Main';
-import SavedNews from './SavedNews';
+import { Routes, Route } from 'react-router-dom';
+import Main from './Main/Main';
+import SavedNews from './SavedNews/SavedNews';
 
 function WebPageRoutes() {
   return (
-    <Switch>
-      <Route exact path='/'>
-        <Main />
-      </Route>
-      <Route path='/saved-news'>
-        <SavedNews />
-      </Route>
-      //Add more routes as needed
-    </Switch>
+    <Routes>
+      <Route path='/' element={<Main />} />
+      <Route path='/saved-news' element={<SavedNews />} />
+      {/* Add more routes as needed */}
+    </Routes>
   );
 }
 

@@ -3,8 +3,8 @@ import './Header.css';
 
 const Header = () => {
   return (
-    <header className='header-container'>
-      <h1>News Site</h1>
+    <header className='header'>
+      <h1 className='header__title'>BENS NEWS PAGE</h1>
       {/* Additional content goes here */}
     </header>
   );

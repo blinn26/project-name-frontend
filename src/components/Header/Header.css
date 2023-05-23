@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__title {
+  font-size: 6rem;
+  font-weight: 600;
+  color: chartreuse;
+}
