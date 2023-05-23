@@ -66,11 +66,12 @@
 }
 
 .modal__button-close {
-  position: absolute;
+  position: relative;
   width: 24px;
   height: 24px;
-  right: 224px;
-  top: calc(50% - 24px/2 + 3.5px);
+  left: 275px;
+  bottom: 520px;
+  /*  top: calc(50% - 20px/2 + 3.5px); */
   background-image: url('../images/Cross.svg');
   border: none;
   background-color: #FFFFFF;
