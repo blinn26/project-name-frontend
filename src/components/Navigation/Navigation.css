@@ -1,18 +1,18 @@
 .navigation {
   color: blueviolet;
-  /* Styles for the navigation container */
+
 }
 
 .navigation__list {
   list-style: none;
   margin: 0;
   padding: 0;
-  /* Styles for the navigation list */
+
 }
 
 .navigation__item {
   list-style: none;
   margin: 0;
   padding: 0;
-  /* Styles for the navigation list items */
+
 }
