@@ -31,7 +31,7 @@
 
 .modal__title {
   color: pink;
-  /* Style your title here */
+
 }
 
 .modal__input {
@@ -46,10 +46,10 @@
 
 .modal__button-submit {
   color: gren;
-  /* Style your submit button here */
+
 }
 
 .modal__button-submit-valid {
   color: blue;
-  /* Add additional styles for a valid submit button here */
+
 }
