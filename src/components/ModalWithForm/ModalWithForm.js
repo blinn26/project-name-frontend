@@ -1,18 +1,28 @@
 import React, { useState } from 'react';
-import Modal from './Modal';
 import './ModalWithForm.css';
 
 const ModalWithForm = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [modalIsOpen, setModalIsOpen] = useState(false); // control the modal visibility
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setModalIsOpen(false); // close the modal after submitting the form
   };
 
+  const handleOpenModal = () => {
+    setModalIsOpen(true); // open the modal
+  };
+
+  // Check if the modal is open before rendering
+  if (!modalIsOpen) {
+    return <button onClick={handleOpenModal}>Sign up</button>;
+  }
+
   return (
-    <Modal buttonText='Sign Up'>
+    <div className='modal'>
       <form onSubmit={handleSubmit} className='form'>
         <input
           className='form__input'
@@ -36,10 +46,10 @@ const ModalWithForm = () => {
           placeholder='Password'
         />
         <button className='form__button' type='submit'>
-          Submit
+          Sign Up
         </button>
       </form>
-    </Modal>
+    </div>
   );
 };
 
