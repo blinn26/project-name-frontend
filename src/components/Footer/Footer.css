@@ -2,16 +2,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Styles for your footer block go here */
-}
+  margin-top: 50;
 
+  position: relative;
+  top: 380px;
+  align-items: center;
+  align-content: center;
+  background-size: contain;
+}
 
 
 .footer__text {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 20px;
-
 }
 
 .footer__button-link {
