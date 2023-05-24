@@ -16,7 +16,6 @@
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
   z-index: 2;
-
 }
 
 .modal_open {
@@ -37,10 +36,10 @@
 
 .modal__input {
   box-sizing: border-box;
-  width: 400px;
-  height: 60px;
+  width: 358px;
+  height: 40px;
   background: #FFFFFF;
-  border: 1px solid #CFCFCF;
+  border: 1px solid #000000;
   border-radius: 30px;
   margin-bottom: 20px;
 }
@@ -60,28 +59,34 @@
   box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
   border-radius: 100px;
   color: white;
-  /* You can set your desired color for the text */
-}
-
-.modal__button-submit-valid {
-  color: blue;
 }
 
 .modal__button-close {
   position: relative;
-  width: 24px;
-  height: 24px;
-  left: 275px;
-  bottom: 520px;
-  /*  top: calc(50% - 20px/2 + 3.5px); */
-  background-image: url('../images/Cross.svg');
+  bottom: 464px;
+  background: url('../images/Cross.svg') center no-repeat;
+  filter: invert(1) grayscale(1) brightness(100);
+  width: 14px;
+  height: 23px;
   border: none;
-  background-color: #FFFFFF;
-
+  color: #FFFFFF;
+  left: 264px;
 }
-
-
 
 .signin-link {
   color: blue;
+}
+
+.invalid-email {
+  position: absolute;
+  width: 173px;
+  height: 14px;
+  left: 541px;
+  top: 345px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
 }

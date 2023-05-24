@@ -1,5 +1,8 @@
 .navigation {
-  color: blueviolet;
+  background-color: black !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
 }
 
