@@ -5,7 +5,12 @@
 }
 
 .header__title {
-  font-size: 6rem;
   font-weight: 600;
   color: chartreuse;
+}
+
+.header__logo {
+  width: 100%;
+  position: relative;
+
 }

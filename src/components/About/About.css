@@ -2,12 +2,16 @@
   font-size: 20px;
   font-weight: 400;
   color: red;
+  align-items: center;
 }
 
 .about__title {
   margin-bottom: 20px;
   color: deeppink;
   font-weight: bold;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -17,6 +21,9 @@
   color: greenyellow;
   font-weight: bold;
   font-size: 24px;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .about__image {
