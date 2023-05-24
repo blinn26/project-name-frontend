@@ -3,13 +3,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(../images/phonepic.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../images/WhiteonBlack.png);
   position: relative;
   width: 1440px;
   height: 576px;
   left: 0px;
   top: 0px;
-  z-index: 1;
+
 }
 
 .main__title {

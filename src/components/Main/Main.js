@@ -1,10 +1,11 @@
 import React from 'react';
 import About from '../About/About';
 import './Main.css';
+import blackonWhite from '../images/WhiteonBlack.png';
 
 const Main = ({ onModalOpen }) => {
   return (
-    <div className='main'>
+    <div className='main' style={{ backgroundImage: `url(${blackonWhite})` }}>
       <h1 className='main__title'>Welcome2NeWZ</h1>
       <button className='main__button' onClick={onModalOpen}>
         Open Modal
