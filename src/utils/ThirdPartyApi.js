@@ -1,19 +1,20 @@
+import stubdata from './stubdata.json';
+
 const apiKey = process.env.REACT_APP_NEWS_API_KEY;
 
 export const fetchNews = async () => {
-  console.log('API key is:', apiKey);
+  if (!apiKey) {
+    console.log('stubdata test');
+    return stubdata.articles;
+  }
 
-  // Comment out the fetch line to disable the API request.
-  // const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`);
+  const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`);
 
-  // if (!response.ok) {
-  //   throw new Error('Network response was not ok');
-  // }
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
 
-  // const data = await response.json();
-  // console.log(data);
-  // return data.articles;
+  const data = await response.json();
 
-  // Instead, you can return an empty array or a mock data
-  return [];
+  return data.articles;
 };
