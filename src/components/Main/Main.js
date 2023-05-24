@@ -2,6 +2,7 @@ import React from 'react';
 import About from '../About/About';
 import './Main.css';
 import blackonWhite from '../images/WhiteonBlack.png';
+import Preloader from '../Preloader/Preloader';
 
 const Main = ({ onModalOpen }) => {
   return (
@@ -10,6 +11,7 @@ const Main = ({ onModalOpen }) => {
       <button className='main__button' onClick={onModalOpen}>
         Open Modal
       </button>
+      {/* <Preloader /> */}
       <About />
     </div>
   );
