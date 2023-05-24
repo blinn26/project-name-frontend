@@ -1,12 +1,30 @@
 .about {
   font-size: 20px;
+  font-weight: 400;
+  color: red;
 }
 
 .about__title {
   margin-bottom: 20px;
-
+  color: deeppink;
+  font-weight: bold;
 }
+
+
 
 .about__text {
   margin-bottom: 20px;
+  color: greenyellow;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.about__image {
+  width: 464px;
+  height: 464px;
+  border-radius: 50%;
+  position: relative;
+  right: 480px;
+  top: 350px;
+  background: url('../images/Email Signature Logo.png') no-repeat center/cover;
 }

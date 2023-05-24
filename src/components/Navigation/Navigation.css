@@ -16,3 +16,15 @@
   padding: 0;
 
 }
+
+.navigation__link {
+  color: blueviolet;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.navigation__link:hover {
+  text-decoration: underline;
+  color: blueviolet;
+
+}

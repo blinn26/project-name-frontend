@@ -6,10 +6,14 @@ const Navigation = () => {
     <nav className='navigation'>
       <ul className='navigation__list'>
         <li className='navigation__item'>
-          <a href='/'>Home</a>
+          <a className='navigation__link' href='/'>
+            Home
+          </a>
         </li>
         <li className='navigation__item'>
-          <a href='/saved-news'>Saved News</a>
+          <a className='navigation__link' href='/saved-news'>
+            Saved News
+          </a>
         </li>
         {/* More navigation items here */}
       </ul>
