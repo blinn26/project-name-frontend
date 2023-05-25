@@ -7,18 +7,12 @@
   background-size: cover;
   background-position: center;
   background-image: url(../images/WhiteonBlack.png);
-  position: relative;
-  /* width: 1440px;
-  height: 576px; */
-  left: 0px;
-  top: 0px;
 
 }
 
-.main__title {
+/* .main__title {
   color: gray;
-  font-size: 80px;
-}
+} */
 
 .main__button {
   padding: 10px;

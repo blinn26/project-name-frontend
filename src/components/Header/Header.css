@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   background-color: black !important;
 }
 
@@ -13,6 +12,22 @@
 }
 
 .header__logo {
-
   background-color: #333;
+}
+
+.main__button {
+  width: 176px;
+  height: 48px;
+  position: absolute;
+  top: 23.75%;
+  bottom: 16.25%;
+  left: 80.56%;
+  right: 7.22%;
+  box-sizing: border-box;
+  border: 1px solid #FFFFFF;
+  border-radius: 100px;
+  background-color: rgba(255, 255, 255, 1);
+  color: black;
+  /* You may want to specify the button text color */
+  cursor: pointer;
 }

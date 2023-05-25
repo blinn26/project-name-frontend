@@ -8,6 +8,10 @@ function SignInandUpModal({ isOpen, onClose, onLogin, switchToRegister }) {
   const [isSignUp, setIsSignUp] = useState(true); // initial state is sign up
   const [isValidEmail, setIsValidEmail] = useState(true);
 
+  useEffect(() => {
+    console.log(`Modal open state: ${isOpen}`);
+  }, [isOpen]);
+
   const validateEmail = (email) => {
     const re = /\S+@\S+\.\S+/;
     return re.test(email);

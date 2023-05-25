@@ -20,17 +20,20 @@ function App() {
   };
 
   return (
-    <>
-      <Header />
-      <Navigation />
-      <Routes>
-        <Route path='/' element={<Main onModalOpen={handleModalOpen} />} exact />
-        <Route path='/saved-news' element={<SavedNews />} />
-        <Route path='/about' element={<About />} />
-      </Routes>
-      <SignInandUpModal isOpen={isModalOpen} onClose={handleModalClose} />
-      <Footer />
-    </>
+    <div className='page'>
+      <div className='page__wrapper'>
+        <Header onModalOpen={handleModalOpen} />
+
+        <Navigation />
+        <Routes>
+          <Route path='/' element={<Main />} /> {/* Remove onModalOpen from Main */}
+          <Route path='/saved-news' element={<SavedNews />} />
+          <Route path='/about' element={<About />} />
+        </Routes>
+        <SignInandUpModal isOpen={isModalOpen} onClose={handleModalClose} />
+        <Footer />
+      </div>
+    </div>
   );
 }
 
