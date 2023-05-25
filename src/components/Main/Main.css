@@ -13,10 +13,12 @@
 /* .main__title {
   color: gray;
 } */
-
 .main__button {
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 10px;
+  background-color: transparent;
+  color: #ffffff;
+  /* Add this line to make the text color white */
 }

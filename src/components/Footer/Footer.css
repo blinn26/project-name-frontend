@@ -2,15 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50;
-
-  position: relative;
-  top: 380px;
-  align-items: center;
-  align-content: center;
-  background-size: contain;
+  margin-top: 50px;
+  /* ensure the correct unit */
+  width: 100%;
 }
-
 
 .footer__text {
   font-size: 20px;

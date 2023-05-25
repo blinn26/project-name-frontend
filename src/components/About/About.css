@@ -1,4 +1,4 @@
-.about {
+/* .about {
   font-size: 20px;
   font-weight: 400;
   color: red;
@@ -33,5 +33,40 @@
   position: relative;
   right: 480px;
   top: 350px;
+  background: url('../images/BenImage.jpeg') no-repeat center/cover;
+} */
+
+.about {
+  font-size: 20px;
+  font-weight: 400;
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__title,
+.about__text {
+  margin-bottom: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__title {
+  color: deeppink;
+}
+
+.about__text {
+  color: greenyellow;
+  font-size: 24px;
+}
+
+.about__image {
+  width: 464px;
+  height: 464px;
+  border-radius: 50%;
+  margin: auto;
   background: url('../images/BenImage.jpeg') no-repeat center/cover;
 }

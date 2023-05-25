@@ -15,7 +15,7 @@
   background-color: #333;
 }
 
-.main__button {
+/* .main__button {
   width: 176px;
   height: 48px;
   position: absolute;
@@ -29,5 +29,3 @@
   background-color: rgba(255, 255, 255, 1);
   color: black;
   /* You may want to specify the button text color */
-  cursor: pointer;
-}

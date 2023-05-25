@@ -1,17 +1,18 @@
 .modal {
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 480px;
-  height: 559px;
+  width: 80%;
+  max-width: 480px;
+  max-height: 90vh;
   background: #FFFFFF;
   border: 1px solid #CFCFCF;
   border-radius: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
@@ -88,4 +89,35 @@
   font-size: 12px;
   line-height: 15px;
   color: #FF0000;
+}
+
+.modal__input {
+  width: 66px;
+  height: 14px;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.52px;
+  color: #2F71E5;
+  margin-bottom: 78px;
+  /* to create vertical space between fields */
+}
+
+.modal__button-submit {
+  width: 360px;
+  height: 64px;
+  border-radius: 100px;
+  background-color: rgba(47, 113, 229, 1);
+  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 74px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 64px;
+}
+
+/* You can create a class for the last input field in both forms to remove the bottom margin */
+.modal__input_last {
+  margin-bottom: 0;
 }
