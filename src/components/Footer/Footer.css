@@ -17,6 +17,22 @@
 .footer__links {
   margin: 40px 77px 24px 0;
   display: flex;
+  gap: 35px;
+}
+
+.footer__home-icon {
+  background-color: transparent;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.33em;
+  color: #1a1b22;
+  transition: opacity 0.3s ease;
+  padding-top: 4px;
+}
+
+.footer__home-icon:hover {
+  opacity: 0.7;
 }
 
 .footer__button {
@@ -24,19 +40,27 @@
   background-color: #fff;
   padding: 0;
   height: fit-content;
-  margin-right: 35px;
-
 }
 
 .footer__icon {
   width: 24px;
   height: 24px;
   background-color: transparent;
+  transition: opacity 0.3s ease;
+}
+
+.footer__icon:hover {
+  opacity: 0.7;
 }
 
 .footer__practicum-icon {
   background-color: transparent;
+  transition: opacity 0.3s ease;
+  padding-top: 4px;
+}
 
+.footer__practicum-icon:hover {
+  opacity: 0.7;
 }
 
 .footer__email {
@@ -45,9 +69,18 @@
   font-size: 18px;
   line-height: 1.33em;
   color: #1a1b22;
+  transition: color 0.3s ease;
 }
 
 .footer__email:hover {
-  cursor: pointer;
-  opacity: 0.6;
+  color: #0056b3;
+}
+
+.footer__api-button {
+
+  transition: opacity 0.3s ease;
+}
+
+.footer__api-button:hover {
+  opacity: 0.7;
 }

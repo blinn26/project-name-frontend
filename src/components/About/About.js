@@ -5,9 +5,15 @@ import benImage from '../images/BenImage.jpeg';
 const About = () => {
   return (
     <section className='about'>
-      <h2 className='about__title'></h2>
-      <p className='about__text'></p>
-      {<img className='about__image' src={benImage} alt='benselfie' />}
+      <img className='about__image' src={benImage} alt='Ben Linn' />
+      <div className='about__container'>
+        <h2 className='about__title'>About the author</h2>
+        <p className='about__text'>
+          My name is Ben Linn. I'm a passionate software developer skilled in numerous development technologies. Through
+          my experience with Practicum, I've honed my skills and expanded my knowledge, ready to create value for
+          potential customers.
+        </p>
+      </div>
     </section>
   );
 };
