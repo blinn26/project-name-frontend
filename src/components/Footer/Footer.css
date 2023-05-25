@@ -1,28 +1,53 @@
 .footer {
+  max-width: 1440px;
+  height: 80px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-  /* ensure the correct unit */
-  width: 100%;
+  justify-content: space-between;
 }
 
-.footer__text {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
+.footer__copyright {
+  margin: 32px 0 26px 106px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.375em;
+  color: #b6bcbf;
 }
 
-.footer__button-link {
-  display: inline-block;
-  padding: 10px 20px;
-  color: #fff;
-  background-color: #007bff;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+.footer__links {
+  margin: 40px 77px 24px 0;
+  display: flex;
 }
 
-.footer__button-link:hover {
-  background-color: #0056b3;
+.footer__button {
+  border: none;
+  background-color: #fff;
+  padding: 0;
+  height: fit-content;
+  margin-right: 35px;
+
+}
+
+.footer__icon {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+}
+
+.footer__practicum-icon {
+  background-color: transparent;
+
+}
+
+.footer__email {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.33em;
+  color: #1a1b22;
+}
+
+.footer__email:hover {
+  cursor: pointer;
+  opacity: 0.6;
 }
