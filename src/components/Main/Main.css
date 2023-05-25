@@ -6,7 +6,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url(../images/WhiteonBlack.png);
+
 
 }
 
@@ -21,4 +21,19 @@
   background-color: transparent;
   color: #ffffff;
   /* Add this line to make the text color white */
+}
+
+.main__createdbyben {
+
+
+  width: 1440px;
+  height: 576px;
+  object-fit: fill;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }

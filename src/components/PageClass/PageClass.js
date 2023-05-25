@@ -3,7 +3,6 @@ import Header from '../Header/Header';
 import Main from '../Main/Main';
 import SavedNews from '../SavedNews/SavedNews';
 import Footer from '../Footer/Footer';
-/* import Navigation from '../Navigation/Navigation'; */
 import About from '../About/About';
 import SignInandUpModal from '../SignInandUpModal/SignInandUpModal';
 import { Route, Routes } from 'react-router-dom';
@@ -13,8 +12,7 @@ const PageClass = ({ isModalOpen, handleModalOpen, handleModalClose }) => {
   return (
     <div className='page'>
       <div className='page__wrapper'>
-        <Header onModalOpen={handleModalOpen} />
-        {/*  <Navigation /> */}
+        <Header handleModalOpen={handleModalOpen} />
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/saved-news' element={<SavedNews />} />

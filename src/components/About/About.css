@@ -20,15 +20,19 @@
 }
 
 .about__title {
+  font-family: "Roboto",
+    sans-serif;
   font-size: 40px;
   line-height: 1.15em;
-  color: deeppink;
+  color: gray;
   font-weight: bold;
 }
 
 .about__text {
   font-size: 24px;
   line-height: 1.33em;
-  color: greenyellow;
   font-weight: bold;
+  font-family: "Roboto",
+    sans-serif;
+  color: black
 }

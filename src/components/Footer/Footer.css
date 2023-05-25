@@ -11,17 +11,18 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.375em;
-  color: #b6bcbf;
+  background-color: cyan;
 }
 
 .footer__links {
   margin: 40px 77px 24px 0;
   display: flex;
   gap: 35px;
+  background-color: cyan;
 }
 
 .footer__home-icon {
-  background-color: transparent;
+  background-color: cyan;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -37,7 +38,7 @@
 
 .footer__button {
   border: none;
-  background-color: #fff;
+  background-color: cyan;
   padding: 0;
   height: fit-content;
 }
@@ -45,7 +46,7 @@
 .footer__icon {
   width: 24px;
   height: 24px;
-  background-color: transparent;
+  background-color: cyan;
   transition: opacity 0.3s ease;
 }
 
@@ -54,7 +55,7 @@
 }
 
 .footer__practicum-icon {
-  background-color: transparent;
+  background-color: cyan;
   transition: opacity 0.3s ease;
   padding-top: 4px;
 }
@@ -70,6 +71,7 @@
   line-height: 1.33em;
   color: #1a1b22;
   transition: color 0.3s ease;
+  background-color: cyan;
 }
 
 .footer__email:hover {
@@ -77,7 +79,7 @@
 }
 
 .footer__api-button {
-
+  background-color: cyan;
   transition: opacity 0.3s ease;
 }
 
