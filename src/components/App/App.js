@@ -23,7 +23,6 @@ function App() {
     <div className='page'>
       <div className='page__wrapper'>
         <Header onModalOpen={handleModalOpen} />
-
         <Navigation />
         <Routes>
           <Route path='/' element={<Main />} /> {/* Remove onModalOpen from Main */}
