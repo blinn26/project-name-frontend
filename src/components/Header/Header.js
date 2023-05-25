@@ -1,19 +1,12 @@
 import React from 'react';
-import './Header.css';
-import NewsExplorer from '../images/NewsExplorer.png';
+import Navigation from '../Navigation/Navigation';
+import SearchForm from '../SearchForm/SearchForm';
 
-const Header = ({ onModalOpen }) => {
-  console.log(onModalOpen); // This should log the function or undefined if it's not being passed correctly.
-
+const Header = ({ onLoginClick, handleSearchSubmit, isLoggedIn, isHomeActive }) => {
   return (
     <header className='header'>
-      <div className='header__logo'>
-        <img src={NewsExplorer} alt='NewsExplorer Logo' />
-      </div>
-      <h1 className='header__title'>{/* Insert Site Title Here */}</h1>
-      <button className='main__button' onClick={onModalOpen}>
-        Sign In
-      </button>
+      <Navigation onLoginClick={onLoginClick} isLoggedIn={isLoggedIn} isHomeActive={isHomeActive} />
+      <SearchForm handleSearchSubmit={handleSearchSubmit} />
     </header>
   );
 };

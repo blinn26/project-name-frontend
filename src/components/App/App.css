@@ -1,17 +1,3 @@
-.page {
-  background-color: black;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.page__wrapper {
-  max-width: 90%;
-  /* adjust this as needed */
-  margin: 0 auto;
-}
-
 .App {
   text-align: center;
   display: flex;
