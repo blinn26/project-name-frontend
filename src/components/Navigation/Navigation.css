@@ -21,13 +21,13 @@
 }
 
 .navigation__link {
-  color: cyan;
+  color: gray;
   text-decoration: underline;
   font-size: 20px;
 }
 
 .navigation__link:hover {
   text-decoration: underline;
-  color: blueviolet;
+  color: cyan;
 
 }
