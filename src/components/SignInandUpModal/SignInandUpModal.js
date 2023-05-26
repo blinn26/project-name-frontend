@@ -70,8 +70,13 @@ function SignInandUpModal({ isOpen, onClose }) {
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
-      buttonText={isSignUp ? 'Sign Up' : 'Sign In'}
       isValid>
+      <button
+        className='modal__button-submit'
+        type='Sign up'
+        disabled={!isValidEmail || (!isValidUsername && isSignUp)}>
+        {isSignUp ? 'Sign Up' : 'Sign In'}
+      </button>
       {isSignUp && (
         <input
           className={`modal__input ${!isValidUsername ? 'invalid' : ''}`}
