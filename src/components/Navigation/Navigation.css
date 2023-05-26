@@ -1,5 +1,5 @@
 .navigation {
-  background-color: black !important;
+  /* background-color: black; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,5 +29,12 @@
 .navigation__link:hover {
   text-decoration: underline;
   color: cyan;
+
+}
+
+.navigation__home-icon {
+  width: 49px;
+  height: 24px;
+  margin-right: 5px;
 
 }

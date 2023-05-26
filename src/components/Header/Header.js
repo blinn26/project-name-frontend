@@ -14,7 +14,7 @@ const Header = ({ onLoginClick, handleSearchSubmit, isLoggedIn, isHomeActive, ha
         <SearchForm handleSearchSubmit={handleSearchSubmit} />
       </div>
       <div className='header__bottom'>
-        <button className='header__sign-in-button' onClick={handleModalOpen}>
+        <button className='header__sign-in-button button__rectangle' onClick={handleModalOpen}>
           Sign In
         </button>
       </div>

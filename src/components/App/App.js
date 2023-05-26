@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Header from '../Header/Header';
 import Main from '../Main/Main';
+import Header from '../Header/Header';
 import SavedNews from '../SavedNews/SavedNews';
 import Footer from '../Footer/Footer';
 import About from '../About/About';
