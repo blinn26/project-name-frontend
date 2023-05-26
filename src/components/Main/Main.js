@@ -1,8 +1,8 @@
 import React from 'react';
 import './Main.css';
-import blackonWhite from '../images/BandW.png';
+import blackonWhite from '../images/pay.jpg';
 import About from '../About/About';
-/* import Preloader from '../Preloader/Preloader'; */
+import Preloader from '../Preloader/Preloader';
 
 const Main = () => {
   return (
@@ -11,7 +11,7 @@ const Main = () => {
       <h2 className='main__subtitle'></h2>
       <img src={blackonWhite} className='main__createdbyben' alt='createdbyben' />
       <About />
-      {/*  {<Preloader />} */}
+      <Preloader />
     </div>
   );
 };

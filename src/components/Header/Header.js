@@ -7,6 +7,7 @@ import './Header.css';
 const Header = ({ onLoginClick, handleSearchSubmit, isLoggedIn, isHomeActive, handleModalOpen }) => {
   return (
     <header className='header'>
+      <div className='header__top-line'></div> {/* add this line */}
       <div className='header__top'>
         <img className='header__logo' src={logo} alt='Logo' />
 

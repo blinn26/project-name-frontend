@@ -66,12 +66,12 @@ function SignInandUpModal({ isOpen, onClose }) {
 
   return (
     <ModalWithForm
+      title={isSignUp ? 'Sign Up' : 'Sign In'}
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
       buttonText={isSignUp ? 'Sign Up' : 'Sign In'}
       isValid>
-      <h2 className='modal__title'>{isSignUp ? 'Sign Up' : 'Sign In'}</h2>
       {isSignUp && (
         <input
           className={`modal__input ${!isValidUsername ? 'invalid' : ''}`}
@@ -99,11 +99,11 @@ function SignInandUpModal({ isOpen, onClose }) {
         placeholder='Password'
         required
       />
-      <p>
-        <span className='or-text'>or</span>{' '}
-        <button className='toggle-form-button' onClick={toggleForm}>
-          {isSignUp ? 'Sign In' : 'Sign Up'}
-        </button>
+      <p className='modal__alternative'>
+        or{' '}
+        <span className='signin-link' onClick={toggleForm}>
+          {isSignUp ? 'sign in' : 'sign up'}
+        </span>
       </p>
     </ModalWithForm>
   );

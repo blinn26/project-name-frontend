@@ -8,15 +8,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
-  max-width: 480px;
-  max-height: 90vh;
+  max-width: 430px;
+  max-height: 458px;
   background: #FFFFFF;
   border: 1px solid #CFCFCF;
-  border-radius: 30px;
+  border-radius: 16px;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
-  /*  z-index: 2; */
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 }
 
 .modal_open {
@@ -27,8 +27,10 @@
 .modal__form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding: 10px;
+  position: relative;
+  width: 100%;
 }
 
 .modal__title {
@@ -38,42 +40,47 @@
 .modal__input {
   box-sizing: border-box;
   width: 358px;
-  height: 40px;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  border-radius: 30px;
+  border: none;
+  border-bottom: 1px solid #000000;
+  background: transparent;
   margin-bottom: 20px;
 }
 
+.modal__input::placeholder {
+  color: #000000;
+  opacity: 0.5;
+}
+
 .modal__button-submit {
+  margin-top: 25px;
   width: 360px;
   height: 64px;
   border-radius: 100px;
   background-color: black;
   box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
   box-sizing: border-box;
-
-  bottom: 74px;
   color: #ffffff;
-  text-align: center;
   line-height: 64px;
-
 }
-
 
 .modal__button-close {
   position: absolute;
-  bottom: 464px;
+  top: -20px;
+  right: -15px;
   background: url('../images/Cross.svg') center no-repeat;
-  width: 14px;
+  width: 24px;
   height: 23px;
   border: none;
-  color: black;
-  left: 264px;
+}
+
+.modal__alternative {
+  text-align: center;
+  margin-top: 20px;
 }
 
 .signin-link {
-  color: blue;
+  color: #2F71E5;
+  cursor: pointer;
 }
 
 .invalid-email {
@@ -88,33 +95,4 @@
   font-size: 12px;
   line-height: 15px;
   color: #FF0000;
-}
-
-.modal__input {
-  width: 66px;
-  height: 14px;
-  font-family: Inter, sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14.52px;
-  color: #2F71E5;
-  margin-bottom: 78px;
-}
-
-.modal__button-submit {
-  width: 360px;
-  height: 64px;
-  border-radius: 100px;
-  background-color: black;
-  box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
-  box-sizing: border-box;
-
-  bottom: 74px;
-  color: #ffffff;
-  text-align: center;
-  line-height: 64px;
-}
-
-.modal__input_last {
-  margin-bottom: 0;
 }
