@@ -1,8 +1,23 @@
 .header {
-  background-image: url('../images/b2g.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url('../images/bg.png');
+  /* background-repeat: no-repeat;
+  background-size: cover; */
   color: pink;
   width: 1440px;
   height: 80px;
+  position: relative;
+}
+
+.header__logo {
+  position: absolute;
+  top: 30px;
+  left: 104px;
+  width: 200px;
+  height: 24px;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: black;
+  background-image: url('../images/notfound.png');
 }

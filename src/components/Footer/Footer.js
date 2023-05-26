@@ -17,9 +17,7 @@ const Footer = () => {
     <footer className='footer'>
       <p className='footer__copyright'>© 2023 Powered by Ben Linn's Brain</p>
       <div className='footer__links'>
-        <Link to='/' className='footer__button'>
-          {' '}
-          {/* Add Link to home page */}
+        <Link to='/' className='footer__button footer__home-button'>
           <img alt='Home' src={home} className='footer__home-icon' />
         </Link>
         <button onClick={() => handleNavigation('https://twitter.com/createdbyben26')} className='footer__button'>
@@ -37,7 +35,7 @@ const Footer = () => {
           <img alt='Practicum logo' src={practicum} className='footer__practicum-icon' />
         </button>
         <button onClick={() => handleNavigation('https://newsapi.org')} className='footer__button footer__api-button'>
-          <img alt='nlogo' src={apiLogo} className='footer__icon' />
+          <img alt='nlogo' src={apiLogo} className='footer__api-icon' />
         </button>
       </div>
     </footer>
