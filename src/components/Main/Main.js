@@ -1,6 +1,6 @@
 import React from 'react';
 import './Main.css';
-import blackonWhite from '../images/WhiteonBlack.png';
+import blackonWhite from '../images/BandW.png';
 import About from '../About/About';
 /* import Preloader from '../Preloader/Preloader'; */
 
