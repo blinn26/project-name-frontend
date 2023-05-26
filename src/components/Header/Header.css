@@ -1,13 +1,10 @@
 .header {
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: black;
-  background-color: #c4c4c403;
-  box-shadow: inset 0px -1px 0px 0px #fff3;
-  background-image: url('../images/pay.jpg');
+  height: 576px;
+  background-image: url('../images/bwben.png');
+  background-repeat: no-repeat;
+  /* background-size: cover;  */
+  background-position: center;
+
 }
 
 .header__top {
