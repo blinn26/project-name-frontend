@@ -1,9 +1,12 @@
 .page {
   background-color: black;
-  padding: 30px;
+  /* padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100vh; */
+  position: relative;
 }
 
 .page__wrapper {
