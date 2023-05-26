@@ -1,40 +1,52 @@
 .header {
-  background-image: url('../images/bg.png');
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: black;
+  background-color: #c4c4c403;
+  box-shadow: inset 0px -1px 0px 0px #fff3;
+}
 
-  color: pink;
-  width: 1440px;
-  height: 80px;
-  position: relative;
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__navigation {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__middle {
+  display: flex;
+  justify-content: center;
 }
 
 .header__logo {
-  position: absolute;
-  top: 30px;
-  left: 104px;
-  width: 200px;
   height: 24px;
-  font-family: 'Roboto Slab', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  color: black;
-  background-image: url('../images/notfound.png');
+  width: auto;
+
+
 }
 
-.button__rectangle {
-  background-image: url('../images/Rectangle.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
-  width: 100px;
+.rectangle {
+  width: 176px;
   height: 50px;
-  border: none;
-  position: absolute;
-  right: 20px;
-  top: 15px;
-}
-
-.button__rectangle:hover {
-  background-image: url('../images/Rectangle-hover.png');
-  /* add hover effects here */
+  margin-top: 15px;
+  color: white;
+  border-radius: 100px;
+  outline: none;
+  background: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 3px 14px 0px #0e1a391c;
 }

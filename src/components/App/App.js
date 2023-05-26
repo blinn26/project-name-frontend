@@ -10,13 +10,27 @@ import { Route, Routes } from 'react-router-dom';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [userCredentials, setUserCredentials] = useState({
+    username: '',
+    email: '',
+    password: '',
+    isSignUp: false,
+  });
 
-  const handleModalOpen = () => {
+  const handleModalOpen = (isSignUp) => {
     setIsModalOpen(true);
+    setUserCredentials((prevState) => ({
+      ...prevState,
+      isSignUp,
+    }));
   };
 
   const handleModalClose = () => {
     setIsModalOpen(false);
+  };
+
+  const handleUserCredentialsChange = (newUserCredentials) => {
+    setUserCredentials(newUserCredentials);
   };
 
   return (
@@ -27,7 +41,12 @@ function App() {
         <Route path='/saved-news' element={<SavedNews />} />
         <Route path='/about' element={<About />} />
       </Routes>
-      <SignInandUpModal isOpen={isModalOpen} onClose={handleModalClose} />
+      <SignInandUpModal
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
+        userCredentials={userCredentials}
+        onUserCredentialsChange={handleUserCredentialsChange}
+      />
       <Footer />
     </PageClass>
   );

@@ -62,14 +62,13 @@
 
 
 .modal__button-close {
-  position: relative;
+  position: absolute;
   bottom: 464px;
   background: url('../images/Cross.svg') center no-repeat;
-  filter: invert(1) grayscale(1) brightness(100);
   width: 14px;
   height: 23px;
   border: none;
-  color: #FFFFFF;
+  color: black;
   left: 264px;
 }
 
@@ -100,7 +99,6 @@
   line-height: 14.52px;
   color: #2F71E5;
   margin-bottom: 78px;
-  /* to create vertical space between fields */
 }
 
 .modal__button-submit {
@@ -117,7 +115,6 @@
   line-height: 64px;
 }
 
-/* You can create a class for the last input field in both forms to remove the bottom margin */
 .modal__input_last {
   margin-bottom: 0;
 }
