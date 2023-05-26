@@ -3,84 +3,64 @@
   height: 80px;
   display: flex;
   justify-content: space-between;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  transition: opacity 0.3s ease;
 }
 
-.footer__copyright {
+.footer__copyright,
+.footer__email {
   margin: 32px 0 26px 106px;
-  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.375em;
-  background-color: cyan;
+  /*  line-height: 1.375em; */
+  padding-top: 10px;
+  color: white;
 }
 
 .footer__links {
-  margin: 40px 77px 24px 0;
+  margin: 40px 77px 25px 0;
   display: flex;
   gap: 35px;
-  background-color: cyan;
 }
 
-.footer__home-icon {
-  background-color: cyan;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.33em;
-  color: #1a1b22;
-  transition: opacity 0.3s ease;
-  padding-top: 4px;
-}
-
-.footer__home-icon:hover {
-  opacity: 0.7;
-}
-
-.footer__button {
-  border: none;
-  background-color: cyan;
-  padding: 0;
-  height: fit-content;
-}
-
+.footer__home-icon,
 .footer__icon {
-  width: 24px;
-  height: 24px;
-  background-color: cyan;
-  transition: opacity 0.3s ease;
-}
+  border-radius: 5px;
+  height: 30px;
+  background-color: white;
 
-.footer__icon:hover {
-  opacity: 0.7;
 }
 
 .footer__practicum-icon {
-  background-color: cyan;
-  transition: opacity 0.3s ease;
-  padding-top: 4px;
+  background-color: white;
+  border-radius: 9px;
+
+  height: 25px;
+
 }
 
+.footer__home-icon:hover,
+.footer__icon:hover,
 .footer__practicum-icon:hover {
   opacity: 0.7;
 }
 
-.footer__email {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.33em;
-  color: #1a1b22;
-  transition: color 0.3s ease;
-  background-color: cyan;
+.footer__button {
+  border-radius: 10px;
+  border: none;
+  padding: 0;
+  height: fit-content;
+  background-color: transparent;
 }
 
 .footer__email:hover {
   color: #0056b3;
 }
 
-.footer__api-button {
-  background-color: cyan;
-  transition: opacity 0.3s ease;
+.footer__practicum-icon {
+  align-self: center;
+  margin-top: 5px;
 }
 
 .footer__api-button:hover {
