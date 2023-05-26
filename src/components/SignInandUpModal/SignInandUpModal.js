@@ -14,7 +14,7 @@ function SignInandUpModal({ isOpen, onClose }) {
   }, [isOpen]);
 
   const validateEmail = (email) => {
-    const re = /\S+@\S+\.\S+/;
+    const re = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/gim;
     return re.test(email);
   };
 
@@ -41,9 +41,18 @@ function SignInandUpModal({ isOpen, onClose }) {
     // Add password validation logic here, if needed
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add form submission logic here
+
+    if (isSignUp) {
+      // Handle sign up here...
+      // Use username, email, and password values to create a new user
+      // Make API calls, dispatch actions, etc.
+    } else {
+      // Handle sign in
+      // Use email and password values to authenticate the user
+      // Make API calls, dispatch actions, etc.
+    }
   };
 
   const toggleForm = () => {
@@ -63,14 +72,16 @@ function SignInandUpModal({ isOpen, onClose }) {
       buttonText={isSignUp ? 'Sign Up' : 'Sign In'}
       isValid>
       <h2 className='modal__title'>{isSignUp ? 'Sign Up' : 'Sign In'}</h2>
-      <input
-        className={`modal__input ${!isValidUsername && isSignUp ? 'invalid' : ''}`}
-        type='text'
-        value={username}
-        onChange={handleUsernameChange}
-        placeholder='Username'
-        required={isSignUp}
-      />
+      {isSignUp && (
+        <input
+          className={`modal__input ${!isValidUsername ? 'invalid' : ''}`}
+          type='text'
+          value={username}
+          onChange={handleUsernameChange}
+          placeholder='Username'
+          required
+        />
+      )}
       <input
         className={`modal__input ${!isValidEmail ? 'invalid' : ''}`}
         type='email'
