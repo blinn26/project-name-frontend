@@ -24,10 +24,8 @@
 }
 
 .main__createdbyben {
-
-
   width: 1440px;
-  height: 576px;
+  /* height: 576px; */
   object-fit: fill;
   display: flex;
   flex-direction: column;

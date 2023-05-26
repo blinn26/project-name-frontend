@@ -1,8 +1,8 @@
 .header {
-  background-image: url('../images/bg.png');
+  background-image: url('../images/b2g.png');
   background-repeat: no-repeat;
   background-size: cover;
-  color: #E5E5E5;
+  color: pink;
   width: 1440px;
   height: 80px;
 }

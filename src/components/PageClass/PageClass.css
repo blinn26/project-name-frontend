@@ -1,16 +1,11 @@
 .page {
   background-color: black;
-  /* padding: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; */
+
   position: relative;
 }
 
 .page__wrapper {
   max-width: 90%;
-  /* adjust this as needed */
+
   margin: 0 auto;
 }
