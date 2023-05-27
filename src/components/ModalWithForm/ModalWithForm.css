@@ -1,21 +1,32 @@
-.modal {
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.modal-overlay {
+  z-index: 1;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 430px;
-  max-height: 458px;
-  background: #FFFFFF;
-  border: 1px solid #CFCFCF;
-  border-radius: 16px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
+}
+
+.modal-overlay_open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal {
+  box-sizing: border-box;
+  max-width: 430px;
+  max-height: 458px;
+  width: 80%;
+  background: #FFFFFF;
+  border: 1px solid #CFCFCF;
+  border-radius: 16px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -43,12 +54,15 @@
   border: none;
   border-bottom: 1px solid #000000;
   background: transparent;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+
 }
 
 .modal__input::placeholder {
   color: #000000;
   opacity: 0.5;
+  padding-bottom: 5px;
+  Fill: Solid #2F71E5;
 }
 
 .modal__button-submit {
@@ -61,6 +75,11 @@
   box-sizing: border-box;
   color: #ffffff;
   line-height: 64px;
+}
+
+.modal__button-disabled {
+  background-color: #E6E8EB;
+  cursor: not-allowed;
 }
 
 .modal__button-close {
@@ -83,6 +102,21 @@
   cursor: pointer;
 }
 
+.modal__error-message {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
+  text-align: center;
+  width: 200px;
+  height: 14px;
+  margin-top: 5px;
+  /* Adjust this value as necessary */
+  margin-bottom: 5px;
+  /* Adjust this value as necessary */
+}
+
 .invalid-email {
   position: absolute;
   width: 173px;
@@ -95,4 +129,8 @@
   font-size: 12px;
   line-height: 15px;
   color: #FF0000;
+}
+
+.modal__button-submit_disabled {
+  background-color: #E8E8E8;
 }

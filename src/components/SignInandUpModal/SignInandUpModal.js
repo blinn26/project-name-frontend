@@ -8,6 +8,7 @@ function SignInandUpModal({ isOpen, onClose }) {
   const [isSignUp, setIsSignUp] = useState(true);
   const [isValidEmail, setIsValidEmail] = useState(true);
   const [isValidUsername, setIsValidUsername] = useState(true);
+  const [isValidPassword, setIsValidPassword] = useState(true);
 
   useEffect(() => {
     console.log(`Modal open state: ${isOpen}`);
@@ -19,7 +20,11 @@ function SignInandUpModal({ isOpen, onClose }) {
   };
 
   const validateUsername = (username) => {
-    return username.length >= 2 && username.length <= 30;
+    return username.length >= 4 && username.length <= 30;
+  };
+
+  const validatePassword = (password) => {
+    return password.length >= 4 && password.length <= 30;
   };
 
   const handleEmailChange = (e) => {
@@ -38,20 +43,15 @@ function SignInandUpModal({ isOpen, onClose }) {
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
-    // Add password validation logic here, if needed
+    setIsValidPassword(validatePassword(e.target.value));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (isSignUp) {
       // Handle sign up here...
-      // Use username, email, and password values to create a new user
-      // Make API calls, dispatch actions, etc.
     } else {
       // Handle sign in
-      // Use email and password values to authenticate the user
-      // Make API calls, dispatch actions, etc.
     }
   };
 
@@ -62,15 +62,13 @@ function SignInandUpModal({ isOpen, onClose }) {
     setPassword('');
     setIsValidEmail(true);
     setIsValidUsername(true);
+    setIsValidPassword(true);
   };
 
+  const isFormValid = isValidEmail && isValidUsername && isValidPassword;
+
   return (
-    <ModalWithForm
-      title={isSignUp ? 'Sign Up' : 'Sign In'}
-      isOpen={isOpen}
-      onClose={onClose}
-      onSubmit={handleSubmit}
-      isValid>
+    <ModalWithForm title={isSignUp ? 'Sign Up' : 'Sign In'} isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit}>
       {isSignUp && (
         <input
           className={`modal__input ${!isValidUsername ? 'invalid' : ''}`}
@@ -89,9 +87,9 @@ function SignInandUpModal({ isOpen, onClose }) {
         placeholder='Email'
         required
       />
-      {!isValidEmail && <span className='input_error'>Invalid email address</span>}
+      {!isValidEmail && <span className='modal__error-message'>This email is not available</span>}
       <input
-        className='modal__input'
+        className={`modal__input ${!isValidPassword ? 'invalid' : ''}`}
         type='password'
         value={password}
         onChange={handlePasswordChange}
@@ -99,15 +97,15 @@ function SignInandUpModal({ isOpen, onClose }) {
         required
       />
       <button
-        className='modal__button-submit'
-        type='Sign up'
-        disabled={!isValidEmail || (!isValidUsername && isSignUp)}>
+        className={`modal__button-submit ${!isFormValid ? 'modal__button-submit_disabled' : ''}`}
+        type='submit'
+        disabled={!isFormValid}>
         {isSignUp ? 'Sign Up' : 'Sign In'}
       </button>
       <p className='modal__alternative'>
         or{' '}
         <span className='signin-link' onClick={toggleForm}>
-          {isSignUp ? 'sign in' : 'sign up'}
+          {isSignUp ? 'Sign In' : 'Sign Up'}
         </span>
       </p>
     </ModalWithForm>
