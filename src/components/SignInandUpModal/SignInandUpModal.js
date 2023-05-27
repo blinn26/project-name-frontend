@@ -8,7 +8,9 @@ function SignInandUpModal({ isOpen, onClose }) {
   const [isSignUp, setIsSignUp] = useState(true);
   const [isValidEmail, setIsValidEmail] = useState(true);
   const [isValidUsername, setIsValidUsername] = useState(true);
-  const [isValidPassword, setIsValidPassword] = useState(true);
+
+  // Calculate form validity
+  const isFormValid = isValidEmail && isValidUsername && password.length >= 4 && password.length <= 30;
 
   useEffect(() => {
     console.log(`Modal open state: ${isOpen}`);
@@ -21,10 +23,6 @@ function SignInandUpModal({ isOpen, onClose }) {
 
   const validateUsername = (username) => {
     return username.length >= 4 && username.length <= 30;
-  };
-
-  const validatePassword = (password) => {
-    return password.length >= 4 && password.length <= 30;
   };
 
   const handleEmailChange = (e) => {
@@ -43,7 +41,6 @@ function SignInandUpModal({ isOpen, onClose }) {
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
-    setIsValidPassword(validatePassword(e.target.value));
   };
 
   const handleSubmit = async (e) => {
@@ -62,23 +59,11 @@ function SignInandUpModal({ isOpen, onClose }) {
     setPassword('');
     setIsValidEmail(true);
     setIsValidUsername(true);
-    setIsValidPassword(true);
   };
-
-  const isFormValid = isValidEmail && isValidUsername && isValidPassword;
 
   return (
     <ModalWithForm title={isSignUp ? 'Sign Up' : 'Sign In'} isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit}>
-      {isSignUp && (
-        <input
-          className={`modal__input ${!isValidUsername ? 'invalid' : ''}`}
-          type='text'
-          value={username}
-          onChange={handleUsernameChange}
-          placeholder='Username'
-          required
-        />
-      )}
+      <label className='modal__label'>Email</label>
       <input
         className={`modal__input ${!isValidEmail ? 'invalid' : ''}`}
         type='email'
@@ -88,14 +73,28 @@ function SignInandUpModal({ isOpen, onClose }) {
         required
       />
       {!isValidEmail && <span className='modal__error-message'>This email is not available</span>}
+      <label className='modal__label'>Password</label>
       <input
-        className={`modal__input ${!isValidPassword ? 'invalid' : ''}`}
+        className='modal__input'
         type='password'
         value={password}
         onChange={handlePasswordChange}
         placeholder='Password'
         required
       />
+      {isSignUp && (
+        <>
+          <label className='modal__label'>Username</label>
+          <input
+            className={`modal__input ${!isValidUsername ? 'invalid' : ''}`}
+            type='text'
+            value={username}
+            onChange={handleUsernameChange}
+            placeholder='Username'
+            required
+          />
+        </>
+      )}
       <button
         className={`modal__button-submit ${!isFormValid ? 'modal__button-submit_disabled' : ''}`}
         type='submit'
@@ -104,7 +103,7 @@ function SignInandUpModal({ isOpen, onClose }) {
       </button>
       <p className='modal__alternative'>
         or{' '}
-        <span className='signin-link' onClick={toggleForm}>
+        <span className='modal__alternative-action' onClick={toggleForm}>
           {isSignUp ? 'Sign In' : 'Sign Up'}
         </span>
       </p>

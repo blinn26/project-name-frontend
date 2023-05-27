@@ -14,7 +14,8 @@
   transition: visibility 0s, opacity 0.5s linear;
 }
 
-.modal-overlay_open {
+.modal-overlay_open,
+.modal_open {
   visibility: visible;
   opacity: 1;
 }
@@ -30,22 +31,17 @@
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 }
 
-.modal_open {
-  visibility: visible;
-  opacity: 1;
-}
-
 .modal__form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
   position: relative;
   width: 100%;
 }
 
 .modal__title {
-  padding: 0;
+  text-align: left;
+  padding-left: 15px;
 }
 
 .modal__input {
@@ -55,7 +51,6 @@
   border-bottom: 1px solid #000000;
   background: transparent;
   margin-bottom: 30px;
-
 }
 
 .modal__input::placeholder {
@@ -77,9 +72,11 @@
   line-height: 64px;
 }
 
+.modal__button-submit_disabled,
 .modal__button-disabled {
   background-color: #E6E8EB;
   cursor: not-allowed;
+  color: gray;
 }
 
 .modal__button-close {
@@ -95,6 +92,11 @@
 .modal__alternative {
   text-align: center;
   margin-top: 20px;
+  color: #2F71E5;
+
+  cursor: pointer;
+
+
 }
 
 .signin-link {
@@ -103,7 +105,7 @@
 }
 
 .modal__error-message {
-  font-family: 'Inter', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
@@ -112,9 +114,7 @@
   width: 200px;
   height: 14px;
   margin-top: 5px;
-  /* Adjust this value as necessary */
   margin-bottom: 5px;
-  /* Adjust this value as necessary */
 }
 
 .invalid-email {
@@ -131,6 +131,23 @@
   color: #FF0000;
 }
 
-.modal__button-submit_disabled {
-  background-color: #E8E8E8;
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.modal__label,
+.login__label {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #2F71E5;
+  margin-bottom: 5px;
+  align-content: flex-start;
+  position: relative;
+  right: 150px;
 }
