@@ -1,4 +1,3 @@
-// App.js
 import React, { useState } from 'react';
 import Main from '../Main/Main';
 import Header from '../Header/Header';
@@ -9,6 +8,7 @@ import SignInandUpModal from '../SignInandUpModal/SignInandUpModal';
 import PageClass from '../PageClass/PageClass';
 import { Route, Routes } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
+import SearchForm from '../SearchForm/SearchForm'; // import SearchForm
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,6 +18,14 @@ function App() {
     password: '',
     isSignUp: false,
   });
+
+  const [searchTerm, setSearchTerm] = useState(''); // add state for searchTerm
+
+  const handleSearchSubmit = (search) => {
+    setSearchTerm(search);
+    // Add logic to handle search
+    console.log(searchTerm);
+  };
 
   const handleModalOpen = (isSignUp) => {
     setIsModalOpen(true);
@@ -40,7 +48,14 @@ function App() {
       <Navigation handleModalOpen={handleModalOpen} />
       <Header />
       <Routes>
-        <Route path='/' element={<Main />} />
+        <Route
+          path='/'
+          element={
+            <Main>
+              <SearchForm handleSearchSubmit={handleSearchSubmit} /> {/* add SearchForm */}
+            </Main>
+          }
+        />
         <Route path='/saved-news' element={<SavedNews />} />
         <Route path='/about' element={<About />} />
       </Routes>

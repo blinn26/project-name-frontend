@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './SearchForm.css';
 
-const SearchForm = () => {
+const SearchForm = ({ handleSearchSubmit }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [error, setError] = useState('');
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -10,7 +11,13 @@ const SearchForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Perform search with searchTerm
+    if (!searchTerm) {
+      setError('Please enter a keyword');
+    } else {
+      handleSearchSubmit(searchTerm);
+      setSearchTerm('');
+      setError('');
+    }
   };
 
   return (
@@ -23,6 +30,7 @@ const SearchForm = () => {
           placeholder='Enter topic'
           className='search-form__input'
         />
+        {error && <span className='search-form__error'>{error}</span>}
         <button type='submit' className='search-form__button'>
           Search
         </button>

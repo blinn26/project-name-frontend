@@ -15,8 +15,8 @@ const Navigation = ({ handleModalOpen }) => {
             <a className='navigation__link' href='/'>
               <img src={Home} alt='Home' className='navigation__home-icon' />
             </a>
-            <a className='navigation__link' href='/saved-news'>
-              Saved News
+            <a className='navigation__link' href='/saved-news '>
+              Saved-articles
             </a>
           </li>
           {/* More navigation items here */}

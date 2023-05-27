@@ -1,9 +1,15 @@
 .news-card__list {
-  font-family: 'Courier New', Courier, monospace;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 80px 0;
 }
 
 .news-card__title {
-  margin-bottom: 20px;
-
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 40px;
+  line-height: 1.15em;
+  font-weight: 400;
+  color: #1a1b22;
+  margin-bottom: 64px;
 }
