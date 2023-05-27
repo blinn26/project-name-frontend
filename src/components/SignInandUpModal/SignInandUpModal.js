@@ -71,12 +71,6 @@ function SignInandUpModal({ isOpen, onClose }) {
       onClose={onClose}
       onSubmit={handleSubmit}
       isValid>
-      <button
-        className='modal__button-submit'
-        type='Sign up'
-        disabled={!isValidEmail || (!isValidUsername && isSignUp)}>
-        {isSignUp ? 'Sign Up' : 'Sign In'}
-      </button>
       {isSignUp && (
         <input
           className={`modal__input ${!isValidUsername ? 'invalid' : ''}`}
@@ -104,6 +98,12 @@ function SignInandUpModal({ isOpen, onClose }) {
         placeholder='Password'
         required
       />
+      <button
+        className='modal__button-submit'
+        type='Sign up'
+        disabled={!isValidEmail || (!isValidUsername && isSignUp)}>
+        {isSignUp ? 'Sign Up' : 'Sign In'}
+      </button>
       <p className='modal__alternative'>
         or{' '}
         <span className='signin-link' onClick={toggleForm}>

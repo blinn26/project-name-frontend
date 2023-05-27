@@ -1,8 +1,8 @@
 import React from 'react';
 import './ModalWithForm.css';
 
-function ModalWithForm({ title, name, buttonText, onSubmit, children, isOpen, onClose, isValid, additionalClass }) {
-  const buttonClassName = isValid ? 'modal__button-submit modal__button-submit-valid' : 'modal__button-submit';
+function ModalWithForm({ title, name, onSubmit, children, isOpen, onClose, additionalClass }) {
+  'modal__button-submit';
 
   const handleCloseOnOverlayClick = (event) => {
     if (event.target === event.currentTarget) {

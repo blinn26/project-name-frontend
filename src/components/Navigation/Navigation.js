@@ -1,10 +1,13 @@
 import React from 'react';
 import './Navigation.css';
 import Home from '../images/Home.png';
+import logo from '../images/NewsExplorer.png';
 
-const Navigation = () => {
+const Navigation = ({ handleModalOpen }) => {
   return (
     <nav className='navigation'>
+      <img className='navigation__logo' src={logo} alt='Logo' />
+
       <ul className='navigation__list'>
         <li className='navigation__item'></li>
         <li className='navigation__item'>
@@ -17,6 +20,10 @@ const Navigation = () => {
         </li>
         {/* More navigation items here */}
       </ul>
+
+      <button className='header__sign-in-button rectangle signIn' onClick={handleModalOpen}>
+        Sign In
+      </button>
     </nav>
   );
 };

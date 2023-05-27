@@ -1,3 +1,4 @@
+// App.js
 import React, { useState } from 'react';
 import Main from '../Main/Main';
 import Header from '../Header/Header';
@@ -7,6 +8,7 @@ import About from '../About/About';
 import SignInandUpModal from '../SignInandUpModal/SignInandUpModal';
 import PageClass from '../PageClass/PageClass';
 import { Route, Routes } from 'react-router-dom';
+import Navigation from '../Navigation/Navigation';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,7 +37,8 @@ function App() {
 
   return (
     <PageClass>
-      <Header handleModalOpen={handleModalOpen} />
+      <Navigation handleModalOpen={handleModalOpen} />
+      <Header />
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/saved-news' element={<SavedNews />} />

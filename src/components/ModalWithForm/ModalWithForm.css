@@ -65,8 +65,8 @@
 
 .modal__button-close {
   position: absolute;
-  top: -20px;
-  right: -15px;
+  top: -35px;
+  right: -35px;
   background: url('../images/Cross.svg') center no-repeat;
   width: 24px;
   height: 23px;

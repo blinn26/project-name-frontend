@@ -1,8 +1,12 @@
 .navigation {
-  /* background-color: black; */
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid #333;
+  color: black;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  /*  background-color: #333; */
 
 }
 
@@ -36,5 +40,12 @@
   width: 49px;
   height: 24px;
   margin-right: 5px;
+
+}
+
+.navigation__logo {
+  height: 24px;
+  width: auto;
+
 
 }
