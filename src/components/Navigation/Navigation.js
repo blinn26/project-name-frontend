@@ -5,26 +5,29 @@ import logo from '../images/NewsExplorer.png';
 
 const Navigation = ({ handleModalOpen }) => {
   return (
-    <nav className='navigation'>
-      <img className='navigation__logo' src={logo} alt='Logo' />
+    <>
+      <nav className='navigation'>
+        <img className='navigation__logo' src={logo} alt='Logo' />
 
-      <ul className='navigation__list'>
-        <li className='navigation__item'></li>
-        <li className='navigation__item'>
-          <a className='navigation__link' href='/'>
-            <img src={Home} alt='Home' className='navigation__home-icon' />
-          </a>
-          <a className='navigation__link' href='/saved-news'>
-            Saved News
-          </a>
-        </li>
-        {/* More navigation items here */}
-      </ul>
+        <ul className='navigation__list'>
+          <li className='navigation__item'></li>
+          <li className='navigation__item'>
+            <a className='navigation__link' href='/'>
+              <img src={Home} alt='Home' className='navigation__home-icon' />
+            </a>
+            <a className='navigation__link' href='/saved-news'>
+              Saved News
+            </a>
+          </li>
+          {/* More navigation items here */}
+        </ul>
 
-      <button className='header__sign-in-button rectangle signIn' onClick={handleModalOpen}>
-        Sign In
-      </button>
-    </nav>
+        <button className='header__sign-in-button rectangle signIn' onClick={handleModalOpen}>
+          Sign In
+        </button>
+      </nav>
+      <div className='navigation__background'></div>
+    </>
   );
 };
 

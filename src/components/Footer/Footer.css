@@ -5,7 +5,10 @@
   font-family: "Roboto", sans-serif;
   color: white;
   transition: opacity 0.3s ease;
+
+  padding-bottom: 25px;
 }
+
 
 .footer__copyright,
 .footer__email {
