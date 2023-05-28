@@ -26,7 +26,6 @@ const Navigation = ({ handleModalOpen }) => {
           Sign In
         </button>
       </nav>
-      <div className='navigation__background'></div>
     </>
   );
 };

@@ -1,92 +1,65 @@
 .about {
   max-width: 1440px;
   display: flex;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.about__container {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  color: #1a1b22;
-}
-
-.about__image-container {
-  flex: 0 0 464px;
-
+  justify-content: space-between;
+  margin: 80px 0 0 0;
+  padding: 0 50px;
 }
 
 .about__image {
   width: 464px;
   height: 464px;
-  border-radius: 50%;
+  border-radius: 1000px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
   border: 5px solid #1A1B22;
 }
 
-.about__text-container {
-  flex: 1;
-  padding-left: 3rem;
-  max-width: 600px;
-  width: 100%;
+.about__container {
+  width: 600px;
+  margin: 50px 0 0 56px;
+  font-weight: 400;
+  color: #1a1b22;
 }
 
-
 .about__title {
-  font-family: "Roboto Slab", sans-serif;
-  font-size: 40px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 42px;
+  line-height: 50px;
   font-weight: 700;
-  font-style: italic;
   color: gray;
+  width: 600px;
+  height: auto;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin: 0 0 20px;
+  transform: skew(-5deg);
 }
 
 .about__text {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
-  font-weight: 500;
+  line-height: 2;
+  font-weight: 700;
   color: #1A1B22;
+  width: 600px;
+  height: auto;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 1200px) {
-  .about__container {
+@media (max-width: 768px) {
+  .about {
     flex-direction: column;
     align-items: center;
-    text-align: center;
   }
 
-  .about__image-container {
-    margin-bottom: 2rem;
+  .about__image {
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
   }
 
-  .about__text-container {
-    padding-left: 0;
-  }
-}
-
-@media (max-width: 900px) {
   .about__container {
-    padding: 1rem;
-  }
-
-  .about__text {
-    font-size: 1rem;
-    line-height: 1.375rem;
-  }
-}
-
-@media (max-width: 700px) {
-  .about__title {
-    font-size: 2rem;
-    line-height: 2.3rem;
-  }
-
-  .about__text {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+    width: 100%;
+    margin: 0;
+    text-align: center;
   }
 }
