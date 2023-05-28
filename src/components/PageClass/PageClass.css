@@ -1,11 +1,10 @@
 .page {
+  max-width: 1440px;
+  ;
   background-color: white;
-
-  position: relative;
 }
 
 .page__wrapper {
-  max-width: 90%;
 
-  margin: 0 auto;
+  padding: 20px 20px 20px 20px;
 }

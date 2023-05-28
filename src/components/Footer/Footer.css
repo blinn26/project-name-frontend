@@ -1,3 +1,4 @@
+/* Block: footer */
 .footer {
   height: 80px;
   max-width: 1440px;
@@ -5,12 +6,10 @@
   justify-content: space-between;
   font-family: "Roboto", sans-serif;
   color: white;
-  transition: opacity 0.3s ease;
-
   padding-bottom: 25px;
 }
 
-
+/* Elements: footer__copyright, footer__email */
 .footer__copyright,
 .footer__email {
   margin: 32px 0 26px 106px;
@@ -20,20 +19,23 @@
   color: black;
 }
 
+/* Element: footer__links */
 .footer__links {
   margin: 40px 40px 25px 0;
   display: flex;
   gap: 35px;
 }
 
+/* Element: footer__button */
 .footer__button {
   border-radius: 10px;
   border: none;
   padding: 0;
-  height: fit-content;
+  height: auto;
   background-color: transparent;
 }
 
+/* Elements: footer__home-icon, footer__icon */
 .footer__home-icon,
 .footer__icon {
   border-radius: 5px;
@@ -41,10 +43,12 @@
   background-color: white;
 }
 
+/* Element: footer__home-icon */
 .footer__home-icon {
   width: 49px;
 }
 
+/* Element: footer__practicum-icon */
 .footer__practicum-icon {
   align-self: center;
   height: 25px;
@@ -52,12 +56,13 @@
   border-radius: 9px;
 }
 
+/* Element: footer__api-icon */
 .footer__api-icon {
   width: 25px;
   height: 25px;
-
 }
 
+/* Modifier: footer--hover */
 .footer__home-icon:hover,
 .footer__icon:hover,
 .footer__practicum-icon:hover,
@@ -67,4 +72,20 @@
 
 .footer__email:hover {
   color: #0056b3;
+}
+
+/* Modifier: footer--tablet */
+@media (min-width: 321px) and (max-width: 770px) {
+  .footer {
+    max-width: 770px;
+  }
+}
+
+/* Modifier: footer--mobile */
+@media (max-width: 320px) {
+  .footer {
+    max-width: 320px;
+    flex-direction: column;
+    align-items: center;
+  }
 }

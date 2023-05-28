@@ -1,12 +1,18 @@
-/* .header {
-  display: flex;
-  flex-direction: column;
+/* Block: header */
+.header {
   max-width: 1440px;
   height: 576px;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('../images/bwben.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
-} */
-
+/* Element: header__title */
 .header__title {
   font-family: "Roboto Slab", sans-serif;
   font-weight: 400;
@@ -16,11 +22,10 @@
   text-align: center;
   font-style: normal;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  /*  transform: skew(-5deg); */
 }
 
-
-.rectangle {
+/* Element: rectangle (Assuming it is part of header block) */
+.header__button {
   width: 176px;
   height: 50px;
   margin-top: 15px;
@@ -35,13 +40,36 @@
   box-shadow: 0px 3px 14px 0px #0e1a391c;
 }
 
-.header__background-image {
-  height: 576px;
-  background-image: url('../images/bwben.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+/* Modifier: header--tablet */
+@media (min-width: 321px) and (max-width: 770px) {
+  .header {
+    max-width: 770px;
+    height: auto;
+  }
+
+  .header__title {
+    font-size: 40px;
+  }
+
+  .header__button {
+    width: 150px;
+    height: 40px;
+  }
+}
+
+/* Modifier: header--mobile */
+@media (max-width: 320px) {
+  .header {
+    max-width: 320px;
+    height: auto;
+  }
+
+  .header__title {
+    font-size: 24px;
+  }
+
+  .header__button {
+    width: 120px;
+    height: 30px;
+  }
 }

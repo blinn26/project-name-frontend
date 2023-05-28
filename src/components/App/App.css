@@ -1,3 +1,4 @@
+/* Block: App */
 .App {
   text-align: center;
   display: flex;
@@ -6,43 +7,28 @@
   align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
+/* Element: App__logo */
+.App__logo {
+  height: 400px;
   pointer-events: none;
+  animation: App-logo-spin infinite 20s linear;
 }
 
-.App-header {
+/* Element: App__header */
+.App__header {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 12px;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
+/* Element: App__link */
+.App__link {
   color: #61dafb;
 }
 
@@ -53,5 +39,31 @@
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Modifier: App--tablet */
+@media (min-width: 321px) and (max-width: 770px) {
+  .App__logo {
+    height: 300px;
+    /* smaller logo for tablet */
+  }
+
+  .App__header {
+    font-size: 10px;
+    /* smaller font size for tablet */
+  }
+}
+
+/* Modifier: App--mobile */
+@media (max-width: 320px) {
+  .App__logo {
+    height: 200px;
+    /* smaller logo for mobile */
+  }
+
+  .App__header {
+    font-size: 8px;
+    /* smaller font size for mobile */
   }
 }
