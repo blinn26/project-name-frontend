@@ -1,13 +1,13 @@
 .navigation {
   height: 80px;
-  width: 100%;
+  max-width: 1440px;
   border-bottom: 1px solid #333;
   color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-right: 40px;
-  padding-bottom: 15px;
+
 }
 
 .navigation__background {
@@ -72,4 +72,8 @@
   align-items: center;
   margin-left: auto;
 
+}
+
+.navigation__line {
+  color: black;
 }

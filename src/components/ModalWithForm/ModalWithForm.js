@@ -1,15 +1,15 @@
 import React from 'react';
 import './ModalWithForm.css';
 
-function ModalWithForm({ title, name, onSubmit, children, isOpen, onClose, additionalClass }) {
-  const handleCloseOnOverlayClick = (event) => {
+const ModalWithForm = ({ title, name, onSubmit, children, isOpen, onClose, additionalClass }) => {
+  const handleCloseOnClickOutside = (event) => {
     if (event.target === event.currentTarget) {
       onClose();
     }
   };
 
   return (
-    <div className={`modal-overlay ${isOpen ? 'modal-overlay_open' : ''}`} onClick={handleCloseOnOverlayClick}>
+    <div className={`modal-overlay ${isOpen ? 'modal-overlay_open' : ''}`} onClick={handleCloseOnClickOutside}>
       <div className={`modal ${additionalClass}`} onClick={(e) => e.stopPropagation()}>
         <form className='modal__form' name={name} onSubmit={onSubmit}>
           <h2 className='modal__title'>{title}</h2>
@@ -19,6 +19,6 @@ function ModalWithForm({ title, name, onSubmit, children, isOpen, onClose, addit
       </div>
     </div>
   );
-}
+};
 
 export default ModalWithForm;

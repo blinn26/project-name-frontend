@@ -1,36 +1,4 @@
  .main {
    display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center;
-
-
- }
-
-
- .main__button {
-   padding: 10px;
-   font-size: 16px;
-   cursor: pointer;
-   border-radius: 10px;
-   background-color: transparent;
-   color: #ffffff;
- }
-
- .main__createdbyben {
-   /* width: 1440px; */
-   width: 100%;
-   height: 576px;
-   object-fit: fill;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   position: absolute;
-   top: -6px;
+   max-width: 1440px;
  }

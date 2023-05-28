@@ -1,17 +1,11 @@
 import React from 'react';
-import './Main.css';
 import About from '../About/About';
-import Preloader from '../Preloader/Preloader';
 
-const Main = ({ children }) => {
+const Main = () => {
   return (
-    <div className='main'>
-      <h1 className='main__title'></h1>
-      <h2 className='main__subtitle'></h2>
-      {children}
+    <main>
       <About />
-      <Preloader />
-    </div>
+    </main>
   );
 };
 

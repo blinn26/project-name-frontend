@@ -1,14 +1,12 @@
 /* .header {
-  height: 576px;
-  background-image: url('../images/bawphone.png');
-  background-repeat: no-repeat;
-  background-position: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-}
- */
+  max-width: 1440px;
+  height: 576px;
+  color: white;
+
+} */
+
 .header__title {
   font-family: "Roboto Slab", sans-serif;
   font-weight: 400;
@@ -18,8 +16,9 @@
   text-align: center;
   font-style: normal;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  transform: skew(-5deg);
+  /*  transform: skew(-5deg); */
 }
+
 
 .rectangle {
   width: 176px;
@@ -33,14 +32,5 @@
   font-size: 18px;
   line-height: 24px;
   font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   box-shadow: 0px 3px 14px 0px #0e1a391c;
 }
-
-/* <Header handleSearchSubmit= {
-  mySearchSubmitFunction
-}
-
-title="What's going on in the world?" /> */

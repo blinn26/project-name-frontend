@@ -1,5 +1,6 @@
 .footer {
   height: 80px;
+  max-width: 1440px;
   display: flex;
   justify-content: space-between;
   font-family: "Roboto", sans-serif;
