@@ -12,8 +12,6 @@ const NewsCard = ({ newsItem, isLoggedIn }) => {
     setIsShown(false);
   };
 
-  console.log('Rendering NewsCard with newsItem:', newsItem);
-
   return (
     <div className='news-card' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <h2 className='news-card__title'>{newsItem.title}</h2>

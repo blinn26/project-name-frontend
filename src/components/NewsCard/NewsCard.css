@@ -29,14 +29,14 @@
   margin-bottom: 16px;
 }
 
-.news-card__save,
-.news-card p {
-  display: none;
+.news-card__image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 16px;
 }
 
-.news-card:hover .news-card__save,
-.news-card:hover p {
-  display: block;
+.news-card__save {
+  display: none;
   background-color: #fff;
   color: #000;
   border: 1px solid #000;
@@ -49,8 +49,20 @@
   transform: translateX(-50%);
 }
 
-.news-card__save:hover,
-.news-card p:hover {
+.news-card:hover .news-card__save {
+  display: block;
+}
+
+.news-card__save:hover {
   opacity: 0.8;
   cursor: pointer;
+  margin: 10px;
+}
+
+.news-card__sign-in {
+  display: none;
+}
+
+.news-card:hover .news-card__sign-in {
+  display: block;
 }
