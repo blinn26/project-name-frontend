@@ -126,3 +126,45 @@
   align-items: flex-start;
   margin-bottom: 20px;
 }
+
+.modal__success {
+  width: 315px;
+  height: 400px;
+  /* height adjusted considering the contents */
+  padding: 20px;
+  background-color: #fff;
+  color: #000;
+  text-align: left;
+  border-radius: 8px;
+  position: absolute;
+  top: 322px;
+  left: 541px;
+}
+
+.modal__success h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000;
+}
+
+.modal__success p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #2F71E5;
+  /* This is a blue color, adjust as necessary */
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.modal__success span.modal__alternative-action {
+  cursor: pointer;
+}
+
+.modal__alternative-or {
+  color: black;
+  margin-right: 5px;
+}

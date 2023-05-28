@@ -10,7 +10,7 @@ import { Route, Routes } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [userCredentials, setUserCredentials] = useState({
     username: '',
     email: '',
@@ -25,7 +25,7 @@ function App() {
   }, []);
 
   const handleModalOpen = (isSignUp) => {
-    setIsModalOpen(true);
+    setIsOpen(true);
     setUserCredentials((prevState) => ({
       ...prevState,
       isSignUp,
@@ -33,7 +33,7 @@ function App() {
   };
 
   const handleModalClose = () => {
-    setIsModalOpen(false);
+    setIsOpen(false);
   };
 
   const handleUserCredentialsChange = (newUserCredentials) => {
@@ -52,7 +52,8 @@ function App() {
         <Route path='/about' element={<About />} />
       </Routes>
       <SignInandUpModal
-        isOpen={isModalOpen}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
         onClose={handleModalClose}
         userCredentials={userCredentials}
         onUserCredentialsChange={handleUserCredentialsChange}
