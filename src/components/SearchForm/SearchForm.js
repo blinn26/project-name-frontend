@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './SearchForm.css';
 
 const SearchForm = ({ handleSearchSubmit }) => {
+  console.log('handleSearchSubmit is a: ', typeof handleSearchSubmit);
+
   const [searchTerm, setSearchTerm] = useState('');
   const [error, setError] = useState('');
 
@@ -15,6 +17,7 @@ const SearchForm = ({ handleSearchSubmit }) => {
       setError('Please enter a keyword');
     } else {
       handleSearchSubmit(searchTerm);
+      console.log(searchTerm);
       setSearchTerm('');
       setError('');
     }

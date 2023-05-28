@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Main from '../Main/Main';
 import Header from '../Header/Header';
 import SavedNews from '../SavedNews/SavedNews';
@@ -8,7 +8,6 @@ import SignInandUpModal from '../SignInandUpModal/SignInandUpModal';
 import PageClass from '../PageClass/PageClass';
 import { Route, Routes } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
-import SearchForm from '../SearchForm/SearchForm'; // import SearchForm
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,14 +17,12 @@ function App() {
     password: '',
     isSignUp: false,
   });
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const [searchTerm, setSearchTerm] = useState(''); // add state for searchTerm
-
-  const handleSearchSubmit = (search) => {
+  const handleSearchSubmit = useCallback((search) => {
     setSearchTerm(search);
-    // Add logic to handle search
-    console.log(searchTerm);
-  };
+    console.log(search);
+  }, []);
 
   const handleModalOpen = (isSignUp) => {
     setIsModalOpen(true);
@@ -43,19 +40,14 @@ function App() {
     setUserCredentials(newUserCredentials);
   };
 
+  console.log(searchTerm);
+
   return (
     <PageClass>
       <Navigation handleModalOpen={handleModalOpen} />
-      <Header />
+      <Header handleSearchSubmit={handleSearchSubmit} />
       <Routes>
-        <Route
-          path='/'
-          element={
-            <Main>
-              <SearchForm handleSearchSubmit={handleSearchSubmit} /> {/* add SearchForm */}
-            </Main>
-          }
-        />
+        <Route path='/' element={<Main />} />
         <Route path='/saved-news' element={<SavedNews />} />
         <Route path='/about' element={<About />} />
       </Routes>

@@ -9,7 +9,6 @@ function SignInandUpModal({ isOpen, onClose }) {
   const [isValidEmail, setIsValidEmail] = useState(true);
   const [isValidUsername, setIsValidUsername] = useState(true);
 
-  // Calculate form validity
   const isFormValid = isValidEmail && isValidUsername && password.length >= 4 && password.length <= 30;
 
   useEffect(() => {
@@ -46,10 +45,14 @@ function SignInandUpModal({ isOpen, onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isSignUp) {
-      // Handle sign up here...
+      console.log('Signing up with:', { username, email, password });
     } else {
-      // Handle sign in
+      console.log('Signing in with:', { email, password });
     }
+    setUsername('');
+    setEmail('');
+    setPassword('');
+    onClose();
   };
 
   const toggleForm = () => {

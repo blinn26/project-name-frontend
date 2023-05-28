@@ -1,15 +1,14 @@
 import React from 'react';
 import './Main.css';
-/* import blackonWhite from '../images/BandW.png'; */
 import About from '../About/About';
 import Preloader from '../Preloader/Preloader';
 
-const Main = () => {
+const Main = ({ children }) => {
   return (
     <div className='main'>
       <h1 className='main__title'></h1>
       <h2 className='main__subtitle'></h2>
-      {/* <img src={blackonWhite} className='main__createdbyben' alt='createdbyben' /> */}
+      {children}
       <About />
       <Preloader />
     </div>

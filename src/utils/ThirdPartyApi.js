@@ -1,12 +1,12 @@
-// import stubdata from './stubdata.json';
+import stubdata from './stubdata.json';
 
 const apiKey = process.env.REACT_APP_NEWS_API_KEY;
 
 export const fetchNews = async () => {
-  // if (!apiKey) {
-  //   console.log('stubdata test');
-  //   return stubdata.articles;
-  // }
+  if (!apiKey) {
+    console.log('stubdata test');
+    return stubdata.articles;
+  }
 
   const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`);
 

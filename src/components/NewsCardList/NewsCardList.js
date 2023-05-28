@@ -1,28 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './NewsCardList.css';
 import NewsCard from '../NewsCard/NewsCard';
-import { fetchNews } from '../../utils/ThirdPartyApi';
 
-const NewsCardList = ({ isLoggedIn }) => {
-  const [news, setNews] = useState(null);
-
-  useEffect(() => {
-    const loadNews = async () => {
-      const data = await fetchNews();
-      setNews(data.articles);
-    };
-
-    loadNews();
-  }, []);
+const NewsCardList = ({ news, isLoggedIn }) => {
+  console.log('Rendering NewsCardList with news:', news);
+  if (!news) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className='news-card__list'>
       <h2 className='news-card__title'>News</h2>
-      {news ? (
-        news.map((item, index) => <NewsCard key={index} newsItem={item} isLoggedIn={isLoggedIn} />)
-      ) : (
-        <p>Loading...</p>
-      )}
+      {news.map((item, index) => (
+        <NewsCard key={index} newsItem={item} isLoggedIn={isLoggedIn} />
+      ))}
     </div>
   );
 };
