@@ -44,7 +44,7 @@
 @media (min-width: 321px) and (max-width: 770px) {
   .header {
     max-width: 770px;
-    height: auto;
+
   }
 
   .header__title {
@@ -61,7 +61,7 @@
 @media (max-width: 320px) {
   .header {
     max-width: 320px;
-    height: auto;
+
   }
 
   .header__title {
