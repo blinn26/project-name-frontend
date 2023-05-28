@@ -8,19 +8,19 @@ const Navigation = ({ handleModalOpen }) => {
     <>
       <nav className='navigation'>
         <img className='navigation__logo' src={logo} alt='Logo' />
-
         <ul className='navigation__list'>
           <li className='navigation__item'></li>
           <li className='navigation__item'>
-            <a className='navigation__link' href='/'>
-              <img src={Home} alt='Home' className='navigation__home-icon' />
-            </a>
-            <a className='navigation__link' href='/saved-news '>
+            <a className='navigation__link' href='/saved-news'>
               Saved-articles
             </a>
           </li>
           {/* More navigation items here */}
         </ul>
+
+        <button className='navigation__home' onClick={handleModalOpen}>
+          <img src={Home} alt='Home' className='navigation__home-icon' />
+        </button>
 
         <button className='header__sign-in-button rectangle signIn' onClick={handleModalOpen}>
           Sign In

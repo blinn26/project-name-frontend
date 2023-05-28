@@ -6,8 +6,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /*  background-color: #333; */
-
+  padding-right: 40px;
+  padding-bottom: 15px;
 }
 
 .navigation__background {
@@ -25,6 +25,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
 
 }
 
@@ -32,31 +33,43 @@
   list-style: none;
   margin: 0;
   padding: 0;
-
 }
 
 .navigation__link {
   color: gray;
   text-decoration: underline;
   font-size: 20px;
+  margin-left: 80px;
 }
 
 .navigation__link:hover {
   text-decoration: underline;
   color: cyan;
-
 }
 
 .navigation__home-icon {
   width: 49px;
   height: 24px;
-  margin-right: 5px;
-
+  margin-right: 120px;
+  margin-top: 15px;
 }
 
 .navigation__logo {
   height: 24px;
   width: auto;
+}
 
+.navigation__home {
+  height: 80px;
+  width: 68px;
+  border: none;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
 
 }
