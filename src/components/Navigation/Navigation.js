@@ -18,9 +18,9 @@ const Navigation = ({ handleModalOpen }) => {
           {/* More navigation items here */}
         </ul>
 
-        <button className='navigation__home' onClick={handleModalOpen}>
+        <a href='/' className='navigation__home'>
           <img src={Home} alt='Home' className='navigation__home-icon' />
-        </button>
+        </a>
 
         <button className='header__sign-in-button rectangle signIn' onClick={handleModalOpen}>
           Sign In
