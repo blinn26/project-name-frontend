@@ -1,15 +1,18 @@
 .navigation {
   max-width: 1440px;
   width: 100%;
-  height: 80px;
-
   margin: 0 auto 80px;
 
-  background-color: black;
+}
 
-
+.navigation__line {
+  width: 100%;
+  height: 5px;
+  background-color: white;
+  width: 1440px;
 
 }
+
 
 .navigation__list {
   list-style: none;
@@ -45,8 +48,8 @@
 }
 
 .navigation__logo {
+  width: 200px;
   height: 24px;
-  width: auto;
 }
 
 .navigation__home {

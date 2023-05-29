@@ -1,8 +1,6 @@
  .page {
    max-width: 1440px;
    background-color: white;
- }
+   padding: 10px 10px 10px 10px;
 
- .page__wrapper {
-   padding: 20px 20px 20px 20px;
  }

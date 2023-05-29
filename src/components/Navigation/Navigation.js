@@ -2,7 +2,7 @@ import React from 'react';
 import './Navigation.css';
 import Home from '../images/Home.png';
 import logo from '../images/NewsExplorer.png';
-import bgLine from '../images/bgLine.png';
+import bgLine from '../images/bg.png';
 
 const Navigation = ({ handleModalOpen }) => {
   return (

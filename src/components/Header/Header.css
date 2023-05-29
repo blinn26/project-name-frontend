@@ -1,7 +1,6 @@
 /* Block: header */
 .header {
   max-width: 1440px;
-  height: 576px;
   flex-grow: 0;
   padding: 0 0 80px;
   color: white;
@@ -14,17 +13,7 @@
   background-position: center;
 }
 
-/* Element: header__title */
-.header__title {
-  font-family: "Roboto Slab", sans-serif;
-  font-weight: 400;
-  font-size: 60px;
-  line-height: 64px;
-  color: white;
-  text-align: center;
-  font-style: normal;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
+
 
 /* Element: rectangle (Assuming it is part of header block) */
 .header__button {

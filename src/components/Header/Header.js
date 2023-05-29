@@ -1,17 +1,13 @@
 import React from 'react';
 import SearchForm from '../SearchForm/SearchForm';
+import Navigation from '../Navigation/Navigation';
 import './Header.css';
 
-const Header = ({ handleSearchSubmit }) => {
-  const title = "What's going on in the world?";
+const Header = ({ handleModalOpen, handleSearchSubmit }) => {
   return (
     <header className='header'>
-      <div className='header__background-image'>
-        <h1 className='header__title'>{title}</h1>
-        <div className='header__middle'>
-          <SearchForm handleSearchSubmit={handleSearchSubmit} />
-        </div>
-      </div>
+      <Navigation handleModalOpen={handleModalOpen} /> {/* Navigation component is now here */}
+      <SearchForm handleSearchSubmit={handleSearchSubmit} />
     </header>
   );
 };

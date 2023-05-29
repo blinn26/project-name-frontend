@@ -7,7 +7,6 @@ import About from '../About/About';
 import SignInandUpModal from '../SignInandUpModal/SignInandUpModal';
 import PageClass from '../PageClass/PageClass';
 import { Route, Routes } from 'react-router-dom';
-import Navigation from '../Navigation/Navigation';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,8 +43,8 @@ function App() {
 
   return (
     <PageClass>
-      <Navigation handleModalOpen={handleModalOpen} />
-      <Header handleSearchSubmit={handleSearchSubmit} />
+      <Header handleSearchSubmit={handleSearchSubmit} handleModalOpen={handleModalOpen} />{' '}
+      {/* Both props are now passed to Header */}
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/saved-news' element={<SavedNews />} />
@@ -53,7 +52,7 @@ function App() {
       </Routes>
       <SignInandUpModal
         isOpen={isOpen}
-        setIsOpen={setIsOpen} // passing setIsOpen as a prop
+        setIsOpen={setIsOpen}
         onClose={handleModalClose}
         userCredentials={userCredentials}
         onUserCredentialsChange={handleUserCredentialsChange}
