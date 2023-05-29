@@ -53,7 +53,7 @@ function App() {
       </Routes>
       <SignInandUpModal
         isOpen={isOpen}
-        setIsOpen={setIsOpen}
+        setIsOpen={setIsOpen} // passing setIsOpen as a prop
         onClose={handleModalClose}
         userCredentials={userCredentials}
         onUserCredentialsChange={handleUserCredentialsChange}
