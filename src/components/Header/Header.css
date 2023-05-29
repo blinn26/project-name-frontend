@@ -5,13 +5,15 @@
   flex-grow: 0;
   padding: 0 0 80px;
   color: white;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-image: url('../images/bawphone.png');
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
+
 }
 
 

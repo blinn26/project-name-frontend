@@ -1,16 +1,11 @@
 /* General Styles */
-/* .navigation {
+.navigation {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto 80px;
   justify-content: space-between;
   align-items: center;
-} */
 
-.navigation__line {
-  width: 1440px;
-  height: 5px;
-  background-color: black;
 }
 
 .navigation__list {
@@ -70,6 +65,7 @@
 .navigation__light {
   background-color: white;
   color: black;
+  display: flex;
 }
 
 .navigation__light .navigation__link {
