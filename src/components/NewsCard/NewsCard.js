@@ -14,11 +14,11 @@ const NewsCard = ({ newsItem, isLoggedIn }) => {
 
   return (
     <div className='news-card' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      {newsItem.urlToImage && <img className='news-card__image' src={newsItem.urlToImage} alt={newsItem.title} />}
       <p className='card__date'>{newsItem.publishedAt.slice(0, 10)}</p>
       <h3 className='card__title'>{newsItem.title}</h3>
       <p className='card__description'>{newsItem.description}</p>
       <h4 className='card__source'>{newsItem.source.name}</h4>
-      {newsItem.urlToImage && <img className='news-card__image' src={newsItem.urlToImage} alt={newsItem.title} />}
       {isLoggedIn && isShown && <button className='news-card__save'>Save Article</button>}
       {!isLoggedIn && isShown && <p>Sign in to save articles</p>}
     </div>
