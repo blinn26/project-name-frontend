@@ -3,6 +3,7 @@ import stubData from '../utils/ThirdPartyApi';
 
 const NewsComponents = () => {
   const [data, setData] = useState([]);
+  console.log(data);
 
   useEffect(() => {
     // Simulate API call with delay

@@ -1,12 +1,13 @@
 .navigation {
-  height: 80px;
   max-width: 1440px;
+  height: 80px;
+  padding: 19px 104px 0;
   border-bottom: 1px solid #333;
   color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 40px;
+
 
 }
 
@@ -49,23 +50,19 @@
 }
 
 .navigation__home {
-  height: 80px;
-  width: 68px;
+  height: 26px;
+  width: 49px;
   border: none;
   font-weight: 500;
   font-size: 18px;
   font-family: "Roboto", sans-serif;
   background-color: rgba(0, 0, 0, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
+  text-align: center;
+
 
 }
 
-.navigation__line {
-  color: black;
-}
+
 
 .header__sign-in-button {
   width: 176px;
