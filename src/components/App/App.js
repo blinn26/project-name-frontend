@@ -18,6 +18,12 @@ function App() {
   });
   const [searchTerm, setSearchTerm] = useState('');
 
+  const [theme, setTheme] = useState('light');
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
   const handleSearchSubmit = useCallback((search) => {
     setSearchTerm(search);
     console.log(search);
@@ -43,8 +49,13 @@ function App() {
 
   return (
     <PageClass>
-      <Header handleSearchSubmit={handleSearchSubmit} handleModalOpen={handleModalOpen} />{' '}
-      {/* Both props are now passed to Header */}
+      <Header
+        handleSearchSubmit={handleSearchSubmit}
+        handleModalOpen={handleModalOpen}
+        toggleTheme={toggleTheme}
+        theme={theme}
+      />
+      {/* Pass toggleTheme and theme to Header */}
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/saved-news' element={<SavedNews />} />

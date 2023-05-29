@@ -132,7 +132,6 @@
 .modal__success {
   width: 315px;
   height: 400px;
-  /* height adjusted considering the contents */
   padding: 20px;
   background-color: #fff;
   color: #000;

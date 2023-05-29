@@ -1,31 +1,27 @@
-.navigation {
+/* General Styles */
+/* .navigation {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto 80px;
-
-}
+  justify-content: space-between;
+  align-items: center;
+} */
 
 .navigation__line {
-  width: 100%;
-  height: 5px;
-  background-color: white;
   width: 1440px;
-
+  height: 5px;
+  background-color: black;
 }
-
 
 .navigation__list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-
 }
 
 .navigation__item {
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .navigation__link {
@@ -35,7 +31,7 @@
   margin-left: 80px;
 }
 
-.navigation__link:hover {
+*/ .navigation__link:hover {
   text-decoration: underline;
   color: cyan;
 }
@@ -43,41 +39,81 @@
 .navigation__home-icon {
   width: 49px;
   height: 24px;
-  margin-right: 120px;
-  margin-top: 15px;
+  background-color: white;
 }
 
 .navigation__logo {
   width: 200px;
   height: 24px;
-}
-
-.navigation__home {
-  height: 26px;
-  width: 49px;
-  border: none;
-  font-weight: 500;
-  font-size: 18px;
-  font-family: "Roboto", sans-serif;
-  background-color: rgba(0, 0, 0, 0);
-  text-align: center;
-
-
-}
-
-
-
-.header__sign-in-button {
-  width: 176px;
-  height: 50px;
-  margin-top: 15px;
-  color: white;
-  border-radius: 100px;
-  outline: none;
-  background: #333;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 20px;
   line-height: 24px;
-  font-weight: 500;
-  box-shadow: 0px 3px 14px 0px #0e1a391c;
+  color: gray;
+}
+
+
+
+.navigation__sign-in {
+  width: 176px;
+  height: 48px;
+  border-radius: 100px;
+  border: 1px solid #000000;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+}
+
+/* Light Theme Styles */
+.navigation__light {
+  background-color: white;
+  color: black;
+}
+
+.navigation__light .navigation__link {
+  color: black;
+}
+
+.navigation__light .navigation__link:hover {
+  color: cyan;
+}
+
+/* Dark Theme Styles */
+.navigation__dark {
+  background-color: black;
+  color: white;
+}
+
+.navigation__dark .navigation__link {
+  color: white;
+}
+
+.navigation__dark .navigation__link:hover {
+  color: cyan;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 320px) {
+  .navigation {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navigation__list {
+    flex-direction: column;
+  }
+}
+
+/* Tablet Styles */
+@media screen and (max-width: 768px) {
+  .navigation {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .navigation__list {
+    flex-direction: row;
+  }
 }

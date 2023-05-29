@@ -3,13 +3,21 @@ import SearchForm from '../SearchForm/SearchForm';
 import Navigation from '../Navigation/Navigation';
 import './Header.css';
 
-const Header = ({ handleModalOpen, handleSearchSubmit }) => {
+function Header(props) {
+  const { handleModalOpen, handleSearchSubmit, toggleTheme, isLoggedIn, setLogin, theme } = props;
+
   return (
     <header className='header'>
-      <Navigation handleModalOpen={handleModalOpen} /> {/* Navigation component is now here */}
+      <Navigation
+        handleModalOpen={handleModalOpen}
+        toggleTheme={toggleTheme}
+        isLoggedIn={isLoggedIn}
+        setLogin={setLogin}
+        theme={theme}
+      />
       <SearchForm handleSearchSubmit={handleSearchSubmit} />
     </header>
   );
-};
+}
 
 export default Header;

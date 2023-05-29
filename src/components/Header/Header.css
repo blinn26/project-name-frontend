@@ -1,6 +1,7 @@
 /* Block: header */
 .header {
   max-width: 1440px;
+  height: 567px;
   flex-grow: 0;
   padding: 0 0 80px;
   color: white;
@@ -13,23 +14,6 @@
   background-position: center;
 }
 
-
-
-/* Element: rectangle (Assuming it is part of header block) */
-.header__button {
-  width: 176px;
-  height: 50px;
-  margin-top: 15px;
-  color: white;
-  border-radius: 100px;
-  outline: none;
-  background: #333;
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 500;
-  box-shadow: 0px 3px 14px 0px #0e1a391c;
-}
 
 /* Modifier: header--tablet */
 @media (min-width: 320px) and (max-width: 768px) {
