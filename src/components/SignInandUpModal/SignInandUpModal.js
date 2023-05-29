@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
+import { useNavigate } from 'react-router-dom';
 
 function SignInandUpModal({ isOpen, setIsOpen, onClose }) {
   const [username, setUsername] = useState('');
@@ -9,12 +10,17 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose }) {
   const [isValidEmail, setIsValidEmail] = useState(true);
   const [isValidUsername, setIsValidUsername] = useState(true);
   const [successModal, setSuccessModal] = useState(false);
+  const navigate = useNavigate();
 
   const isFormValid = isValidEmail && isValidUsername && password.length >= 4 && password.length <= 30;
 
+  // On component mount, check if user is logged in
   useEffect(() => {
-    console.log(`Modal open state: ${isOpen}`);
-  }, [isOpen]);
+    const user = localStorage.getItem('user');
+    if (user) {
+      navigate('/saved-news');
+    }
+  }, []);
 
   const validateEmail = (email) => {
     const re = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/gim;
@@ -47,9 +53,17 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose }) {
     e.preventDefault();
     if (isSignUp) {
       console.log('Signing up with:', { username, email, password });
+      localStorage.setItem('user', JSON.stringify({ username, email, password }));
       setSuccessModal(true);
+      navigate('/saved-news');
     } else {
-      console.log('Signing in with:', { email, password });
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (user && user.email === email && user.password === password) {
+        console.log('Signing in with:', { email, password });
+        navigate('/');
+      } else {
+        alert('Invalid credentials');
+      }
     }
     setUsername('');
     setEmail('');
