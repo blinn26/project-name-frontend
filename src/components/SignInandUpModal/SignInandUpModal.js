@@ -14,7 +14,6 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose }) {
 
   const isFormValid = isValidEmail && isValidUsername && password.length >= 4 && password.length <= 30;
 
-  // On component mount, check if user is logged in
   useEffect(() => {
     const user = localStorage.getItem('user');
     if (user) {
