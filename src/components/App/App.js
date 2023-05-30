@@ -31,7 +31,6 @@ function App() {
 
   const handleSearchSubmit = useCallback((search) => {
     setSearchTerm(search);
-    console.log(search);
   }, []);
 
   const handleModalOpen = (isSignUp) => {

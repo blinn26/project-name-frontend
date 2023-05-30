@@ -4,7 +4,6 @@ const apiKey = process.env.REACT_APP_NEWS_API_KEY;
 
 export const fetchNews = async () => {
   if (!apiKey) {
-    console.log('stubdata test');
     return stubdata.articles;
   }
 

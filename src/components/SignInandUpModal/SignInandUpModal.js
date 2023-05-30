@@ -51,14 +51,12 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isSignUp) {
-      console.log('Signing up with:', { username, email, password });
       localStorage.setItem('user', JSON.stringify({ username, email, password }));
       setSuccessModal(true);
       navigate('/saved-news');
     } else {
       const user = JSON.parse(localStorage.getItem('user'));
       if (user && user.email === email && user.password === password) {
-        console.log('Signing in with:', { email, password });
         navigate('/');
       } else {
         alert('Invalid credentials');

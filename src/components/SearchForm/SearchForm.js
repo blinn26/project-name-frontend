@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import './SearchForm.css';
 
 const SearchForm = ({ handleSearchSubmit }) => {
-  console.log('handleSearchSubmit is a: ', typeof handleSearchSubmit);
-
   const [searchTerm, setSearchTerm] = useState('');
   const [error, setError] = useState('');
 

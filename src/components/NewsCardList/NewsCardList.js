@@ -3,7 +3,6 @@ import './NewsCardList.css';
 import NewsCard from '../NewsCard/NewsCard';
 
 const NewsCardList = ({ news, isLoggedIn }) => {
-  console.log('Rendering NewsCardList with news:', news);
   if (!news) {
     return <p>Loading...</p>;
   }

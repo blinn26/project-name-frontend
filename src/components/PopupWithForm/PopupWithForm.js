@@ -6,7 +6,6 @@ const PopupWithForm = ({ isOpen, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(inputValue);
   };
 
   const handleInputChange = (e) => {

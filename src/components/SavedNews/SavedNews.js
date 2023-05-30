@@ -8,7 +8,6 @@ function SavedNews() {
   useEffect(() => {
     const loadNews = async () => {
       const data = await fetchNews();
-      console.log('Fetched news data:', data);
       setNews(data);
     };
 
