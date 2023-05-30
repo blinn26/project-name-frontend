@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,12 +14,12 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose }) {
 
   const isFormValid = isValidEmail && isValidUsername && password.length >= 4 && password.length <= 30;
 
-  useEffect(() => {
+  /*  useEffect(() => {
     const user = localStorage.getItem('user');
     if (user) {
       navigate('/saved-news');
     }
-  }, []);
+  }, []); */
 
   const validateEmail = (email) => {
     const re = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/gim;

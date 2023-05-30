@@ -3,9 +3,9 @@
   max-width: 1440px;
   width: 100%;
   margin: 0 auto 80px;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-
+  display: flex;
 }
 
 .navigation__list {
@@ -26,15 +26,9 @@
   margin-left: 80px;
 }
 
-*/ .navigation__link:hover {
+.navigation__link:hover {
   text-decoration: underline;
   color: cyan;
-}
-
-.navigation__home-icon {
-  width: 49px;
-  height: 24px;
-  background-color: white;
 }
 
 .navigation__logo {
@@ -46,8 +40,6 @@
   line-height: 24px;
   color: gray;
 }
-
-
 
 .navigation__sign-in {
   width: 176px;
@@ -61,34 +53,13 @@
   background-color: gray;
 }
 
-/* Light Theme Styles */
-.navigation__light {
+.navigation__home-image {
+  width: 49px;
   background-color: white;
-  color: black;
-  display: flex;
-}
-
-.navigation__light .navigation__link {
-  color: black;
-}
-
-.navigation__light .navigation__link:hover {
-  color: cyan;
-}
-
-/* Dark Theme Styles */
-.navigation__dark {
-  background-color: black;
   color: white;
+  height: 24px;
 }
 
-.navigation__dark .navigation__link {
-  color: white;
-}
-
-.navigation__dark .navigation__link:hover {
-  color: cyan;
-}
 
 /* Mobile Styles */
 @media screen and (max-width: 320px) {
