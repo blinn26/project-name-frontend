@@ -18,6 +18,8 @@ function App() {
   });
   const [searchTerm, setSearchTerm] = useState('');
   const [news, setNews] = useState([]);
+  const [savedNews, setSavedNews] = useState([]);
+  const [numNewsToShow, setNumNewsToShow] = useState(10);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,6 +30,20 @@ function App() {
 
     loadNews();
   }, []);
+
+  useEffect(() => {
+    const loadNews = async () => {
+      const data = await fetchNews();
+      if (searchTerm !== '') {
+        const filteredData = data.filter((newsItem) => newsItem.title.toLowerCase().includes(searchTerm.toLowerCase()));
+        setNews(filteredData);
+      } else {
+        setNews(data);
+      }
+    };
+
+    loadNews();
+  }, [searchTerm]);
 
   const handleSearchSubmit = useCallback((search) => {
     setSearchTerm(search);
@@ -49,7 +65,10 @@ function App() {
     setUserCredentials(newUserCredentials);
   };
 
-  console.log(searchTerm);
+  const handleSaveNews = (newsItem) => {
+    setSavedNews([...savedNews, newsItem]);
+  };
+
   useEffect(() => {
     const user = localStorage.getItem('user');
     if (user) {
@@ -61,8 +80,19 @@ function App() {
     <PageClass>
       <Header handleSearchSubmit={handleSearchSubmit} handleModalOpen={handleModalOpen} news={news} />
       <Routes>
-        <Route path='/' element={<Main />} />
-        <Route path='/saved-news' element={<SavedNews />} />
+        <Route
+          path='/'
+          element={
+            <Main
+              news={news.slice(0, numNewsToShow)}
+              onSaveNews={handleSaveNews}
+              numNewsToShow={numNewsToShow}
+              setNumNewsToShow={setNumNewsToShow}
+            />
+          }
+        />
+
+        <Route path='/saved-news' element={<SavedNews news={savedNews} />} />
       </Routes>
       <SignInandUpModal
         isOpen={isOpen}
