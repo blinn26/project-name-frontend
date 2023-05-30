@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Main from '../Main/Main';
 import Header from '../Header/Header';
 import SavedNews from '../SavedNews/SavedNews';
@@ -7,6 +7,7 @@ import About from '../About/About';
 import SignInandUpModal from '../SignInandUpModal/SignInandUpModal';
 import PageClass from '../PageClass/PageClass';
 import { Route, Routes } from 'react-router-dom';
+import { fetchNews } from '../../utils/ThirdPartyApi';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,12 +18,16 @@ function App() {
     isSignUp: false,
   });
   const [searchTerm, setSearchTerm] = useState('');
+  const [news, setNews] = useState([]);
 
-  const [theme, setTheme] = useState('light');
+  useEffect(() => {
+    const loadNews = async () => {
+      const data = await fetchNews();
+      setNews(data);
+    };
 
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
+    loadNews();
+  }, []);
 
   const handleSearchSubmit = useCallback((search) => {
     setSearchTerm(search);
@@ -49,12 +54,7 @@ function App() {
 
   return (
     <PageClass>
-      <Header
-        handleSearchSubmit={handleSearchSubmit}
-        handleModalOpen={handleModalOpen}
-        toggleTheme={toggleTheme}
-        theme={theme}
-      />
+      <Header handleSearchSubmit={handleSearchSubmit} handleModalOpen={handleModalOpen} news={news} />
       {/* Pass toggleTheme and theme to Header */}
       <Routes>
         <Route path='/' element={<Main />} />

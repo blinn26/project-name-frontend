@@ -4,17 +4,11 @@ import Navigation from '../Navigation/Navigation';
 import './Header.css';
 
 function Header(props) {
-  const { handleModalOpen, handleSearchSubmit, toggleTheme, isLoggedIn, setLogin, theme } = props;
+  const { handleModalOpen, handleSearchSubmit, isLoggedIn, setLogin, news } = props;
 
   return (
     <header className='header'>
-      <Navigation
-        handleModalOpen={handleModalOpen}
-        toggleTheme={toggleTheme}
-        isLoggedIn={isLoggedIn}
-        setLogin={setLogin}
-        theme={theme}
-      />
+      <Navigation handleModalOpen={handleModalOpen} isLoggedIn={isLoggedIn} setLogin={setLogin} news={news} />
       <SearchForm handleSearchSubmit={handleSearchSubmit} />
     </header>
   );
