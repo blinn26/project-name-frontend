@@ -3,7 +3,6 @@ import Main from '../Main/Main';
 import Header from '../Header/Header';
 import SavedNews from '../SavedNews/SavedNews';
 import Footer from '../Footer/Footer';
-import About from '../About/About';
 import SignInandUpModal from '../SignInandUpModal/SignInandUpModal';
 import PageClass from '../PageClass/PageClass';
 import { Route, Routes } from 'react-router-dom';
@@ -54,11 +53,9 @@ function App() {
   return (
     <PageClass>
       <Header handleSearchSubmit={handleSearchSubmit} handleModalOpen={handleModalOpen} news={news} />
-      {/* Pass toggleTheme and theme to Header */}
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/saved-news' element={<SavedNews />} />
-        <Route path='/about' element={<About />} />
       </Routes>
       <SignInandUpModal
         isOpen={isOpen}
