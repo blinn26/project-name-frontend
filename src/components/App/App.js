@@ -5,7 +5,7 @@ import SavedNews from '../SavedNews/SavedNews';
 import Footer from '../Footer/Footer';
 import SignInandUpModal from '../SignInandUpModal/SignInandUpModal';
 import PageClass from '../PageClass/PageClass';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import { fetchNews } from '../../utils/ThirdPartyApi';
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
   });
   const [searchTerm, setSearchTerm] = useState('');
   const [news, setNews] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadNews = async () => {
@@ -49,6 +50,12 @@ function App() {
   };
 
   console.log(searchTerm);
+  useEffect(() => {
+    const user = localStorage.getItem('user');
+    if (user) {
+      navigate('/saved-news');
+    }
+  }, []);
 
   return (
     <PageClass>
