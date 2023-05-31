@@ -10,6 +10,7 @@ import { fetchNews } from '../../utils/ThirdPartyApi';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userCredentials, setUserCredentials] = useState({
     username: '',
     email: '',
@@ -19,9 +20,9 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [news, setNews] = useState([]);
   const [savedNews, setSavedNews] = useState([]);
-  const [numNewsToShow, setNumNewsToShow] = useState(3); // Changed initial state to 3
+  const [numNewsToShow, setNumNewsToShow] = useState(3);
   const [theme, setTheme] = useState('light');
-  const [error, setError] = useState(null); // new error state
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const toggleTheme = () => {
@@ -72,6 +73,7 @@ function App() {
     const user = localStorage.getItem('user');
     if (user) {
       navigate('/saved-news');
+      setIsLoggedIn(true);
     }
 
     loadNews();
@@ -99,7 +101,7 @@ function App() {
             />
           }
         />
-        <Route path='/saved-news' element={<SavedNews news={savedNews} />} />
+        <Route path='/saved-news' element={<SavedNews isLoggedIn={isLoggedIn} savedNews={savedNews} />} />
       </Routes>
       <SignInandUpModal
         isOpen={isOpen}
