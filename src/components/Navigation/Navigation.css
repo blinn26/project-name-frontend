@@ -5,11 +5,19 @@
   padding: 10px;
   background-color: rgba(0, 0, 0, 0);
   color: #333333;
+  border-bottom: solid;
+  height: 80px;
 }
 
 .navigation[data-theme='dark'] {
   background-color: rgba(0, 0, 0, 0);
   color: #ffffff;
+  border-bottom: solid;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
 
 .navigation__list {
