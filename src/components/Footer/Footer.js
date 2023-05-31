@@ -15,7 +15,7 @@ const Footer = () => {
 
   return (
     <footer className='footer'>
-      <p className='footer__copyright'>© 2023 Powered by Ben Linn's Brain</p>
+      <p className='footer__copyright'>© 2023 Powered by Ben Linn</p>
       <div className='footer__links'>
         <Link to='/' className='footer__button footer__home-button'>
           <img alt='Home' src={home} className='footer__home-icon' />

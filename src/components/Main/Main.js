@@ -5,15 +5,17 @@ import './Main.css';
 
 const Main = ({ news, numNewsToShow, setNumNewsToShow, isLoggedIn }) => {
   return (
-    <main>
+    <main className='main'>
       <About />
-      <div>
+      <div className='news-container'>
         {news.slice(0, numNewsToShow).map((newsItem, index) => (
-          <NewsCard key={index} newsItem={newsItem} isLoggedIn={isLoggedIn} />
+          <NewsCard className='news-card' key={index} newsItem={newsItem} isLoggedIn={isLoggedIn} />
         ))}
-        <button className='main__show-more-button' onClick={() => setNumNewsToShow(numNewsToShow + 10)}>
-          Show More
-        </button>
+        {numNewsToShow < news.length && (
+          <button className='main__show-more-button' onClick={() => setNumNewsToShow(numNewsToShow + 3)}>
+            Show More
+          </button>
+        )}
       </div>
     </main>
   );

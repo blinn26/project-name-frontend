@@ -19,36 +19,14 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [news, setNews] = useState([]);
   const [savedNews, setSavedNews] = useState([]);
-  const [numNewsToShow, setNumNewsToShow] = useState(10);
+  const [numNewsToShow, setNumNewsToShow] = useState(3); // Changed initial state to 3
   const [theme, setTheme] = useState('light');
+  const [error, setError] = useState(null); // new error state
   const navigate = useNavigate();
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
-
-  useEffect(() => {
-    const loadNews = async () => {
-      const data = await fetchNews();
-      setNews(data);
-    };
-
-    loadNews();
-  }, []);
-
-  useEffect(() => {
-    const loadNews = async () => {
-      const data = await fetchNews();
-      if (searchTerm !== '') {
-        const filteredData = data.filter((newsItem) => newsItem.title.toLowerCase().includes(searchTerm.toLowerCase()));
-        setNews(filteredData);
-      } else {
-        setNews(data);
-      }
-    };
-
-    loadNews();
-  }, [searchTerm]);
 
   const handleSearchSubmit = useCallback((search) => {
     setSearchTerm(search);
@@ -75,14 +53,33 @@ function App() {
   };
 
   useEffect(() => {
+    const loadNews = async () => {
+      try {
+        const data = await fetchNews();
+        if (searchTerm !== '') {
+          const filteredData = data.filter((newsItem) =>
+            newsItem.title.toLowerCase().includes(searchTerm.toLowerCase())
+          );
+          setNews(filteredData);
+        } else {
+          setNews(data);
+        }
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+
     const user = localStorage.getItem('user');
     if (user) {
       navigate('/saved-news');
     }
-  }, []);
+
+    loadNews();
+  }, [searchTerm]);
 
   return (
     <PageClass className={theme}>
+      {error && <div>Error: {error}</div>}
       <Header
         toggleTheme={toggleTheme}
         theme={theme}
@@ -95,14 +92,13 @@ function App() {
           path='/'
           element={
             <Main
-              news={news.slice(0, numNewsToShow)}
+              news={news}
               onSaveNews={handleSaveNews}
               numNewsToShow={numNewsToShow}
               setNumNewsToShow={setNumNewsToShow}
             />
           }
         />
-
         <Route path='/saved-news' element={<SavedNews news={savedNews} />} />
       </Routes>
       <SignInandUpModal
