@@ -8,28 +8,6 @@
   display: flex;
 }
 
-.navigation__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.navigation__item {
-  list-style: none;
-}
-
-.navigation__link {
-  color: gray;
-  text-decoration: underline;
-  font-size: 20px;
-  margin-left: 80px;
-}
-
-.navigation__link:hover {
-  text-decoration: underline;
-  color: cyan;
-}
 
 .navigation__logo {
   width: 200px;
@@ -68,9 +46,7 @@
     align-items: flex-start;
   }
 
-  .navigation__list {
-    flex-direction: column;
-  }
+
 }
 
 /* Tablet Styles */
@@ -80,7 +56,4 @@
     align-items: center;
   }
 
-  .navigation__list {
-    flex-direction: row;
-  }
 }

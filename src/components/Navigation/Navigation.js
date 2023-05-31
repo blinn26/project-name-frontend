@@ -21,20 +21,20 @@ const Navigation = ({ handleModalOpen, isLoggedIn, setLogin }) => {
   return (
     <nav className='navigation'>
       <img className='navigation__logo' src={logo} alt='Logo' />
-      <ul className='navigation__list'>
+
+      <li className='navigation__item'>
+        <Link className={`navigation__link navigation__highlight-${homeClass}`} to='/'>
+          <img src={homeImage} alt='Home' className='navigation__home-image' /> {/* Added className here */}
+        </Link>
+      </li>
+      {isLoggedIn && (
         <li className='navigation__item'>
-          <Link className={`navigation__link navigation__highlight-${homeClass}`} to='/'>
-            <img src={homeImage} alt='Home' className='navigation__home-image' /> {/* Added className here */}
+          <Link className={`navigation__link navigation__highlight-${articleClass}`} to='/saved-news'>
+            Saved articles
           </Link>
         </li>
-        {isLoggedIn && (
-          <li className='navigation__item'>
-            <Link className={`navigation__link navigation__highlight-${articleClass}`} to='/saved-news'>
-              Saved articles
-            </Link>
-          </li>
-        )}
-      </ul>
+      )}
+
       {isLoggedIn ? (
         <div className='navigation__user'>
           <p className='navigation__username'>Username</p>
