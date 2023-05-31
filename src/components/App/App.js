@@ -20,7 +20,12 @@ function App() {
   const [news, setNews] = useState([]);
   const [savedNews, setSavedNews] = useState([]);
   const [numNewsToShow, setNumNewsToShow] = useState(10);
+  const [theme, setTheme] = useState('light');
   const navigate = useNavigate();
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
 
   useEffect(() => {
     const loadNews = async () => {
@@ -77,8 +82,14 @@ function App() {
   }, []);
 
   return (
-    <PageClass>
-      <Header handleSearchSubmit={handleSearchSubmit} handleModalOpen={handleModalOpen} news={news} />
+    <PageClass className={theme}>
+      <Header
+        toggleTheme={toggleTheme}
+        theme={theme}
+        handleSearchSubmit={handleSearchSubmit}
+        handleModalOpen={handleModalOpen}
+        news={news}
+      />
       <Routes>
         <Route
           path='/'
