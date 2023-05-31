@@ -2,3 +2,12 @@
    display: flex;
    max-width: 1440px;
  }
+
+
+ .main__show-more-button {
+   width: 240px;
+   height: 56px;
+   padding: 16px 74px 16px 75px;
+   border-radius: 80px;
+   margin: 32px 216px 0 8px;
+ }

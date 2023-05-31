@@ -11,7 +11,7 @@
   flex-direction: column; */
   background-image: url('../images/bawphone.png');
   background-repeat: no-repeat;
-  /* background-position: center; */
+  background-position: center;
   background-size: cover;
 
 }

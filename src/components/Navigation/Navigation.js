@@ -1,20 +1,19 @@
-// Navigation.js
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
 import logo from '../images/NewsExplorer.png';
-import homeImage from '../images/Home.png';
+import homeImage from '../images/HomeWhite.png';
+/* import whiteLine from '../images/bg.png'; */
 
 const Navigation = ({ handleModalOpen, isLoggedIn, setLogin }) => {
   const [activeTab, setActiveTab] = useState('home');
-  const [theme, setTheme] = useState('light'); // new state to handle theme
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
     setActiveTab(isLoggedIn ? 'article' : 'home');
   }, [isLoggedIn]);
 
   const toggleTheme = () => {
-    // function to toggle theme
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
@@ -25,7 +24,6 @@ const Navigation = ({ handleModalOpen, isLoggedIn, setLogin }) => {
         <li className={`navigation__item ${activeTab === 'home' ? 'active' : ''}`}>
           <Link to='/'>
             <img src={homeImage} alt='Home' className='navigation__home-image' />
-            Home
           </Link>
         </li>
         {isLoggedIn && (

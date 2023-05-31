@@ -1,24 +1,15 @@
-:root {
-  --bg-color-light: #ffffff;
-  --text-color-light: #000000;
-  --link-color-light: #0000ee;
-  --bg-color-dark: #333333;
-  --text-color-dark: #ffffff;
-  --link-color-dark: #dddddd;
-}
-
 .navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: var(--bg-color-light);
-  color: var(--text-color-light);
+  background-color: #f0f0f0;
+  color: #333333;
 }
 
 .navigation[data-theme='dark'] {
-  background-color: var(--bg-color-dark);
-  color: var(--text-color-dark);
+  background-color: #333333;
+  color: #f0f0f0;
 }
 
 .navigation__list {
@@ -28,12 +19,12 @@
 }
 
 .navigation__list a {
-  color: var(--link-color-light);
+  color: #0088cc;
   text-decoration: none;
 }
 
 .navigation[data-theme='dark'] .navigation__list a {
-  color: var(--link-color-dark);
+  color: #88ccff;
 }
 
 .navigation__item.active {
@@ -46,13 +37,31 @@
   cursor: pointer;
 }
 
+.navigation__home-image {
+  width: 49px;
+  height: 24px;
+  margin: 11px 42px 23px 765px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.33;
+  text-align: center;
+  color: white;
+}
+
 .navigation__button.signIn {
-  background-color: transparent;
-  border: 1px solid var(--text-color-light);
+  width: 176px;
+  height: 48px;
+  margin: 0 0 10px 34px;
+  padding: 12px;
+  border-radius: 100px;
+  background-color: black;
+  border: 1px solid #333333;
+  color: white;
 }
 
 .navigation[data-theme='dark'] .navigation__button.signIn {
-  border-color: var(--text-color-dark);
+  border-color: #f0f0f0;
 }
 
 @media screen and (max-width: 600px) {
