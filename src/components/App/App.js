@@ -48,31 +48,36 @@ function App() {
   const handleUserCredentialsChange = (newUserCredentials) => {
     setUserCredentials(newUserCredentials);
   };
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  const handleLogOut = () => {
+    setIsLoggedIn(false);
+    localStorage.removeItem('user');
+    navigate('/');
+  };
 
   const handleSaveNews = (newsItem) => {
     setSavedNews([...savedNews, newsItem]);
   };
-
-  useEffect(() => {
-    const loadNews = async () => {
-      try {
-        const data = await fetchNews();
-        if (searchTerm !== '') {
-          const filteredData = data.filter((newsItem) =>
-            newsItem.title.toLowerCase().includes(searchTerm.toLowerCase())
-          );
-          setNews(filteredData);
-        } else {
-          setNews(data);
-        }
-      } catch (error) {
-        setError(error.message);
+  const loadNews = async () => {
+    try {
+      const data = await fetchNews();
+      if (searchTerm !== '') {
+        const filteredData = data.filter((newsItem) => newsItem.title.toLowerCase().includes(searchTerm.toLowerCase()));
+        setNews(filteredData);
+      } else {
+        setNews(data);
       }
-    };
-
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+  useEffect(() => {
     const user = localStorage.getItem('user');
     if (user) {
-      navigate('/saved-news');
+      // navigate('/saved-news');
       setIsLoggedIn(true);
     }
 
@@ -88,6 +93,8 @@ function App() {
         handleSearchSubmit={handleSearchSubmit}
         handleModalOpen={handleModalOpen}
         news={news}
+        isLoggedIn={isLoggedIn}
+        handleLogOut={handleLogOut}
       />
       <Routes>
         <Route
@@ -109,6 +116,7 @@ function App() {
         onClose={handleModalClose}
         userCredentials={userCredentials}
         onUserCredentialsChange={handleUserCredentialsChange}
+        handleLogin={handleLogin}
       />
       <Footer />
     </PageClass>

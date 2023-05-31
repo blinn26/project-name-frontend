@@ -3,13 +3,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #f0f0f0;
+  background-color: rgba(0, 0, 0, 0);
   color: #333333;
 }
 
 .navigation[data-theme='dark'] {
-  background-color: #333333;
-  color: #f0f0f0;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
 }
 
 .navigation__list {
@@ -58,6 +58,12 @@
   background-color: black;
   border: 1px solid #333333;
   color: white;
+}
+
+
+.navigation__logo {
+  background-color: white;
+
 }
 
 .navigation[data-theme='dark'] .navigation__button.signIn {

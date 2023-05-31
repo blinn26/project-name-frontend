@@ -4,16 +4,16 @@ import Navigation from '../Navigation/Navigation';
 import './Header.css';
 
 function Header(props) {
-  const { handleModalOpen, handleSearchSubmit, isLoggedIn, setLogin, news, theme, toggleTheme } = props;
+  const { handleModalOpen, handleSearchSubmit, isLoggedIn, news, theme, toggleTheme, handleLogOut } = props;
 
   return (
-    <header className='header'>
+    <header className={`header ${isLoggedIn ? '' : 'header_image'}`}>
       <Navigation
         toggleTheme={toggleTheme}
         theme={theme}
         handleModalOpen={handleModalOpen}
         isLoggedIn={isLoggedIn}
-        setLogin={setLogin}
+        handleLogOut={handleLogOut}
         news={news}
       />
       <SearchForm handleSearchSubmit={handleSearchSubmit} />

@@ -3,22 +3,16 @@ import { Link } from 'react-router-dom';
 import './Navigation.css';
 import logo from '../images/NewsExplorer.png';
 import homeImage from '../images/HomeWhite.png';
-/* import whiteLine from '../images/bg.png'; */
 
-const Navigation = ({ handleModalOpen, isLoggedIn, setLogin }) => {
+const Navigation = ({ handleModalOpen, isLoggedIn, handleLogOut }) => {
   const [activeTab, setActiveTab] = useState('home');
-  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
     setActiveTab(isLoggedIn ? 'article' : 'home');
   }, [isLoggedIn]);
 
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
-
   return (
-    <nav className='navigation' data-theme={theme}>
+    <nav className='navigation' data-theme={isLoggedIn ? 'light' : 'dark'}>
       <img className='navigation__logo' src={logo} alt='Logo' />
       <ul className='navigation__list'>
         <li className={`navigation__item ${activeTab === 'home' ? 'active' : ''}`}>
@@ -36,7 +30,7 @@ const Navigation = ({ handleModalOpen, isLoggedIn, setLogin }) => {
       {isLoggedIn ? (
         <div className='navigation__user'>
           <p className='navigation__username'>Username</p>
-          <button onClick={() => setLogin(false)} className='navigation__logout'>
+          <button onClick={handleLogOut} className='navigation__logout'>
             Log Out
           </button>
         </div>
@@ -45,9 +39,6 @@ const Navigation = ({ handleModalOpen, isLoggedIn, setLogin }) => {
           Sign In
         </button>
       )}
-      <button className='navigation__button' onClick={toggleTheme}>
-        Toggle theme
-      </button>
     </nav>
   );
 };
