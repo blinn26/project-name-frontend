@@ -18,6 +18,12 @@
   border-bottom: 1px solid var(--color-black);
 }
 
+.navigation__wrapper {
+  display: flex;
+  gap: 75px;
+  align-items: center;
+}
+
 .navigation__logo {
   background-color: var(--color-white);
   margin-left: 20px;
@@ -28,7 +34,10 @@
   position: relative;
   text-align: center;
   text-decoration: none;
-  font-family: var(--font-primary);
+  font-family: "Roboto Slab", sans-serif;
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .navigation__home-link-underline,
@@ -73,10 +82,13 @@
   background-color: transparent;
   border: 1px solid var(--color-light-theme-bg);
   border-radius: 100px;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  cursor: default;
+  cursor: default; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navigation[data-theme='light'] .navigation__home-link-text,
