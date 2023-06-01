@@ -18,10 +18,11 @@
   position: relative;
   text-align: center;
   text-decoration: none;
+  font-family: "Roboto", sans-serif;
 }
 
 .navigation__home-link-text {
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
