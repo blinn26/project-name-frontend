@@ -7,7 +7,8 @@ import SignInandUpModal from '../SignInandUpModal/SignInandUpModal';
 import PageClass from '../PageClass/PageClass';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { fetchNews } from '../../utils/ThirdPartyApi';
-
+import './App.css';
+import lapka from '../images/lapka.png';
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -23,6 +24,7 @@ function App() {
   const [numNewsToShow, setNumNewsToShow] = useState(3);
   const [theme, setTheme] = useState('light');
   const [error, setError] = useState(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
   const navigate = useNavigate();
 
   const toggleTheme = () => {
@@ -83,9 +85,18 @@ function App() {
 
     loadNews();
   }, [searchTerm]);
+  useEffect(() => {
+    const setFromEvent = (e) => setPosition({ x: e.clientX, y: e.clientY });
+    window.addEventListener('mousemove', setFromEvent);
+
+    return () => {
+      window.removeEventListener('mousemove', setFromEvent);
+    };
+  }, []);
 
   return (
     <PageClass className={theme}>
+      <img src={lapka} className='cursor' style={{ left: `${position.x}px`, top: `${position.y}px` }} />
       {error && <div>Error: {error}</div>}
       <Header
         toggleTheme={toggleTheme}
