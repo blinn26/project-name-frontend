@@ -43,10 +43,13 @@
 
 .navigation__home-link-underline {
   width: 68px;
+  margin-bottom: -22px;
+  background-color: white;
 }
 
 .navigation__saved-news-link-underline {
   width: 178px;
+  margin-bottom: -27px;
 }
 
 .navigation__button.signIn {
