@@ -1,16 +1,26 @@
+:root {
+  --font-primary: "Roboto", sans-serif;
+  --color-black: black;
+  --color-white: white;
+  --color-dark-theme-bg: rgba(0, 0, 0, 0);
+  --color-light-theme-bg: rgba(26, 27, 34, 1);
+  --btn-bg-color: black;
+  --btn-border-color: #333333;
+  --btn-text-color: var(--color-white);
+}
+
 .navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 80px;
   padding: 0 104px;
-  border-bottom: black 1px solid;
+  border-bottom: 1px solid var(--color-black);
 }
 
-.navigation[data-theme='dark'] {
-  background-color: rgba(0, 0, 0, 0);
-  color: #ffffff;
-  border-bottom: black solid;
+.navigation__logo {
+  background-color: var(--color-white);
+  margin-left: 20px;
 }
 
 .navigation__home-link,
@@ -18,21 +28,13 @@
   position: relative;
   text-align: center;
   text-decoration: none;
-  font-family: "Roboto", sans-serif;
-}
-
-.navigation__home-link-text {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 24px;
-  margin-bottom: 3px;
+  font-family: var(--font-primary);
 }
 
 .navigation__home-link-underline,
 .navigation__saved-news-link-underline {
   height: 3px;
-  background-color: black;
+  background-color: var(--color-black);
   position: absolute;
   bottom: -3px;
   left: 50%;
@@ -47,30 +49,46 @@
   width: 178px;
 }
 
-.text-white {
-  color: white;
-}
-
-.text-black {
-  color: black;
-}
-
 .navigation__button.signIn {
   width: 176px;
   height: 48px;
   padding: 12px;
   border-radius: 100px;
-  background-color: black;
-  border: 1px solid #333333;
-  color: white;
+  background-color: var(--btn-bg-color);
+  border: 1px solid var(--btn-border-color);
+  color: var(--btn-text-color);
   margin-right: 20px;
-}
-
-.navigation__logo {
-  background-color: white;
-  margin-left: 20px;
 }
 
 .navigation[data-theme='dark'] .navigation__button.signIn {
   border-color: #f0f0f0;
+}
+
+.navigation__user {
+  width: 112px;
+  height: 48px;
+  background-color: transparent;
+  border: 1px solid var(--color-light-theme-bg);
+  border-radius: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: default;
+}
+
+.navigation[data-theme='light'] .navigation__home-link-text,
+.navigation__home-link-text {
+  color: var(--color-black);
+}
+
+.navigation[data-theme='dark'] {
+  background-color: var(--color-dark-theme-bg);
+  color: var(--color-white);
+  border-bottom: var(--color-black) solid;
+}
+
+.navigation__home-link-image {
+  background-color: white;
+  width: 50px;
+  height: 30px;
 }
