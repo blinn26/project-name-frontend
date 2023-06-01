@@ -2,84 +2,74 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0);
-  color: #333333;
-  border-bottom: solid;
   height: 80px;
+  padding: 0 104px;
+  border-bottom: black 1px solid;
 }
 
 .navigation[data-theme='dark'] {
   background-color: rgba(0, 0, 0, 0);
   color: #ffffff;
-  border-bottom: solid;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
+  border-bottom: black solid;
 }
 
-.navigation__list {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-}
-
-.navigation__list a {
-  color: #0088cc;
+.navigation__home-link,
+.navigation__saved-news-link {
+  position: relative;
+  text-align: center;
   text-decoration: none;
 }
 
-.navigation[data-theme='dark'] .navigation__list a {
-  color: #88ccff;
-}
-
-.navigation__item.active {
-  font-weight: bold;
-}
-
-.navigation__button {
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
-}
-
-.navigation__home-image {
-  width: 49px;
-  height: 24px;
-  margin: 11px 42px 23px 765px;
+.navigation__home-link-text {
   font-family: Roboto;
-  font-size: 18px;
   font-weight: 500;
-  line-height: 1.33;
-  text-align: center;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 3px;
+}
+
+.navigation__home-link-underline,
+.navigation__saved-news-link-underline {
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navigation__home-link-underline {
+  width: 68px;
+}
+
+.navigation__saved-news-link-underline {
+  width: 178px;
+}
+
+.text-white {
   color: white;
+}
+
+.text-black {
+  color: black;
 }
 
 .navigation__button.signIn {
   width: 176px;
   height: 48px;
-  margin: 0 0 10px 34px;
   padding: 12px;
   border-radius: 100px;
   background-color: black;
   border: 1px solid #333333;
   color: white;
+  margin-right: 20px;
 }
-
 
 .navigation__logo {
   background-color: white;
-
+  margin-left: 20px;
 }
 
 .navigation[data-theme='dark'] .navigation__button.signIn {
   border-color: #f0f0f0;
-}
-
-@media screen and (max-width: 600px) {
-  .navigation {
-    flex-direction: column;
-  }
 }

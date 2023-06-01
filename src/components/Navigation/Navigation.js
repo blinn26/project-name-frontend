@@ -2,18 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
 import logo from '../images/NewsExplorer.png';
-import homeImage from '../images/HomeWhite.png';
 
 const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen }) => {
+  const textColorClass = isLoggedIn ? 'text-black' : 'text-white';
   return (
     <nav className='navigation' data-theme={isLoggedIn ? 'light' : 'dark'}>
       <img className='navigation__logo' src={logo} alt='Logo' />
 
-      <Link to='/'>
-        <img src={homeImage} alt='Home' className='navigation__home-image' />
+      <Link to='/' className={`navigation__home-link ${textColorClass}`}>
+        <p className='navigation__home-link-text'>Home</p>
+        {!isLoggedIn && <div className='navigation__home-link-underline'></div>}
       </Link>
 
-      {isLoggedIn && <Link to='/saved-news'>Saved articles</Link>}
+      {isLoggedIn && (
+        <Link to='/saved-news' className={`navigation__saved-news-link ${textColorClass}`}>
+          Saved articles
+          <div className='navigation__saved-news-link-underline'></div>
+        </Link>
+      )}
 
       {isLoggedIn ? (
         <div className='navigation__user'>
