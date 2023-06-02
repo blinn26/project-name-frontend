@@ -5,19 +5,23 @@ import './Main.css';
 import Preloader from '../Preloader/Preloader';
 
 const Main = ({ news, numNewsToShow, setNumNewsToShow, isLoggedIn }) => {
-  console.log(news);
   function renderNewsCards() {
-    return news
-      .slice(0, numNewsToShow)
-      .map((newsItem, index) => (
-        <NewsCard className='news-card' key={index} newsItem={newsItem} isLoggedIn={isLoggedIn} />
-      ));
+    return news.slice(0, numNewsToShow).map((newsItem, index) => (
+      <NewsCard
+        className='news-card'
+        key={index}
+        newsItem={newsItem}
+        isLoggedIn={isLoggedIn}
+      />
+    ));
   }
 
   function renderMoreNewsToShowCards() {
     return (
       numNewsToShow < news.length && (
-        <button className='main__show-more-button' onClick={() => setNumNewsToShow(numNewsToShow + 3)}>
+        <button
+          className='main__show-more-button'
+          onClick={() => setNumNewsToShow(numNewsToShow + 3)}>
           Show More
         </button>
       )

@@ -20,13 +20,17 @@ function SavedNews({ isLoggedIn, savedNews }) {
     }
   }, [isLoggedIn]);
 
-  if (isLoggedIn) {
-    console.log('User is logged in');
+  if (!isLoggedIn) {
+    return null;
   }
 
   return (
     <>
-      <SavedNewsHeader username={username} savedArticlesCount={savedArticlesCount} keywords={keywords} />
+      <SavedNewsHeader
+        username={username}
+        savedArticlesCount={savedArticlesCount}
+        keywords={keywords}
+      />
       <NewsCardList news={savedNews} />
     </>
   );

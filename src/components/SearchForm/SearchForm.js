@@ -15,14 +15,16 @@ const SearchForm = ({ handleSearchSubmit }) => {
       setError('Please enter a keyword');
     } else {
       handleSearchSubmit(searchTerm);
-      console.log(searchTerm);
+
       setSearchTerm('');
       setError('');
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className='search-form'>
+    <form
+      onSubmit={handleSubmit}
+      className='search-form'>
       <div className='search-form__field'>
         <input
           type='text'
@@ -32,7 +34,9 @@ const SearchForm = ({ handleSearchSubmit }) => {
           className='search-form__input'
         />
         {error && <span className='search-form__error'>{error}</span>}
-        <button type='submit' className='search-form__button'>
+        <button
+          type='submit'
+          className='search-form__button'>
           Search
         </button>
       </div>
