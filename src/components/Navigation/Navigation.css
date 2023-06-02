@@ -80,7 +80,7 @@
   height: 3px;
   background-color: var(--color-black);
   position: absolute;
-  bottom: -3px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -94,10 +94,14 @@
   transform: translateX(-50%);
 }
 
-.navigation__home-link-underline {
+.navigation[data-theme='dark'] .navigation__home-link-underline {
   width: 68px;
   margin-bottom: -22px;
   background-color: white;
+}
+
+.navigation[data-theme='light'] .navigation__home-link-underline {
+  background-color: transparent;
 }
 
 .navigation__saved-news-link-underline {
