@@ -13,6 +13,9 @@
   justify-content: space-between;
   width: 100%;
   padding: 0 15px;
+  background-color: #F5F6F7;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 /* Block: news-card */

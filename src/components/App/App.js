@@ -33,6 +33,7 @@ function App() {
 
   const handleSearchSubmit = useCallback((search) => {
     setSearchTerm(search);
+    loadNews(search);
   }, []);
 
   const handleModalOpen = (isSignUp) => {
@@ -63,13 +64,15 @@ function App() {
   const handleSaveNews = (newsItem) => {
     setSavedNews([...savedNews, newsItem]);
   };
-  const loadNews = async () => {
+  const loadNews = async (search) => {
     try {
-      const data = await fetchNews();
+      const data = await fetchNews(search);
       if (searchTerm !== '') {
         const filteredData = data.filter((newsItem) => newsItem.title.toLowerCase().includes(searchTerm.toLowerCase()));
+        console.log(data);
         setNews(filteredData);
       } else {
+        console.log(data);
         setNews(data);
       }
     } catch (error) {
@@ -82,9 +85,7 @@ function App() {
       // navigate('/saved-news');
       setIsLoggedIn(true);
     }
-
-    loadNews();
-  }, [searchTerm]);
+  }, []);
   useEffect(() => {
     const setFromEvent = (e) => setPosition({ x: e.clientX, y: e.clientY });
     window.addEventListener('mousemove', setFromEvent);
@@ -96,7 +97,11 @@ function App() {
 
   return (
     <PageClass className={theme}>
-      <img src={lapka} className='cursor' style={{ left: `${position.x}px`, top: `${position.y}px` }} />
+      <img
+        src={lapka}
+        className='cursor'
+        style={{ left: `${position.x}px`, top: `${position.y}px` }}
+      />
       {error && <div>Error: {error}</div>}
       <Header
         toggleTheme={toggleTheme}
@@ -119,7 +124,15 @@ function App() {
             />
           }
         />
-        <Route path='/saved-news' element={<SavedNews isLoggedIn={isLoggedIn} savedNews={savedNews} />} />
+        <Route
+          path='/saved-news'
+          element={
+            <SavedNews
+              isLoggedIn={isLoggedIn}
+              savedNews={savedNews}
+            />
+          }
+        />
       </Routes>
       <SignInandUpModal
         isOpen={isOpen}

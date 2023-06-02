@@ -30,11 +30,11 @@ const Main = ({ news, numNewsToShow, setNumNewsToShow, isLoggedIn }) => {
 
   return (
     <main className='main'>
-      <About />
       <div className='news-container'>
         {news.length === 0 ? <Preloader /> : renderNewsCards()}
         {news.length === 0 ? <></> : renderMoreNewsToShowCards()}
       </div>
+      <About />
     </main>
   );
 };
