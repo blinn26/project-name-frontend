@@ -24,12 +24,8 @@
   align-items: center;
 }
 
-.navigation__logo {
-  /* background-color: var(--color-white); */
-  margin-left: 20px;
-}
 
-.navigation__logo-text {
+.navigation[data-theme='dark'] .navigation__logo-text {
   font-family: "Roboto Slab", sans-serif;
   line-height: 24px;
   font-size: 20px;
@@ -38,8 +34,27 @@
   margin: 0;
 }
 
-.navigation__home-link,
-.navigation__saved-news-link {
+.navigation[data-theme='light'] .navigation__logo-text {
+  font-family: "Roboto Slab", sans-serif;
+  line-height: 24px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-black);
+  margin: 0;
+}
+
+.navigation[data-theme='light'] .navigation__home-link-text {
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Roboto Slab", sans-serif;
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.navigation__home-link {
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -50,7 +65,26 @@
   color: var(--color-white);
 }
 
-.navigation__home-link-underline,
+.navigation[data-theme='light'] .navigation__saved-news-link {
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Roboto Slab", sans-serif;
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-black);
+}
+
+.navigation__home-link-underline {
+  height: 3px;
+  background-color: var(--color-black);
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .navigation__saved-news-link-underline {
   height: 3px;
   background-color: var(--color-black);
@@ -97,20 +131,14 @@
   justify-content: center;
 }
 
-.navigation[data-theme='light'] .navigation__home-link-text,
-.navigation__home-link-text {
-  color: var(--color-white);
+.navigation[data-theme='light'] .navigation__home-link-text {
+  color: var(--color-black);
 }
 
 .navigation[data-theme='dark'] {
   background-color: var(--color-dark-theme-bg);
   color: var(--color-white);
   border-bottom: var(--color-black) solid;
-}
-
-.navigation__home-link-text,
-.navigation__saved-news-link-text {
-  margin: 0;
 }
 
 .navigation__home-link-image {
