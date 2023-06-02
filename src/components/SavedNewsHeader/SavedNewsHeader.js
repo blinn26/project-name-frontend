@@ -8,7 +8,7 @@ const SavedNewsHeader = ({ username, savedArticlesCount, keywords }) => {
       <h2 className='saved__header'>
         {username}, you have {savedArticlesCount} saved articles
       </h2>
-      <p className='saved__words'>
+      <p className='saved__keywords'>
         By keywords: <span className='saved__bold'>{keywords.join(', ')}</span>
       </p>
     </div>

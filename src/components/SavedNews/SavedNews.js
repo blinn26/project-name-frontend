@@ -14,7 +14,7 @@ function SavedNews({ isLoggedIn, savedNews }) {
         setUsername(user.username);
         setSavedArticlesCount(user.savedArticles.length);
 
-        const keywordsArray = user.savedArticles.map((article) => article.title.split(' ')[0]);
+        const keywordsArray = user.savedArticles.map((article) => article.keyword);
         setKeywords(keywordsArray);
       }
     }
