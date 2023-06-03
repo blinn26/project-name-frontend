@@ -9,6 +9,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import { fetchNews } from '../../utils/ThirdPartyApi';
 import './App.css';
 import lapka from '../images/lapka.png';
+
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,6 +25,7 @@ function App() {
   const [numNewsToShow, setNumNewsToShow] = useState(3);
   const [theme, setTheme] = useState('light');
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const navigate = useNavigate();
 
@@ -40,7 +42,7 @@ function App() {
     setIsOpen(true);
     setUserCredentials((prevState) => ({
       ...prevState,
-      isSignUp,
+      isSignUp: isSignUp,
     }));
   };
 
@@ -51,6 +53,7 @@ function App() {
   const handleUserCredentialsChange = (newUserCredentials) => {
     setUserCredentials(newUserCredentials);
   };
+
   const handleLogin = () => {
     setIsLoggedIn(true);
   };
@@ -64,28 +67,35 @@ function App() {
   const handleSaveNews = (newsItem) => {
     setSavedNews([...savedNews, newsItem]);
   };
+
   const loadNews = async (search) => {
-    try {
-      const data = await fetchNews(search);
-      if (searchTerm !== '') {
-        const filteredData = data.filter((newsItem) => newsItem.title.toLowerCase().includes(searchTerm.toLowerCase()));
-        console.log(data);
-        setNews(filteredData);
-      } else {
-        console.log(data);
-        setNews(data);
+    setIsLoading(true);
+    setError(null);
+    setTimeout(async () => {
+      try {
+        const data = await fetchNews(search);
+        if (searchTerm !== '') {
+          const filteredData = data.filter((newsItem) =>
+            newsItem.title.toLowerCase().includes(searchTerm.toLowerCase())
+          );
+          setNews(filteredData);
+        } else {
+          setNews(data);
+        }
+      } catch (error) {
+        setError(error.message);
       }
-    } catch (error) {
-      setError(error.message);
-    }
+      setIsLoading(false);
+    }, 1000);
   };
+
   useEffect(() => {
     const user = localStorage.getItem('user');
     if (user) {
-      // navigate('/saved-news');
       setIsLoggedIn(true);
     }
   }, []);
+
   useEffect(() => {
     const setFromEvent = (e) => setPosition({ x: e.clientX, y: e.clientY });
     window.addEventListener('mousemove', setFromEvent);
@@ -117,6 +127,8 @@ function App() {
           path='/'
           element={
             <Main
+              isLoading={isLoading}
+              isError={error !== null}
               news={news}
               onSaveNews={handleSaveNews}
               numNewsToShow={numNewsToShow}
