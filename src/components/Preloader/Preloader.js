@@ -1,9 +1,14 @@
 import React from 'react';
+import spinningCircle from '../images/Ellipse.png';
 import './Preloader.css';
 
 const Preloader = () => (
   <div className='spinner-container'>
-    <i className='circle-preloader'></i>
+    <img
+      className='circle-preloader'
+      src={spinningCircle}
+      alt='Spinning Circle'
+    />
   </div>
 );
 
