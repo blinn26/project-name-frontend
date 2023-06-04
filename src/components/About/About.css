@@ -1,45 +1,40 @@
-/* Block: about */
 .about {
   max-width: 1440px;
+  height: 624px;
+  padding: 80px 0;
   display: flex;
-  margin: 80px 0 0 0;
-  padding: 0 50px;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-/* Element: about__image */
 .about__image {
   width: 464px;
   height: 464px;
-  margin: 0 56px 0 0;
   border-radius: 1000px;
   border: 5px solid #1A1B22;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  margin-left: 104px;
+  margin-right: 56px;
 }
 
-/* Element: about__text-container */
 .about__text-container {
-  width: 600px;
-  margin: 50px 0 0 56px;
+  width: 424px;
 }
 
-/* Element: about__title */
 .about__title {
-  width: 600px;
-  height: 46px;
-  margin: 51px 0 24px 56px;
+  width: 424px;
+  height: 34px;
   font-family: 'Roboto Slab', serif;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: normal;
   text-align: left;
   color: #1A1B22;
   transform: skew(-5deg);
 }
 
-/* Element: about__text */
 .about__text {
-  width: 600px;
-  height: 120px;
-  margin: 24px 0 223px 0px;
+  width: 424px;
+  height: 168px;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: normal;
@@ -48,52 +43,46 @@
   color: #1A1B22;
 }
 
-/* Modifier: about--tablet */
-@media (min-width: 320px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .about {
     flex-direction: column;
     align-items: center;
-    padding: 0 30px;
+    padding: 30px;
   }
 
   .about__image {
-    width: 300px;
-    height: 300px;
-    border-radius: 150px;
+    width: 264px;
+    height: 264px;
+    border-radius: 132px;
   }
 
   .about__text-container {
-    width: 100%;
-    margin: 30px 0 0 0;
-    text-align: center;
-  }
-
-  .about__title,
-  .about__text {
     width: 80%;
-    margin: 0 auto;
-  }
-}
-
-/* Modifier: about--mobile */
-@media (max-width: 320px) {
-  .about__image {
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
-  }
-
-  .about__text-container {
-    margin: 20px 0 0 0;
+    text-align: center;
+    padding: 20px 0;
   }
 
   .about__title {
-    font-size: 32px;
-    line-height: 38px;
+    font-size: 30px;
   }
 
   .about__text {
     font-size: 16px;
-    line-height: 22px;
+  }
+}
+
+@media (max-width: 320px) {
+  .about__image {
+    width: 150px;
+    height: 150px;
+    border-radius: 1000px;
+  }
+
+  .about__title {
+    font-size: 26px;
+  }
+
+  .about__text {
+    font-size: 14px;
   }
 }

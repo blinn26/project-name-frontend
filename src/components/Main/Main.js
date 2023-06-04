@@ -8,7 +8,8 @@ import notFoundImg from '../images/ImageNotFound.png';
 
 const Main = ({ news, numNewsToShow, setNumNewsToShow, onSaveNews, isLoggedIn, isLoading, isError }) => {
   function renderNewsCards() {
-    if (isError) {
+    if (isLoading) {
+      <Preloader />;
       return (
         <div className='spinner-container'>
           <img
@@ -16,11 +17,11 @@ const Main = ({ news, numNewsToShow, setNumNewsToShow, onSaveNews, isLoggedIn, i
             src={spinningCircle}
             alt='Spinning Circle'
           />
-          <h3>Error occurred</h3>
+          <h3></h3>
           <p>Searching for news...</p>
         </div>
       );
-    } else if (isLoading) {
+    } else if (isError) {
       return <Preloader />;
     } else if (news.length === 0) {
       return (

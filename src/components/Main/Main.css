@@ -10,14 +10,13 @@
 .news-container {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 1440px;
   background-color: #F5F6F7;
   padding-top: 80px;
   padding-bottom: 80px;
-  height: 282px;
   min-height: 300px;
   flex-wrap: wrap;
 }
@@ -25,6 +24,8 @@
 .news-container.center-contents {
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .spinner-container {
@@ -91,10 +92,17 @@
   color: black;
 }
 
+.no-image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 .no-image-image {
-  width: 74px;
-  height: 74px;
-  margin-top: 20px;
+  margin: 0 auto;
+  display: block;
 }
 
 .no-image-title {

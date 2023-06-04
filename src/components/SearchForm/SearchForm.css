@@ -1,15 +1,38 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+  color: #FFFFFF;
+}
+
+.search-title {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 60px;
+  line-height: 64px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 608px;
+}
+
 .search-form {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   width: 608px;
   height: 64px;
   background-color: black;
   border-radius: 100px;
-  margin: 0 auto;
-
-  top: 50%;
 }
 
 .search-form__field {
@@ -17,7 +40,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-
+  padding: 0 15px;
 }
 
 .search-form__input {
@@ -55,4 +78,37 @@
   color: red;
   font-size: 12px;
   margin-top: 8px;
+}
+
+/* Add a breakpoint for devices with width less than 768px */
+@media only screen and (max-width: 768px) {
+  .search-container {
+    padding: 10px;
+  }
+
+  .search-title {
+    font-size: 32px;
+    /* Reduce font size */
+    line-height: 36px;
+  }
+
+  .search-description {
+    font-size: 16px;
+    /* Reduce font size */
+    line-height: 20px;
+  }
+
+  .search-form {
+    width: 100%;
+    /* Make search form take full width */
+  }
+
+  .search-form__button {
+    width: 128px;
+    /* Reduce width of the search button */
+    height: 48px;
+    /* Reduce height of the search button */
+    font-size: 14px;
+    /* Reduce font size */
+  }
 }
