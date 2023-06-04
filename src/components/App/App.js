@@ -26,7 +26,7 @@ function App() {
   const [theme, setTheme] = useState('light');
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [position] = useState({ x: 0, y: 0 });
   const navigate = useNavigate();
 
   const toggleTheme = () => {
@@ -101,14 +101,14 @@ function App() {
     }
   }, []);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     const setFromEvent = (e) => setPosition({ x: e.clientX, y: e.clientY });
     window.addEventListener('mousemove', setFromEvent);
 
     return () => {
       window.removeEventListener('mousemove', setFromEvent);
     };
-  }, []);
+  }, []); */
 
   return (
     <PageClass className={theme}>
@@ -135,9 +135,11 @@ function App() {
               isLoading={isLoading}
               isError={error !== null}
               news={news}
-              onSaveNews={handleSaveNews}
+              onSaveNewsItem={handleSaveNews}
+              onDeleteNewsItem={handleDeleteNews}
               numNewsToShow={numNewsToShow}
               setNumNewsToShow={setNumNewsToShow}
+              isLoggedIn={isLoggedIn}
             />
           }
         />

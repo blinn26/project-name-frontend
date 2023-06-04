@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './NewsCard.css';
 
-// Define formatDate function here
 function formatDate(isoDate) {
   const date = new Date(isoDate);
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -9,37 +8,31 @@ function formatDate(isoDate) {
 }
 
 const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem }) => {
-  const [isShown, setIsShown] = useState(false);
+  console.log(newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem);
+  if (!newsItem) {
+    return <div>News item is not available</div>;
+  }
 
-  const handleMouseEnter = () => {
-    setIsShown(true);
-  };
+  const { urlToImage, title, description, publishedAt, source } = newsItem;
 
-  const handleMouseLeave = () => {
-    setIsShown(false);
-  };
-
-  console.log(newsItem.title); // Log the title to the console
+  const sourceName = source ? source.name : 'Source name not available';
 
   return (
-    <div
-      className='news-card'
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}>
+    <div className='news-card'>
       <div className='news-card__container'>
-        {newsItem.urlToImage && (
+        {urlToImage && (
           <img
             className='news-card__image'
-            src={newsItem.urlToImage}
-            alt={newsItem.title}
+            src={urlToImage}
+            alt={title || 'Image title not available'}
           />
         )}
         <div className='news-card__content'>
-          <p className='news-card__date'>{formatDate(newsItem.publishedAt)}</p>
-          <h3 className='news-card__title'>{newsItem.title}</h3>
-          <p className='news-card__description'>{newsItem.description}</p>
-          <h4 className='news-card__source'>{newsItem.source.name}</h4>
-          {isLoggedIn && isShown && (
+          <p className='news-card__date'>{publishedAt ? formatDate(publishedAt) : 'Date not available'}</p>
+          <h3 className='news-card__title'>{title || 'Title not available'}</h3>
+          <p className='news-card__description'>{description || 'Description not available'}</p>
+          <h4 className='news-card__source'>{sourceName}</h4>
+          {isLoggedIn && (
             <>
               <button
                 className='news-card__save'
@@ -53,7 +46,7 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem }) =>
               </button>
             </>
           )}
-          {!isLoggedIn && isShown && <p>Sign in to save articles</p>}
+          {!isLoggedIn && <p>Sign in to save articles</p>}
         </div>
       </div>
     </div>

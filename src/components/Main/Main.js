@@ -3,26 +3,33 @@ import About from '../About/About';
 import NewsCard from '../NewsCard/NewsCard';
 import './Main.css';
 import Preloader from '../Preloader/Preloader';
-import spinningCircle from '../images/Ellipse.png';
 import notFoundImg from '../images/ImageNotFound.png';
 
-const Main = ({ news, numNewsToShow, setNumNewsToShow, onSaveNews, isLoggedIn, isLoading, isError }) => {
-  function renderNewsCards() {
+const Main = ({
+  news,
+  numNewsToShow,
+  setNumNewsToShow,
+  onSaveNewsItem,
+  onDeleteNewsItem,
+  isLoggedIn,
+  isLoading,
+  isError,
+}) => {
+  const renderNewsCards = () => {
     if (isLoading) {
-      <Preloader />;
+      return <Preloader />;
+    } else if (isError) {
       return (
-        <div className='spinner-container'>
+        <div className='no-image-container'>
           <img
-            className='circle-preloader'
-            src={spinningCircle}
-            alt='Spinning Circle'
+            className='no-image-image'
+            src={notFoundImg}
+            alt='Not found'
           />
-          <h3></h3>
-          <p>Searching for news...</p>
+          <h3 className='no-image-title'>Sorry, something went wrong.</h3>
+          <p className='no-image-text'>Please try again later.</p>
         </div>
       );
-    } else if (isError) {
-      return <Preloader />;
     } else if (news.length === 0) {
       return (
         <div className='no-image-container'>
@@ -32,7 +39,7 @@ const Main = ({ news, numNewsToShow, setNumNewsToShow, onSaveNews, isLoggedIn, i
             alt='Not found'
           />
           <h3 className='no-image-title'>Nothing found</h3>
-          <p className='no-image-text'>Sorry, we encountered an error while processing your request.</p>
+          <p className='no-image-text'>Please try again with different keywords.</p>
         </div>
       );
     } else {
@@ -41,14 +48,15 @@ const Main = ({ news, numNewsToShow, setNumNewsToShow, onSaveNews, isLoggedIn, i
           className='news-card'
           key={index}
           newsItem={newsItem}
-          onSaveNews={onSaveNews}
+          onSaveNewsItem={onSaveNewsItem}
+          onDeleteNewsItem={onDeleteNewsItem}
           isLoggedIn={isLoggedIn}
         />
       ));
     }
-  }
+  };
 
-  function renderMoreNewsToShowCards() {
+  const renderMoreNewsToShowCards = () => {
     return (
       numNewsToShow < news.length &&
       !isLoading &&
@@ -60,7 +68,7 @@ const Main = ({ news, numNewsToShow, setNumNewsToShow, onSaveNews, isLoggedIn, i
         </button>
       )
     );
-  }
+  };
 
   return (
     <main className='main'>

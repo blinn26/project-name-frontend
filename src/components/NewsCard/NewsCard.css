@@ -24,8 +24,6 @@
   object-fit: cover;
 }
 
-
-
 .news-card__date {
   width: 134px;
   height: 24px;
@@ -33,7 +31,6 @@
   font-size: 18px;
   color: #b6bcbf;
   margin-left: 24px;
-
 }
 
 .news-card__title {
@@ -44,10 +41,8 @@
   font-weight: 400;
   color: #1a1b22;
   margin-left: 24px;
-  margin: top 14px;
+  margin-top: 14px;
   margin-bottom: 14px;
-
-
 }
 
 .news-card__description {
@@ -69,25 +64,39 @@
   margin-left: 24px;
 }
 
-.news-card__save {
-  display: none;
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #000;
-  padding: 10px 20px;
-  font-size: 18px;
-  border-radius: 100px;
+.news-card__book,
+.news-card__delete {
   position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 24px;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 0;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.news-card:hover .news-card__save {
-  display: block;
+.news-card__book {
+  right: 70px;
+  background-image: url(../images/bookmark.png);
+  filter: grayscale(100%);
 }
 
-.news-card__save:hover {
-  opacity: 0.8;
+.news-card__book:hover {
+  filter: grayscale(0%);
+}
+
+.news-card__book-clicked {
+  filter: grayscale(0%);
+}
+
+.news-card__delete {
+  right: 24px;
+  background-image: url(../images/trash.png);
+}
+
+.news-card__delete:hover {
   cursor: pointer;
 }
