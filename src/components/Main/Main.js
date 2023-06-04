@@ -14,6 +14,7 @@ const Main = ({
   isLoggedIn,
   isLoading,
   isError,
+  hasSearched,
 }) => {
   const renderNewsCards = () => {
     if (isLoading) {
@@ -30,7 +31,7 @@ const Main = ({
           <p className='no-image-text'>Please try again later.</p>
         </div>
       );
-    } else if (news.length === 0) {
+    } else if (news.length === 0 && hasSearched) {
       return (
         <div className='no-image-container'>
           <img
@@ -72,7 +73,9 @@ const Main = ({
 
   return (
     <main className='main'>
-      <div className={`news-container ${news.length === 0 ? 'center-contents' : ''}`}>
+      <div className={`news-container ${news.length === 0 && hasSearched ? 'center-contents' : ''}`}>
+        {' '}
+        {/* Only center contents if user has searched */}
         {renderNewsCards()}
         {renderMoreNewsToShowCards()}
       </div>

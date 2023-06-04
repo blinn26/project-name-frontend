@@ -20,6 +20,7 @@ function App() {
     isSignUp: false,
   });
   const [searchTerm, setSearchTerm] = useState('');
+  const [hasSearched, setHasSearched] = useState(false);
   const [news, setNews] = useState([]);
   const [savedNews, setSavedNews] = useState([]);
   const [numNewsToShow, setNumNewsToShow] = useState(3);
@@ -36,6 +37,7 @@ function App() {
   const handleSearchSubmit = useCallback((search) => {
     setSearchTerm(search);
     loadNews(search);
+    setHasSearched(true);
   }, []);
 
   const handleModalOpen = (isSignUp) => {
@@ -140,6 +142,7 @@ function App() {
               numNewsToShow={numNewsToShow}
               setNumNewsToShow={setNumNewsToShow}
               isLoggedIn={isLoggedIn}
+              hasSearched={hasSearched}
             />
           }
         />

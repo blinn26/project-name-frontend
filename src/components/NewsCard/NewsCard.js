@@ -36,14 +36,10 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem }) =>
             <>
               <button
                 className='news-card__save'
-                onClick={() => onSaveNewsItem(newsItem)}>
-                Save Article
-              </button>
+                onClick={() => onSaveNewsItem(newsItem)}></button>
               <button
                 className='news-card__delete'
-                onClick={() => onDeleteNewsItem(newsItem)}>
-                Delete Article
-              </button>
+                onClick={() => onDeleteNewsItem(newsItem)}></button>
             </>
           )}
           {!isLoggedIn && <p>Sign in to save articles</p>}

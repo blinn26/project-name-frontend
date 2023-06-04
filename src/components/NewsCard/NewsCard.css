@@ -64,7 +64,7 @@
   margin-left: 24px;
 }
 
-.news-card__book,
+.news-card__save,
 .news-card__delete {
   position: absolute;
   top: 24px;
@@ -78,17 +78,19 @@
   background-position: center;
 }
 
-.news-card__book {
+.news-card__save {
   right: 70px;
   background-image: url(../images/bookmark.png);
   filter: grayscale(100%);
 }
 
-.news-card__book:hover {
+.news-card__save:hover {
   filter: grayscale(0%);
+  background-image: url(../images/bookmark.png);
 }
 
-.news-card__book-clicked {
+.news-card__save-clicked {
+  background-image: url(../images/bookmark.png);
   filter: grayscale(0%);
 }
 

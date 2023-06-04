@@ -14,13 +14,6 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin }) {
 
   const isFormValid = isValidEmail && isValidUsername && password.length >= 4 && password.length <= 30;
 
-  /*  useEffect(() => {
-    const user = localStorage.getItem('user');
-    if (user) {
-      navigate('/saved-news');
-    }
-  }, []); */
-
   const validateEmail = (email) => {
     const re = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/gim;
     return re.test(email);
@@ -79,7 +72,11 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin }) {
   };
   return (
     <div>
-      <ModalWithForm title={isSignUp ? 'Sign Up' : 'Sign In'} isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit}>
+      <ModalWithForm
+        title={isSignUp ? 'Sign Up' : 'Sign In'}
+        isOpen={isOpen}
+        onClose={onClose}
+        onSubmit={handleSubmit}>
         <label className='modal__label'>Email</label>
         <input
           className={`modal__input ${!isValidEmail ? 'invalid' : ''}`}
@@ -120,7 +117,9 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin }) {
         </button>
         <p className='modal__alternative'>
           <span className='modal__alternative-or'>or</span>
-          <span className='modal__alternative-action' onClick={toggleForm}>
+          <span
+            className='modal__alternative-action'
+            onClick={toggleForm}>
             {isSignUp ? 'Sign In' : 'Sign Up'}
           </span>
         </p>
