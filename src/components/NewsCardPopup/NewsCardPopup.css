@@ -1,0 +1,17 @@
+.newscard-popup {
+  display: none;
+  position: absolute;
+}
+
+.newscard-popup_open {
+  display: block;
+}
+
+/* 
+.newscard-popup__content {
+ 
+}
+
+.newscard-popup__text {
+ 
+} */

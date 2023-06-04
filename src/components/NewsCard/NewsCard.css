@@ -100,5 +100,6 @@
 }
 
 .news-card__delete:hover {
+  background-image: url(../images/trash.png);
   cursor: pointer;
 }

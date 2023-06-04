@@ -12,6 +12,8 @@
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
+  width: 100vw;
+  height: 100vh;
 }
 
 .modal-overlay_open,
@@ -35,6 +37,9 @@
   align-items: center;
   padding: 30px;
   position: relative;
+  width: 90%;
+  /* fallback for older browsers */
+  width: clamp(250px, 80%, 430px);
 }
 
 .modal__form {
@@ -72,7 +77,6 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-
 }
 
 .modal__button-submit_disabled {
@@ -126,46 +130,15 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 20px;
 }
 
-.modal__success {
-  width: 315px;
-  height: 400px;
-  padding: 20px;
-  background-color: #fff;
-  color: #000;
-  text-align: left;
-  border-radius: 8px;
-  position: absolute;
-  top: 322px;
-  left: 541px;
+.input-group.error .modal__input {
+  border-bottom: 1px solid #FF0000;
 }
 
-.modal__success h1 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 28px;
-  color: #000;
-}
-
-.modal__success p {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
-  color: #2F71E5;
-  /* This is a blue color, adjust as necessary */
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.modal__success span.modal__alternative-action {
-  cursor: pointer;
-}
-
-.modal__alternative-or {
-  color: black;
-  margin-right: 5px;
+@media (max-width: 768px) {
+  .modal {
+    max-width: 90%;
+    width: 90%;
+  }
 }
