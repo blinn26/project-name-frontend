@@ -9,6 +9,7 @@ const Preloader = () => (
       src={spinningCircle}
       alt='Spinning Circle'
     />
+    <p>Searching for the news</p>
   </div>
 );
 
