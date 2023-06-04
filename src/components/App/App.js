@@ -65,7 +65,8 @@ function App() {
   };
 
   const handleSaveNews = (newsItem) => {
-    setSavedNews([...savedNews, newsItem]);
+    const newsWithID = { ...newsItem, id: Math.random().toString() };
+    setSavedNews([...savedNews, newsWithID]);
   };
 
   const loadNews = async (search) => {
@@ -87,6 +88,10 @@ function App() {
       }
       setIsLoading(false);
     }, 1000);
+  };
+
+  const handleDeleteNews = (newsItem) => {
+    setSavedNews(savedNews.filter((item) => item.id !== newsItem.id));
   };
 
   useEffect(() => {
@@ -142,6 +147,7 @@ function App() {
             <SavedNews
               isLoggedIn={isLoggedIn}
               savedNews={savedNews}
+              onDeleteNewsItem={handleDeleteNews}
             />
           }
         />

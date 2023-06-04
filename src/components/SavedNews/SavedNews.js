@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NewsCardList from '../NewsCardList/NewsCardList';
 import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader';
 
-function SavedNews({ isLoggedIn, savedNews }) {
+function SavedNews({ isLoggedIn, savedNews, onDeleteNewsItem }) {
   const [username, setUsername] = useState('');
   const [savedArticlesCount, setSavedArticlesCount] = useState(0);
   const [keywords, setKeywords] = useState([]);
@@ -31,7 +31,10 @@ function SavedNews({ isLoggedIn, savedNews }) {
         savedArticlesCount={savedArticlesCount}
         keywords={keywords}
       />
-      <NewsCardList news={savedNews} />
+      <NewsCardList
+        news={savedNews}
+        onDeleteNewsItem={onDeleteNewsItem}
+      />
     </>
   );
 }

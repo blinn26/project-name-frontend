@@ -2,7 +2,7 @@ import React from 'react';
 import './NewsCardList.css';
 import NewsCard from '../NewsCard/NewsCard';
 
-const NewsCardList = ({ news, isLoggedIn }) => {
+const NewsCardList = ({ news, isLoggedIn, onSaveNews, onDeleteNewsItem }) => {
   if (!news) {
     return <p>Loading...</p>;
   }
@@ -10,9 +10,16 @@ const NewsCardList = ({ news, isLoggedIn }) => {
   return (
     <div className='news-card__list'>
       <h2 className='news-card__title'>News</h2>
-      {news.map((item, index) => (
-        <NewsCard key={index} newsItem={item} isLoggedIn={isLoggedIn} />
-      ))}
+      {isLoggedIn &&
+        news.map((item, index) => (
+          <NewsCard
+            className='news-card'
+            key={index}
+            newsItem={item}
+            onSaveNews={onSaveNews}
+            onDeleteNewsItem={onDeleteNewsItem}
+          />
+        ))}
     </div>
   );
 };
