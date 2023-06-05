@@ -1,11 +1,11 @@
-.newscard-popup {
+/* .newscard-popup {
   display: none;
   position: absolute;
 }
 
 .newscard-popup_open {
   display: block;
-}
+} */
 
 /* 
 .newscard-popup__content {
@@ -15,3 +15,31 @@
 .newscard-popup__text {
  
 } */
+
+.newscard-popup {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1;
+  top: 70px;
+  right: 70px;
+}
+
+.newscard-popup_open {
+  opacity: 1;
+}
+
+.newscard-popup__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newscard-popup__text {
+  font-size: 14px;
+  color: #1a1b22;
+}

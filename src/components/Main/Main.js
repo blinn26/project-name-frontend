@@ -80,7 +80,7 @@ const Main = ({
         {/* Only center contents if user has searched */}
         {renderNewsCards()}
         {renderMoreNewsToShowCards()}
-        {!isLoggedIn && <button onClick={() => handleModalOpen(false)}>Login</button>}{' '}
+        {/*  {!isLoggedIn && <button onClick={() => handleModalOpen(false)}>Login</button>}{' '} */}
         {/* Add this line to create a login button */}
       </div>
       <About />

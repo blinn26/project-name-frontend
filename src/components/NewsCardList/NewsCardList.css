@@ -1,8 +1,19 @@
-.news-card__list {
+/* .news-card__list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   margin: 80px 0;
+} */
+
+.news-card__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 16px;
+  padding: 16px;
+}
+
+.news-card__title {
+  margin-bottom: 16px;
 }
