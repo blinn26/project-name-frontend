@@ -1,6 +1,6 @@
 .footer {
   max-width: 1440px;
-  height: 80px;
+
   display: flex;
   justify-content: space-between;
   padding: 32px 106px;
@@ -92,17 +92,45 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1439px) {
+@media only screen and (max-width: 320px) {
   .footer {
-    max-width: 768px;
-    height: 64px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
   }
 
   .footer__copyright {
-    margin: 24px 0 18px 40px;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 12px;
   }
 
-  .footer__right {
-    margin: 21px 41px 21px 0;
+  .footer__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .footer__button {
+    flex: 1 1 auto;
+    margin: 0 2px;
+  }
+
+  .footer__icon,
+  .footer__home-icon,
+  .footer__practicum-icon,
+  .footer__api-icon {
+    height: 16px;
+    margin-right: 0;
+  }
+
+  .footer__home-icon {
+    width: 30px;
   }
 }
