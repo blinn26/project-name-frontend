@@ -1,4 +1,5 @@
 .news-card {
+  position: relative;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 19px;
   width: 400px;
@@ -11,6 +12,7 @@
   transition: all 0.3s ease;
   margin-bottom: 16px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .news-card:hover {
@@ -21,6 +23,7 @@
   display: block;
   position: relative;
   width: 100%;
+  cursor: pointer;
 }
 
 .news-card__image {
@@ -29,6 +32,7 @@
   border-top-left-radius: 19px;
   border-top-right-radius: 19px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .news-card__date {
@@ -38,6 +42,7 @@
   font-size: 18px;
   color: #b6bcbf;
   margin-left: 24px;
+  cursor: pointer;
 }
 
 .news-card__title {
@@ -50,6 +55,7 @@
   margin-left: 24px;
   margin-top: 14px;
   margin-bottom: 14px;
+  cursor: pointer;
 }
 
 .news-card__description {
@@ -59,6 +65,7 @@
   font-size: 16px;
   color: #1a1b22;
   margin-left: 24px;
+  cursor: pointer;
 }
 
 .news-card__source {
@@ -69,37 +76,52 @@
   font-weight: 700;
   color: #b6bcbf;
   margin-left: 24px;
-}
-
-.news-card__save,
-.news-card__delete {
-  position: absolute;
-  top: 24px;
-  width: 40px;
-  height: 40px;
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 0;
-  border: none;
-  background-repeat: no-repeat;
-  background-position: center;
+  cursor: pointer;
 }
 
 .news-card__save {
+  position: absolute;
+  top: 24px;
   right: 70px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 0;
+  border: none;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
   background-image: url(../images/bookmark.png);
   filter: grayscale(100%);
+  cursor: pointer;
 }
 
-.news-card__save:hover,
-.news-card__save-clicked {
+.news-card__save:hover {
   filter: grayscale(0%);
   background-image: url(../images/bookmark.png);
+  cursor: pointer;
+}
+
+.news-card__save-clicked {
+  filter: grayscale(100%);
+  background-image: url(../images/bookmark.png);
+  cursor: pointer;
 }
 
 .news-card__delete {
+  position: absolute;
+  top: 24px;
   right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 0;
+  border: none;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
   background-image: url(../images/trash.png);
+  cursor: pointer;
 }
 
 .news-card__delete:hover {

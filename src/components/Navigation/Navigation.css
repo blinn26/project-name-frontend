@@ -133,6 +133,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .navigation[data-theme='light'] .navigation__home-link-text {

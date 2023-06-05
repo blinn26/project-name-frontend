@@ -27,6 +27,7 @@
   z-index: 1;
   top: 70px;
   right: 70px;
+  cursor: pointer;
 }
 
 .newscard-popup_open {
@@ -37,9 +38,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .newscard-popup__text {
   font-size: 14px;
   color: #1a1b22;
+  cursor: pointer;
 }

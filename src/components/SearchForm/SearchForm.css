@@ -8,7 +8,7 @@
   background-color: black;
   border-radius: 100px;
   margin: 0 auto;
-
+  cursor: pointer;
   top: 50%;
 }
 
@@ -17,6 +17,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  cursor: pointer;
 
 }
 
@@ -28,10 +29,12 @@
   border-radius: 100px;
   outline: none;
   flex-grow: 1;
+  cursor: pointer;
 }
 
 .search-form__input::placeholder {
   color: #000000;
+  cursor: pointer;
 }
 
 .search-form__button {

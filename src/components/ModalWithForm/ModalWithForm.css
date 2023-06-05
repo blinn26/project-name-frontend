@@ -14,12 +14,14 @@
   transition: visibility 0s, opacity 0.5s linear;
   width: 100vw;
   height: 100vh;
+  cursor: pointer;
 }
 
 .modal-overlay_open,
 .modal_open {
   visibility: visible;
   opacity: 1;
+  cursor: pointer;
 }
 
 .modal {
@@ -38,7 +40,7 @@
   padding: 30px;
   position: relative;
   width: 90%;
-  /* fallback for older browsers */
+  cursor: pointer;
   width: clamp(250px, 80%, 430px);
 }
 
@@ -47,6 +49,7 @@
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+  cursor: pointer;
 }
 
 .modal__input {
@@ -57,11 +60,13 @@
   background: transparent;
   margin-bottom: 30px;
   padding: 5px;
+  cursor: pointer;
 }
 
 .modal__input::placeholder {
   color: #000000;
   opacity: 0.5;
+  cursor: pointer;
 }
 
 .modal__button-submit {
@@ -83,6 +88,7 @@
   background-color: #E6E8EB;
   cursor: not-allowed;
   color: gray;
+
 }
 
 .modal__button-close {
@@ -93,6 +99,7 @@
   width: 24px;
   height: 23px;
   border: none;
+  cursor: pointer;
 }
 
 .modal__alternative {
@@ -110,11 +117,13 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
+  cursor: pointer;
 }
 
 .modal__label {
   color: #2F71E5;
   margin-bottom: 5px;
+  cursor: pointer;
 }
 
 .modal__error-message {
@@ -130,10 +139,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  cursor: pointer;
 }
 
 .input-group.error .modal__input {
   border-bottom: 1px solid #FF0000;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {

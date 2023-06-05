@@ -19,6 +19,7 @@
   padding-bottom: 80px;
   min-height: 300px;
   flex-wrap: wrap;
+  cursor: pointer;
 }
 
 .news-container.center-contents {
@@ -26,6 +27,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .spinner-container {
@@ -39,6 +41,7 @@
   align-items: center;
   flex-direction: column;
   background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .circle-preloader {
@@ -49,6 +52,7 @@
   border-bottom-color: #888;
   border-radius: 50%;
   animation: spin .75s infinite linear;
+  cursor: pointer;
 }
 
 @keyframes spin {

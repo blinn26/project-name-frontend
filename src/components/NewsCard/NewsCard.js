@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './NewsCard.css';
 import NewsCardPopup from '../NewsCardPopup/NewsCardPopup';
 
@@ -47,22 +46,29 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem, setI
 
   return (
     <div className='news-card'>
-      <Link
-        to={url}
-        className='news-card__link'>
-        {urlToImage ? (
+      {urlToImage ? (
+        <a
+          href={url}
+          target='_blank'
+          rel='noreferrer'>
           <img
             className='news-card__image'
             src={urlToImage}
             alt={title || 'Image title not available'}
           />
-        ) : (
-          <h3 className='news-card__placeholder'>Image could not be found</h3>
-        )}
-      </Link>
+        </a>
+      ) : (
+        <h3 className='news-card__placeholder'>Image could not be found</h3>
+      )}
       <div className='news-card__content'>
         <p className='news-card__date'>{publishedAt ? formatDate(publishedAt) : 'Date not available'}</p>
-        <h3 className='news-card__title'>{title || 'Title not available'}</h3>
+        <a
+          href={url}
+          target='_blank'
+          rel='noreferrer'
+          className='news-card__title'>
+          {title || 'Title not available'}
+        </a>
         <p className='news-card__description'>{description || 'Description not available'}</p>
         <h4 className='news-card__source'>{sourceName}</h4>
 
