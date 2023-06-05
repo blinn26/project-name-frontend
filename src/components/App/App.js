@@ -126,6 +126,8 @@ function App() {
               numNewsToShow={numNewsToShow}
               setNumNewsToShow={setNumNewsToShow}
               isLoggedIn={isLoggedIn}
+              handleLogin={handleLogin}
+              handleModalOpen={handleModalOpen}
               hasSearched={hasSearched}
             />
           }

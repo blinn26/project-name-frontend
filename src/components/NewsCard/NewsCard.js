@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NewsCard.css';
-import PopupWithForm from '../NewsCardPopup/NewsCardPopup';
+import NewsCardPopup from '../NewsCardPopup/NewsCardPopup';
 
 function formatDate(isoDate) {
   const date = new Date(isoDate);
@@ -9,9 +9,10 @@ function formatDate(isoDate) {
   return date.toLocaleDateString(undefined, options);
 }
 
-const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem }) => {
-  const [isHovered, setIsHovered] = useState(false);
+const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem, setIsModalOpen }) => {
   const [isClicked, setIsClicked] = useState(false);
+  const [showBookmarkPopup, setShowBookmarkPopup] = useState(false);
+  const [showRemovePopup, setShowRemovePopup] = useState(false);
 
   if (!newsItem) {
     return <div>News item is not available</div>;
@@ -21,9 +22,28 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem }) =>
 
   const sourceName = source ? source.name : 'Source name not available';
 
-  const handleMouseEnter = () => setIsHovered(true);
-  const handleMouseLeave = () => setIsHovered(false);
   const handleClick = () => isLoggedIn && setIsClicked(!isClicked);
+
+  const handleBookmarkClick = () => {
+    if (!isLoggedIn) {
+      setShowBookmarkPopup(true);
+      setTimeout(() => {
+        setShowBookmarkPopup(false);
+        if (setIsModalOpen) {
+          setIsModalOpen(true);
+        }
+      }, 3000);
+    }
+  };
+
+  const handleTrashClick = () => {
+    if (showRemovePopup) {
+      onDeleteNewsItem(newsItem);
+      setShowRemovePopup(false);
+    } else {
+      setShowRemovePopup(true);
+    }
+  };
 
   return (
     <div className='news-card'>
@@ -50,36 +70,28 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem }) =>
           <>
             <button
               className={`news-card__save ${isClicked ? 'news-card__save-clicked' : ''}`}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
               onClick={() => {
                 handleClick();
                 onSaveNewsItem(newsItem);
               }}
             />
-            <PopupWithForm
-              isOpen={isHovered}
-              onClose={handleMouseLeave}
+            <NewsCardPopup
+              isOpen={showRemovePopup}
               text='Remove from saved'
             />
             <button
               className='news-card__delete'
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              onClick={() => onDeleteNewsItem(newsItem)}
+              onClick={handleTrashClick}
             />
           </>
         ) : (
           <>
             <button
               className='news-card__save'
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              onClick={handleClick}
+              onClick={handleBookmarkClick}
             />
-            <PopupWithForm
-              isOpen={isHovered}
-              onClose={handleMouseLeave}
+            <NewsCardPopup
+              isOpen={showBookmarkPopup}
               text='Sign in to save articles'
             />
           </>

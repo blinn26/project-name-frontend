@@ -156,38 +156,32 @@
 
   .navigation__wrapper {
     gap: 20px;
-    /* Adjust the gap between items in the navigation wrapper */
   }
 
   .navigation__home-link,
   .navigation[data-theme='light'] .navigation__home-link-text {
     font-size: 16px;
-    /* Reduce font size */
   }
 
   .navigation__saved-news-link,
   .navigation[data-theme='light'] .navigation__saved-news-link {
     font-size: 16px;
-    /* Reduce font size */
   }
 
   .navigation__button.signIn {
     width: 100px;
-    /* Reduce width of the sign in button */
     padding: 8px;
-    /* Adjust padding */
+
   }
 
   .navigation__user {
     width: 60px;
-    /* Reduce width of the user element */
     padding: 8px;
-    /* Adjust padding */
   }
 
   .navigation__home-link-underline,
   .navigation__saved-news-link-underline {
     width: 50px;
-    /* Reduce underline width */
+
   }
 }

@@ -15,6 +15,7 @@ const Main = ({
   isLoading,
   isError,
   hasSearched,
+  handleModalOpen,
 }) => {
   const renderNewsCards = () => {
     if (isLoading) {
@@ -52,6 +53,7 @@ const Main = ({
           onSaveNewsItem={onSaveNewsItem}
           onDeleteNewsItem={onDeleteNewsItem}
           isLoggedIn={isLoggedIn}
+          setIsModalOpen={handleModalOpen}
         />
       ));
     }
@@ -78,6 +80,8 @@ const Main = ({
         {/* Only center contents if user has searched */}
         {renderNewsCards()}
         {renderMoreNewsToShowCards()}
+        {!isLoggedIn && <button onClick={() => handleModalOpen(false)}>Login</button>}{' '}
+        {/* Add this line to create a login button */}
       </div>
       <About />
     </main>
