@@ -8,7 +8,6 @@ import PageClass from '../PageClass/PageClass';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { fetchNews } from '../../utils/ThirdPartyApi';
 import './App.css';
-import lapka from '../images/lapka.png';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +26,6 @@ function App() {
   const [theme, setTheme] = useState('light');
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [position] = useState({ x: 0, y: 0 });
   const navigate = useNavigate();
 
   const toggleTheme = () => {
@@ -103,22 +101,8 @@ function App() {
     }
   }, []);
 
-  /*   useEffect(() => {
-    const setFromEvent = (e) => setPosition({ x: e.clientX, y: e.clientY });
-    window.addEventListener('mousemove', setFromEvent);
-
-    return () => {
-      window.removeEventListener('mousemove', setFromEvent);
-    };
-  }, []); */
-
   return (
     <PageClass className={theme}>
-      <img
-        src={lapka}
-        className='cursor'
-        style={{ left: `${position.x}px`, top: `${position.y}px` }}
-      />
       {error && <div>Error: {error}</div>}
       <Header
         toggleTheme={toggleTheme}
