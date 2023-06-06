@@ -1,13 +1,12 @@
 import React from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import Navigation from '../Navigation/Navigation';
+import { useLocation } from 'react-router-dom';
 import './Header.css';
 
-function Header(props) {
-  const { handleModalOpen, handleSearchSubmit, isLoggedIn, news, theme, toggleTheme, handleLogOut } = props;
-
+function Header({ handleModalOpen, handleSearchSubmit, isLoggedIn, news, theme, toggleTheme, handleLogOut }) {
   return (
-    <header className={`header ${isLoggedIn ? '' : 'header_image'}`}>
+    <header className={`header ${useLocation().pathname === '/saved-news' ? '' : 'header_image'}`}>
       <Navigation
         toggleTheme={toggleTheme}
         theme={theme}

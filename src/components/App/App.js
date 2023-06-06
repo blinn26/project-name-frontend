@@ -142,7 +142,7 @@ function App() {
           }
         />
         <Route
-          path='saved-news'
+          path='/saved-news'
           element={
             <SavedNews
               isLoggedIn={isLoggedIn}
