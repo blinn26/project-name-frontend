@@ -3,6 +3,7 @@ import './NewsCardList.css';
 import NewsCard from '../NewsCard/NewsCard';
 
 const NewsCardList = ({ news, isLoggedIn, onSaveNews, onDeleteNewsItem }) => {
+  console.log(onDeleteNewsItem);
   if (!news) {
     return <p>Loading...</p>;
   }

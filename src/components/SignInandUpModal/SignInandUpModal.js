@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import { useNavigate } from 'react-router-dom';
 
-function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin }) {
+function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNews }) {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -44,7 +44,7 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isSignUp) {
-      localStorage.setItem('user', JSON.stringify({ username, email, password }));
+      localStorage.setItem('user', JSON.stringify({ username, email, password, savedArticles: [] }));
       setSuccessModal(true);
       navigate('/');
       handleLogin();
@@ -52,6 +52,7 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin }) {
       const user = JSON.parse(localStorage.getItem('user'));
       if (user && user.email === email && user.password === password) {
         navigate('/');
+        setSavedNews(user.savedArticles); // Changed this line
       } else {
         alert('Invalid credentials');
       }

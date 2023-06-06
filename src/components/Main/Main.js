@@ -1,3 +1,6 @@
+/* -------------------------------------------------------------------------- */
+/*                        IMPORTS FLOWING THROUGH MAIN                        */
+/* -------------------------------------------------------------------------- */
 import React from 'react';
 import About from '../About/About';
 import NewsCard from '../NewsCard/NewsCard';
@@ -5,6 +8,9 @@ import './Main.css';
 import Preloader from '../Preloader/Preloader';
 import notFoundImg from '../images/ImageNotFound.png';
 
+/* -------------------------------------------------------------------------- */
+/*                                 PARAMETERS                                 */
+/* -------------------------------------------------------------------------- */
 const Main = ({
   news,
   numNewsToShow,
@@ -16,6 +22,7 @@ const Main = ({
   isError,
   hasSearched,
   handleModalOpen,
+  /* ---------------------------------- CARDS --------------------------------- */
 }) => {
   const renderNewsCards = () => {
     if (isLoading) {

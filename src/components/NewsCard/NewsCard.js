@@ -54,6 +54,10 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem, setI
           <img
             className='news-card__image'
             src={urlToImage}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = 'default_image_url';
+            }}
             alt={title || 'Image title not available'}
           />
         </a>

@@ -1,3 +1,6 @@
+/* -------------------------------------------------------------------------- */
+/*                        IMPORTS AND CONST FOR APP.JS                        */
+/* -------------------------------------------------------------------------- */
 import React, { useState, useCallback, useEffect } from 'react';
 import Main from '../Main/Main';
 import Header from '../Header/Header';
@@ -12,12 +15,6 @@ import './App.css';
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userCredentials, setUserCredentials] = useState({
-    username: '',
-    email: '',
-    password: '',
-    isSignUp: false,
-  });
   const [searchTerm, setSearchTerm] = useState('');
   const [hasSearched, setHasSearched] = useState(false);
   const [news, setNews] = useState([]);
@@ -27,6 +24,12 @@ function App() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const [userCredentials, setUserCredentials] = useState({
+    username: '',
+    email: '',
+    password: '',
+    isSignUp: false,
+  });
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
@@ -66,7 +69,15 @@ function App() {
 
   const handleSaveNews = (newsItem) => {
     const newsWithID = { ...newsItem, id: Math.random().toString() };
-    setSavedNews([...savedNews, newsWithID]);
+
+    const newSavedNews = [...savedNews, newsWithID];
+    setSavedNews(newSavedNews);
+
+    if (isLoggedIn) {
+      const user = JSON.parse(localStorage.getItem('user'));
+      user.savedArticles = newSavedNews;
+      localStorage.setItem('user', JSON.stringify(user));
+    }
   };
 
   const loadNews = async (search) => {
@@ -89,18 +100,16 @@ function App() {
       setIsLoading(false);
     }, 1000);
   };
-
   const handleDeleteNews = (newsItem) => {
     setSavedNews(savedNews.filter((item) => item.id !== newsItem.id));
   };
-
   useEffect(() => {
-    const user = localStorage.getItem('user');
-    if (user) {
-      setIsLoggedIn(true);
-    }
-  }, []);
+    console.log(savedNews);
+  }, [savedNews]);
 
+  /* -------------------------------------------------------------------------- */
+  /*                     ROUTES, PATHS, CLASSNAMES AND SETUP                    */
+  /* -------------------------------------------------------------------------- */
   return (
     <PageClass className={theme}>
       {error && <div>Error: {error}</div>}
@@ -133,7 +142,7 @@ function App() {
           }
         />
         <Route
-          path='/saved-news'
+          path='saved-news'
           element={
             <SavedNews
               isLoggedIn={isLoggedIn}
@@ -150,6 +159,7 @@ function App() {
         userCredentials={userCredentials}
         onUserCredentialsChange={handleUserCredentialsChange}
         handleLogin={handleLogin}
+        setSavedNews={setSavedNews}
       />
       <Footer />
     </PageClass>

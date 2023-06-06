@@ -33,6 +33,7 @@ function SavedNews({ isLoggedIn, savedNews, onDeleteNewsItem }) {
       />
       <NewsCardList
         news={savedNews}
+        isLoggedIn={isLoggedIn}
         onDeleteNewsItem={onDeleteNewsItem}
       />
     </>
