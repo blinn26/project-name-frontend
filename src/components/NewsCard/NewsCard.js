@@ -8,7 +8,7 @@ function formatDate(isoDate) {
   return date.toLocaleDateString(undefined, options);
 }
 
-const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem, setIsModalOpen }) => {
+const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem, setIsModalOpen, savedNews }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [showBookmarkPopup, setShowBookmarkPopup] = useState(false);
   const [showRemovePopup, setShowRemovePopup] = useState(false);
@@ -43,7 +43,7 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem, setI
       setShowRemovePopup(true);
     }
   };
-
+  console.log(savedNews);
   return (
     <div className='news-card'>
       {urlToImage ? (
@@ -78,21 +78,31 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem, setI
 
         {isLoggedIn ? (
           <>
-            <button
+            {/* <button
               className={`news-card__save ${isClicked ? 'news-card__save-clicked' : ''}`}
               onClick={() => {
                 handleClick();
                 onSaveNewsItem(newsItem);
               }}
-            />
+            /> */}
             <NewsCardPopup
               isOpen={showRemovePopup}
               text='Remove from saved'
             />
-            <button
-              className='news-card__delete'
-              onClick={handleTrashClick}
-            />
+            {savedNews ? (
+              <button
+                className='news-card__delete'
+                onClick={handleTrashClick}
+              />
+            ) : (
+              <button
+                className={`news-card__save ${isClicked ? 'news-card__save-clicked' : ''}`}
+                onClick={() => {
+                  handleClick();
+                  onSaveNewsItem(newsItem);
+                }}
+              />
+            )}
           </>
         ) : (
           <>

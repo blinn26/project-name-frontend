@@ -35,6 +35,7 @@ function SavedNews({ isLoggedIn, savedNews, onDeleteNewsItem }) {
         news={savedNews}
         isLoggedIn={isLoggedIn}
         onDeleteNewsItem={onDeleteNewsItem}
+        savedNews
       />
     </>
   );

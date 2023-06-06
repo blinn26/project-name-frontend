@@ -2,7 +2,7 @@ import React from 'react';
 import './NewsCardList.css';
 import NewsCard from '../NewsCard/NewsCard';
 
-const NewsCardList = ({ news, isLoggedIn, onSaveNews, onDeleteNewsItem }) => {
+const NewsCardList = ({ news, isLoggedIn, onSaveNews, onDeleteNewsItem, savedNews }) => {
   console.log(onDeleteNewsItem);
   if (!news) {
     return <p>Loading...</p>;
@@ -19,6 +19,8 @@ const NewsCardList = ({ news, isLoggedIn, onSaveNews, onDeleteNewsItem }) => {
             newsItem={item}
             onSaveNews={onSaveNews}
             onDeleteNewsItem={onDeleteNewsItem}
+            savedNews={savedNews}
+            isLoggedIn={isLoggedIn}
           />
         ))}
     </div>
