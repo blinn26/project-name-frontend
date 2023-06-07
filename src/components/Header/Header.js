@@ -17,6 +17,7 @@ function Header({ handleModalOpen, handleSearchSubmit, isLoggedIn, news, theme, 
         isLoggedIn={isLoggedIn}
         handleLogOut={handleLogOut}
         news={news}
+        themeChange={isSavedNewsPage ? 'light' : 'dark'}
       />
       {!isSavedNewsPage && (
         <div className='header__content'>

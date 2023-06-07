@@ -5,7 +5,7 @@ import github from '../images/github.png';
 import linkedIn from '../images/linkedin.svg';
 import twitter from '../images/twitter.svg';
 import practicum from '../images/Войти.svg';
-import home from '../images/Home.png';
+import home from '../images/home.svg';
 import apiLogo from '../images/news.jpeg';
 
 const Footer = () => {

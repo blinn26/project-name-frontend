@@ -10,7 +10,7 @@ import Footer from '../Footer/Footer';
 import SignInandUpModal from '../SignInandUpModal/SignInandUpModal';
 import PageClass from '../PageClass/PageClass';
 import { fetchNews } from '../../utils/ThirdPartyApi';
-import MobilMain from '../MobilMain/MobilMain';
+
 import './App.css';
 
 function App() {
@@ -24,6 +24,7 @@ function App() {
   const [theme, setTheme] = useState('light');
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+
   const navigate = useNavigate();
 
   const [userCredentials, setUserCredentials] = useState({
@@ -166,12 +167,6 @@ function App() {
         onUserCredentialsChange={handleUserCredentialsChange}
         handleLogin={handleLogin}
         setSavedNews={setSavedNews}
-      />
-      <MobilMain
-        handleModalClose={handleModalClose}
-        handleModalOpen={handleModalOpen}
-        handleLogOut={handleLogOut}
-        isLoggedIn={isLoggedIn}
       />
       <Footer />
     </PageClass>
