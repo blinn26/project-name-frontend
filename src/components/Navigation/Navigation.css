@@ -168,6 +168,10 @@
   display: none;
 }
 
+.navigation__hamburger-menu {
+  display: none;
+}
+
 @media only screen and (max-width: 768px) {
   .navigation {
     padding: 10px 20px;
@@ -202,5 +206,47 @@
   .navigation__saved-news-link-underline {
     width: 50px;
 
+  }
+
+
+}
+
+/* Add your media query for 320 */
+
+@media only screen and (max-width: 420px) {
+  .navigation {
+    padding: 10px 20px;
+    position: relative;
+  }
+
+  .navigation__wrapper {
+    display: none;
+    /*This is temporarily*/
+  }
+
+  .show__menu {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    bottom: -116px;
+    left: 0;
+    position: absolute;
+    background-color: black;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    align-items: flex-start;
+  }
+
+  .navigation__hamburger-menu {
+    display: block;
+  }
+
+  .navigation__button.signIn {
+    width: 90%;
+
+  }
+
+  .navigation__home-link-underline {
+    display: none;
   }
 }

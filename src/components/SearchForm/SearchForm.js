@@ -15,7 +15,6 @@ const SearchForm = ({ handleSearchSubmit }) => {
       setError('Please enter a keyword');
     } else {
       handleSearchSubmit(searchTerm);
-
       setSearchTerm('');
       setError('');
     }
