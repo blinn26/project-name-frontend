@@ -2,13 +2,13 @@
 /*                        IMPORTS AND CONST FOR APP.JS                        */
 /* -------------------------------------------------------------------------- */
 import React, { useState, useCallback, useEffect } from 'react';
+import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
 import Main from '../Main/Main';
 import Header from '../Header/Header';
 import SavedNews from '../SavedNews/SavedNews';
 import Footer from '../Footer/Footer';
 import SignInandUpModal from '../SignInandUpModal/SignInandUpModal';
 import PageClass from '../PageClass/PageClass';
-import { Route, Routes, useNavigate } from 'react-router-dom';
 import { fetchNews } from '../../utils/ThirdPartyApi';
 import './App.css';
 
@@ -24,6 +24,7 @@ function App() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+
   const [userCredentials, setUserCredentials] = useState({
     username: '',
     email: '',
@@ -144,11 +145,15 @@ function App() {
         <Route
           path='/saved-news'
           element={
-            <SavedNews
-              isLoggedIn={isLoggedIn}
-              savedNews={savedNews}
-              onDeleteNewsItem={handleDeleteNews}
-            />
+            isLoggedIn ? (
+              <SavedNews
+                isLoggedIn={isLoggedIn}
+                savedNews={savedNews}
+                onDeleteNewsItem={handleDeleteNews}
+              />
+            ) : (
+              <Navigate to='/' />
+            )
           }
         />
       </Routes>
