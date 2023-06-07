@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 import './Footer.css';
-import github from '../images/github.png';
+import github from '../images/github.svg';
 import linkedIn from '../images/linkedin.svg';
 import twitter from '../images/twitter.svg';
 import practicum from '../images/Войти.svg';
@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <footer className='footer'>
       <div className='footer__left'>
-        <p className='footer__copyright'>© 2023 Powered by Ben Linn</p>
+        <p className='footer__copyright'>© 2023 Ben Linn</p>
       </div>
       <div className='footer__links'>
         <Link
