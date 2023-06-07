@@ -1,16 +1,17 @@
 .search-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 608px;
+  width: 100%;
+  max-width: 608px;
   height: 64px;
   background-color: black;
   border-radius: 100px;
   margin: 0 auto;
   cursor: pointer;
-  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+
 
 .search-form__field {
   display: flex;
@@ -58,4 +59,20 @@
   color: red;
   font-size: 12px;
   margin-top: 8px;
+}
+
+/* Modifier: header--tablet */
+@media (max-width: 768px) {
+  .search-form {
+    width: 80%;
+    /* decrease the width on smaller screens */
+  }
+}
+
+/* Modifier: header--mobile */
+@media (max-width: 320px) {
+  .search-form {
+    width: 90%;
+    /* decrease the width on very small screens */
+  }
 }

@@ -2,11 +2,9 @@
 .header {
   max-width: 100%;
   height: 567px;
-
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
 }
 
 .header_image {
@@ -17,37 +15,41 @@
   background-image: url('../images/bawphone.png');
 }
 
+.header__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70%;
+  height: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  align-items: center;
+}
 
-/* Modifier: header--tablet */
-@media (min-width: 320px) and (max-width: 768px) {
-  .header {
-    max-width: 768px;
+.header__title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 60px;
+  line-height: 64px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
 
-  }
+.header__description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
 
-  .header__title {
-    font-size: 40px;
-  }
-
-  .header__button {
-    width: 150px;
-    height: 40px;
+@media (max-width: 768px) {
+  .header__content {
+    width: 90%;
   }
 }
 
-/* Modifier: header--mobile */
 @media (max-width: 320px) {
-  .header {
-    max-width: 320px;
-
-  }
-
-  .header__title {
-    font-size: 24px;
-  }
-
-  .header__button {
-    width: 120px;
-    height: 30px;
+  .header__content {
+    width: 95%;
   }
 }
