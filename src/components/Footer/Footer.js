@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import './Footer.css';
 import github from '../images/github.png';
-import linkedIn from '../images/linkedin.png';
-import twitter from '../images/twitter.png';
-import practicum from '../images/Practicum.png';
+import linkedIn from '../images/linkedin.svg';
+import twitter from '../images/twitter.svg';
+import practicum from '../images/Войти.svg';
 import home from '../images/Home.png';
-import apiLogo from '../images/nlogo.png';
+import apiLogo from '../images/news.jpeg';
 
 const Footer = () => {
   const handleNavigation = (url) => {
@@ -34,7 +34,7 @@ const Footer = () => {
           <img
             alt='Twitter logo'
             src={twitter}
-            className='footer__icon'
+            className='footer__icon-twitter'
           />
         </button>
         <button

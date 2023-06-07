@@ -10,6 +10,7 @@ import Footer from '../Footer/Footer';
 import SignInandUpModal from '../SignInandUpModal/SignInandUpModal';
 import PageClass from '../PageClass/PageClass';
 import { fetchNews } from '../../utils/ThirdPartyApi';
+import MobilMain from '../MobilMain/MobilMain';
 import './App.css';
 
 function App() {
@@ -165,6 +166,12 @@ function App() {
         onUserCredentialsChange={handleUserCredentialsChange}
         handleLogin={handleLogin}
         setSavedNews={setSavedNews}
+      />
+      <MobilMain
+        handleModalClose={handleModalClose}
+        handleModalOpen={handleModalOpen}
+        handleLogOut={handleLogOut}
+        isLoggedIn={isLoggedIn}
       />
       <Footer />
     </PageClass>

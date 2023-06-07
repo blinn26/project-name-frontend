@@ -31,10 +31,16 @@
 .footer__icon,
 .footer__home-icon,
 .footer__practicum-icon,
-.footer__api-icon {
+.footer__icon-twitter {
   height: 24px;
   margin-right: 40px;
 }
+
+.footer__api-icon {
+  height: 50px;
+
+}
+
 
 .footer__home-icon {
   width: 49px;
@@ -46,10 +52,7 @@
   border-radius: 9px;
 }
 
-.footer__api-icon {
-  width: 20px;
-  height: 20px;
-}
+
 
 .footer__home-icon:hover,
 .footer__icon:hover,
