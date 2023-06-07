@@ -2,7 +2,7 @@ import React from 'react';
 import './NewsCardList.css';
 import NewsCard from '../NewsCard/NewsCard';
 
-const NewsCardList = ({ news, isLoggedIn, onSaveNews, onDeleteNewsItem, savedNews }) => {
+const NewsCardList = ({ news, isLoggedIn, onDeleteNewsItem, saveNewsItem, savedNews }) => {
   console.log(onDeleteNewsItem);
   if (!news) {
     return <p>Loading...</p>;
@@ -12,12 +12,12 @@ const NewsCardList = ({ news, isLoggedIn, onSaveNews, onDeleteNewsItem, savedNew
     <div className='news-card__list'>
       <h2 className='news-card__title'>News</h2>
       {isLoggedIn &&
-        news.map((item, index) => (
+        news.map((item) => (
           <NewsCard
             className='news-card'
-            key={index}
+            key={item.id} // if your item object has an id
             newsItem={item}
-            onSaveNews={onSaveNews}
+            onSaveNews={saveNewsItem}
             onDeleteNewsItem={onDeleteNewsItem}
             savedNews={savedNews}
             isLoggedIn={isLoggedIn}

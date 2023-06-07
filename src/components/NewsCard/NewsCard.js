@@ -8,7 +8,7 @@ function formatDate(isoDate) {
   return date.toLocaleDateString(undefined, options);
 }
 
-const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem, setIsModalOpen, savedNews }) => {
+const NewsCard = ({ newsItem, isLoggedIn, onSaveNews, onDeleteNews, handleModalOpen, savedNews }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [showBookmarkPopup, setShowBookmarkPopup] = useState(false);
   const [showRemovePopup, setShowRemovePopup] = useState(false);
@@ -18,7 +18,6 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem, setI
   }
 
   const { url, urlToImage, title, description, publishedAt, source } = newsItem;
-
   const sourceName = source ? source.name : 'Source name not available';
 
   const handleClick = () => isLoggedIn && setIsClicked(!isClicked);
@@ -28,22 +27,20 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem, setI
       setShowBookmarkPopup(true);
       setTimeout(() => {
         setShowBookmarkPopup(false);
-        if (setIsModalOpen) {
-          setIsModalOpen(true);
-        }
+        handleModalOpen(true);
       }, 3000);
     }
   };
 
   const handleTrashClick = () => {
     if (showRemovePopup) {
-      onDeleteNewsItem(newsItem);
+      onDeleteNews(newsItem);
       setShowRemovePopup(false);
     } else {
       setShowRemovePopup(true);
     }
   };
-  console.log(savedNews);
+
   return (
     <div className='news-card'>
       {urlToImage ? (
@@ -78,13 +75,6 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem, setI
 
         {isLoggedIn ? (
           <>
-            {/* <button
-              className={`news-card__save ${isClicked ? 'news-card__save-clicked' : ''}`}
-              onClick={() => {
-                handleClick();
-                onSaveNewsItem(newsItem);
-              }}
-            /> */}
             <NewsCardPopup
               isOpen={showRemovePopup}
               text='Remove from saved'
@@ -99,7 +89,7 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNewsItem, onDeleteNewsItem, setI
                 className={`news-card__save ${isClicked ? 'news-card__save-clicked' : ''}`}
                 onClick={() => {
                   handleClick();
-                  onSaveNewsItem(newsItem);
+                  onSaveNews(newsItem);
                 }}
               />
             )}
