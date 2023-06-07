@@ -15,7 +15,7 @@ const NewsCardList = ({ news, isLoggedIn, onDeleteNewsItem, saveNewsItem, savedN
         news.map((item) => (
           <NewsCard
             className='news-card'
-            key={item.id} // if your item object has an id
+            key={item.id}
             newsItem={item}
             onSaveNews={saveNewsItem}
             onDeleteNewsItem={onDeleteNewsItem}

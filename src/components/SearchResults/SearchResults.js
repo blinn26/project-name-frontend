@@ -43,8 +43,8 @@ const SearchResults = ({
             className='news-card'
             key={index}
             newsItem={newsItem}
-            onSaveNews={onSaveNewsItem} // Updated prop name
-            onDeleteNews={onDeleteNewsItem} // Updated prop name
+            onSaveNews={onSaveNewsItem}
+            onDeleteNewsItem={onDeleteNewsItem}
             isLoggedIn={isLoggedIn}
             handleModalOpen={handleModalOpen}
           />

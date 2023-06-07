@@ -8,7 +8,7 @@ function formatDate(isoDate) {
   return date.toLocaleDateString(undefined, options);
 }
 
-const NewsCard = ({ newsItem, isLoggedIn, onSaveNews, onDeleteNews, handleModalOpen, savedNews }) => {
+const NewsCard = ({ newsItem, isLoggedIn, onSaveNews, handleModalOpen, onDeleteNewsItem, savedNews }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [showBookmarkPopup, setShowBookmarkPopup] = useState(false);
   const [showRemovePopup, setShowRemovePopup] = useState(false);
@@ -33,8 +33,9 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNews, onDeleteNews, handleModalO
   };
 
   const handleTrashClick = () => {
+    console.log('onDeleteNewsItem is: ', onDeleteNewsItem);
     if (showRemovePopup) {
-      onDeleteNews(newsItem);
+      onDeleteNewsItem(newsItem);
       setShowRemovePopup(false);
     } else {
       setShowRemovePopup(true);
