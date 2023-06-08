@@ -31,7 +31,7 @@
 
 .footer__icon,
 .footer__home-icon,
-.footer__practicum-icon,
+.footer__tripleten-icon,
 .footer__icon-twitter {
   height: 24px;
   margin-right: 40px;
@@ -63,78 +63,47 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
   .footer {
-    max-width: 320px;
-    height: 176px;
-    flex-direction: column-reverse;
-    padding: 0 16px;
-  }
-
-  .footer__copyright {
-    width: 288px;
-    margin: 38px 0 22px 0;
-    text-align: center;
-  }
-
-  .footer__links {
-    height: 74px;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
-    margin: 20px 0;
-  }
-
-  .footer__button {
-    width: 100%;
-  }
-
-  .footer__icon,
-  .footer__home-icon,
-  .footer__practicum-icon,
-  .footer__api-icon {
-    margin-right: 18px;
-  }
-}
-
-@media only screen and (max-width: 320px) {
-  .footer {
-    width: 100%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-
-  .footer__copyright {
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
-    font-size: 12px;
   }
 
   .footer__links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 10px 0;
+    order: 2;
+    align-self: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
   }
 
-  .footer__button {
-    flex: 1 1 auto;
-    margin: 0 2px;
+  .footer__copyright {
+    order: 1;
+    align-self: center;
   }
 
-  .footer__icon,
-  .footer__home-icon,
-  .footer__practicum-icon,
-  .footer__api-icon {
-    height: 16px;
-    margin-right: 0;
-  }
+  /* Styles for screens from 320px to 767px */
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .footer {
+      flex-direction: column;
+      align-items: center;
+    }
 
-  .footer__home-icon {
-    width: 30px;
+    .footer__left-icons {
+      order: 1;
+      align-self: flex-start;
+    }
+
+    .footer__copyright {
+      order: 2;
+      align-self: center;
+      width: 100%;
+      text-align: center;
+    }
+
+    .footer__links {
+      order: 3;
+      align-self: flex-end;
+    }
   }
 }

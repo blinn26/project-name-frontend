@@ -11,7 +11,7 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
   const showMenu = () => setMenu(!menuVisible);
   return (
     <nav
-      className='navigation'
+      className={`navigation ${menuVisible ? 'navigation_mobile' : ''}`}
       data-theme={themeChange}>
       <div className='navigation__logo'>
         <p className='navigation__logo-text'>NewsExplorer</p>

@@ -4,7 +4,7 @@ import './Footer.css';
 import github from '../images/github.svg';
 import linkedIn from '../images/linkedin.svg';
 import twitter from '../images/twitter.svg';
-import practicum from '../images/Войти.svg';
+import tripleten from '../images/tripleten.png';
 import home from '../images/home.svg';
 import apiLogo from '../images/news.jpeg';
 
@@ -15,10 +15,7 @@ const Footer = () => {
 
   return (
     <footer className='footer'>
-      <div className='footer__left'>
-        <p className='footer__copyright'>© 2023 Ben Linn</p>
-      </div>
-      <div className='footer__links'>
+      <div className='footer__left-icons'>
         <Link
           to='/'
           className='footer__button footer__home-button'>
@@ -28,6 +25,18 @@ const Footer = () => {
             className='footer__home-icon'
           />
         </Link>
+        <button
+          onClick={() => handleNavigation('https://practicum.com')}
+          className='footer__button'>
+          <img
+            alt='TripleTen logo'
+            src={tripleten}
+            className='footer__tripleten-icon'
+          />
+        </button>
+      </div>
+      <div className='footer__copyright'>© 2023 Ben Linn</div>
+      <div className='footer__links'>
         <button
           onClick={() => handleNavigation('https://twitter.com/createdbyben26')}
           className='footer__button'>
@@ -53,15 +62,6 @@ const Footer = () => {
             alt='Github logo'
             src={github}
             className='footer__icon'
-          />
-        </button>
-        <button
-          onClick={() => handleNavigation('https://practicum.com')}
-          className='footer__button'>
-          <img
-            alt='Practicum logo'
-            src={practicum}
-            className='footer__practicum-icon'
           />
         </button>
         <button
