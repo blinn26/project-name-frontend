@@ -1,7 +1,8 @@
 .footer {
   max-width: 1440px;
-
   display: flex;
+  align-items: center;
+
   justify-content: space-between;
   padding: 32px 106px;
   background-color: white;
@@ -14,7 +15,6 @@
   line-height: 1.375em;
   color: #b6bcbf;
   margin: 0;
-  margin: 20px
 }
 
 .footer__links {
@@ -39,71 +39,57 @@
 
 .footer__api-icon {
   height: 50px;
-
 }
-
 
 .footer__home-icon {
   width: 49px;
 }
 
-.footer__practicum-icon {
+.footer__tripleten-icon {
   align-self: center;
   height: 25px;
   border-radius: 9px;
 }
 
-
-
 .footer__home-icon:hover,
 .footer__icon:hover,
-.footer__practicum-icon:hover,
+.footer__footer__tripleten-icon,
 .footer__api-button:hover {
   opacity: 0.6;
   cursor: pointer;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 767px) {
+@media only screen and (min-width: 328px) and (max-width: 767px) {
   .footer {
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .footer__left {
+    order: 3;
+    width: 100%;
+    text-align: center;
   }
 
   .footer__links {
-    order: 2;
-    align-self: flex-end;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-
-  .footer__copyright {
     order: 1;
-    align-self: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
   }
 
-  /* Styles for screens from 320px to 767px */
-  @media only screen and (min-width: 320px) and (max-width: 767px) {
-    .footer {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .footer__left-icons {
-      order: 1;
-      align-self: flex-start;
-    }
-
-    .footer__copyright {
-      order: 2;
-      align-self: center;
-      width: 100%;
-      text-align: center;
-    }
-
-    .footer__links {
-      order: 3;
-      align-self: flex-end;
-    }
+  .footer__home-button {
+    margin-right: 20px;
   }
+
+  .footer__tripleten-icon {
+    margin-right: 14px;
+  }
+
+  .footer__button:not(.footer__home-button) {
+    margin-left: auto;
+  }
+
+
 }

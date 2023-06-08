@@ -15,7 +15,10 @@ const Footer = () => {
 
   return (
     <footer className='footer'>
-      <div className='footer__left-icons'>
+      <div className='footer__left'>
+        <p className='footer__copyright'>© 2023 Ben Linn</p>
+      </div>
+      <div className='footer__links'>
         <Link
           to='/'
           className='footer__button footer__home-button'>
@@ -25,18 +28,6 @@ const Footer = () => {
             className='footer__home-icon'
           />
         </Link>
-        <button
-          onClick={() => handleNavigation('https://practicum.com')}
-          className='footer__button'>
-          <img
-            alt='TripleTen logo'
-            src={tripleten}
-            className='footer__tripleten-icon'
-          />
-        </button>
-      </div>
-      <div className='footer__copyright'>© 2023 Ben Linn</div>
-      <div className='footer__links'>
         <button
           onClick={() => handleNavigation('https://twitter.com/createdbyben26')}
           className='footer__button'>
@@ -62,6 +53,15 @@ const Footer = () => {
             alt='Github logo'
             src={github}
             className='footer__icon'
+          />
+        </button>
+        <button
+          onClick={() => handleNavigation('https://practicum.com')}
+          className='footer__button'>
+          <img
+            alt='tripleten logo'
+            src={tripleten}
+            className='footer__tripleten-icon'
           />
         </button>
         <button

@@ -247,5 +247,19 @@
     padding: 0 20px;
   }
 
+  .navigation[data-theme='light'] .navigation__home-link {
+    display: none;
+  }
 
+  .navigation[data-theme='light'] .navigation__user {
+    display: none;
+  }
+
+  .navigation[data-theme='dark'] .navigation__user {
+    display: none;
+  }
+
+  .navigation[data-theme='light'] .navigation__wrapper.show__menu {
+    display: none;
+  }
 }
