@@ -95,7 +95,7 @@
   position: absolute;
   top: -30px;
   right: -30px;
-  background: url('../images/Cross.svg') center no-repeat;
+  background: url('../images/close.svg') center no-repeat;
   width: 24px;
   height: 23px;
   border: none;
@@ -147,9 +147,22 @@
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 320px) {
   .modal {
-    max-width: 90%;
-    width: 90%;
+    width: 100%;
+    max-width: 320px;
+    max-height: 560px;
   }
+
+  .modal__button-close {
+    position: absolute;
+    top: -45px;
+    right: -6px;
+    background: url('../images/close.svg') center no-repeat;
+    width: 24px;
+    height: 23px;
+    border: none;
+    cursor: pointer;
+  }
+
 }
