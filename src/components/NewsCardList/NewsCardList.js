@@ -1,5 +1,4 @@
 import React from 'react';
-import './NewsCardList.css';
 import NewsCard from '../NewsCard/NewsCard';
 
 const NewsCardList = ({ news, isLoggedIn, onDeleteNewsItem, saveNewsItem, savedNews }) => {
