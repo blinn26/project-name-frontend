@@ -102,17 +102,13 @@
   cursor: pointer;
 }
 
-.news-card__save:hover {
-  filter: grayscale(0%);
-  background-image: url(../images/bookmark.png);
-  cursor: pointer;
-}
 
-.news-card__save-clicked {
+
+/* .news-card__save-clicked {
   filter: grayscale(100%);
   background-image: url(../images/bookmark.png);
   cursor: pointer;
-}
+} */
 
 .news-card__delete {
   position: absolute;
@@ -130,7 +126,27 @@
   cursor: pointer;
 }
 
-.news-card__delete:hover {
+/* .news-card__delete:hover {
   background-image: url(../images/trash.png);
+  cursor: pointer;
+} */
+
+
+.news-card__save:hover {
+  filter: grayscale(0%);
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/bookmarkHover.svg);
+  cursor: pointer;
+}
+
+.news-card__delete:hover {
+  background-image: url(../images/trashFilled.svg);
+  cursor: pointer;
+}
+
+.news-card__save-clicked {
+  filter: grayscale(100%);
+  background-image: url(../images/filledBookmark.svg);
   cursor: pointer;
 }
