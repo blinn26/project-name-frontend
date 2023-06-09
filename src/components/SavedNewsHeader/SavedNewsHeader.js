@@ -1,7 +1,8 @@
 import React from 'react';
 import './SavedNewsHeader.css';
+import NewsCardList from '../NewsCardList/NewsCardList';
 
-const SavedNewsHeader = ({ username, savedArticlesCount, keywords }) => {
+const SavedNewsHeader = ({ username, savedArticlesCount, keywords, savedNews, isLoggedIn, onDeleteNewsItem }) => {
   return (
     <div className='saved-news-header'>
       <p className='saved__title'>Saved Articles</p>
@@ -11,6 +12,13 @@ const SavedNewsHeader = ({ username, savedArticlesCount, keywords }) => {
       <p className='saved__keywords'>
         By keywords: <span className='saved__bold'>{keywords.join(', ')}</span>
       </p>
+      <NewsCardList
+        news={savedNews}
+        isLoggedIn={isLoggedIn}
+        onDeleteNewsItem={onDeleteNewsItem}
+        keywords={keywords}
+        savedNews
+      />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import './Navigation.css';
 import logout from '../images/logout.svg';
 import menuDark from '../images/menu.svg';
 import menuLight from '../images/menuBlack.svg';
+import whiteLog from '../images/whiteLog.svg';
 
 const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) => {
   const location = useLocation();
@@ -12,6 +13,7 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
   const showMenu = () => setMenu(!menuVisible);
 
   const menuIcon = themeChange === 'light' ? menuLight : menuDark;
+  const logoutIcon = themeChange === 'light' ? whiteLog : logout;
 
   return (
     <nav
@@ -20,13 +22,14 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
       <div className='navigation__logo'>
         <p className='navigation__logo-text'>NewsExplorer</p>
       </div>
-      <div className='navigation__hamburger-menu'>
+      <Link
+        to='/'
+        className='navigation__hamburger-menu'>
         <img
           src={menuIcon}
           alt='Menu'
           onClick={showMenu}></img>
-        {/* Use the correct menu icon here */}
-      </div>
+      </Link>
       <div className={`navigation__wrapper ${menuVisible ? 'show__menu' : ''}`}>
         <Link
           to='/'
@@ -34,7 +37,6 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
           <p className='navigation__home-link-text'>Home</p>
           {location.pathname === '/' && <div className='navigation__home-link-underline'></div>}
         </Link>
-
         {isLoggedIn && (
           <Link
             to='/saved-news'
@@ -43,16 +45,24 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
             {location.pathname === '/saved-news' && <div className='navigation__saved-news-link-underline'></div>}
           </Link>
         )}
-
         {isLoggedIn ? (
-          <button
-            className='navigation__user'
-            onClick={handleLogOut}>
-            Ben{' '}
-            <img
-              src={logout}
-              alt='Logout'></img>
-          </button>
+          <>
+            <button
+              className='navigation__user'
+              onClick={handleLogOut}>
+              Ben{' '}
+              <img
+                src={logoutIcon}
+                alt='Logout'></img>
+            </button>
+            <button
+              className='navigation__log'
+              onClick={handleLogOut}>
+              <img
+                src={whiteLog}
+                alt='Logout'></img>
+            </button>
+          </>
         ) : (
           <button
             className='navigation__button signIn'

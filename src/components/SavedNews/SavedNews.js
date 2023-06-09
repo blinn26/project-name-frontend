@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import NewsCardList from '../NewsCardList/NewsCardList';
 import SavedNewsHeader from '../SavedNewsHeader/SavedNewsHeader';
 
 function SavedNews({ isLoggedIn, savedNews, onDeleteNewsItem }) {
@@ -25,20 +24,14 @@ function SavedNews({ isLoggedIn, savedNews, onDeleteNewsItem }) {
   }
 
   return (
-    <>
-      <SavedNewsHeader
-        username={username}
-        savedArticlesCount={savedArticlesCount}
-        keywords={keywords}
-      />
-      <NewsCardList
-        news={savedNews}
-        isLoggedIn={isLoggedIn}
-        onDeleteNewsItem={onDeleteNewsItem}
-        keywords={keywords}
-        savedNews
-      />
-    </>
+    <SavedNewsHeader
+      username={username}
+      savedArticlesCount={savedArticlesCount}
+      keywords={keywords}
+      savedNews={savedNews}
+      isLoggedIn={isLoggedIn}
+      onDeleteNewsItem={onDeleteNewsItem}
+    />
   );
 }
 
