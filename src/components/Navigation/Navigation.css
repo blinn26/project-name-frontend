@@ -167,8 +167,6 @@
 
 }
 
-
-
 /* Small devices (phones) */
 @media only screen and (min-width: 320px) and (max-width: 767px) {
 
@@ -187,6 +185,7 @@
     background: transparent;
     z-index: 1;
     padding: 0 20px;
+    border-bottom: 1px solid var(--color-white);
   }
 
   .navigation[data-theme='dark'].navigation.navigation_mobile {
@@ -228,7 +227,7 @@
     display: block;
   }
 
-  .navigation[data-theme='light'].navigation__hamburger-menu {
+  .navigation[data-theme='light'] .navigation__hamburger-menu {
     color: black;
   }
 
@@ -260,4 +259,6 @@
   .navigation[data-theme='light'] .navigation__wrapper.show__menu {
     display: none;
   }
+
+
 }

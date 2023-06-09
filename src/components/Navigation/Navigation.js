@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navigation.css';
 import logout from '../images/logout.svg';
-import menu from '../images/menu.svg'; // Import the hamburger menu icon
+import menuDark from '../images/menu.svg';
+import menuLight from '../images/menuBlack.svg';
 
 const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) => {
   const location = useLocation();
   const textColorClass = isLoggedIn ? 'text-black' : 'text-white';
   const [menuVisible, setMenu] = useState(false);
   const showMenu = () => setMenu(!menuVisible);
+
+  const menuIcon = themeChange === 'light' ? menuLight : menuDark;
+
   return (
     <nav
       className={`navigation ${menuVisible ? 'navigation_mobile' : ''}`}
@@ -18,10 +22,10 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
       </div>
       <div className='navigation__hamburger-menu'>
         <img
-          src={menu}
+          src={menuIcon}
           alt='Menu'
           onClick={showMenu}></img>
-        {/* Use the hamburger menu icon here */}
+        {/* Use the correct menu icon here */}
       </div>
       <div className={`navigation__wrapper ${menuVisible ? 'show__menu' : ''}`}>
         <Link
