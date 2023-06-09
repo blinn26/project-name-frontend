@@ -134,22 +134,3 @@
   background-image: url(../images/trash.png);
   cursor: pointer;
 }
-
-.news-card__keywords {
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  background: #FFFFFF;
-  border-radius: 10px;
-  width: 87px;
-  height: 40px;
-  font-family: 'Roboto', sans-serif;
-  font-style: medium;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-  color: #000000;
-  cursor: pointer;
-  visibility: visible;
-  /* Ensured visibility */
-}
