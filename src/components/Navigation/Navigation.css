@@ -24,35 +24,26 @@
   align-items: center;
 }
 
-
-.navigation[data-theme='dark'] .navigation__logo-text {
-  font-family: "Roboto Slab", sans-serif;
-  line-height: 24px;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--color-white);
-  margin: 0;
+.navigation__home-link-underline {
+  height: 3px;
+  position: absolute;
+  bottom: -2px;
+  left: 55%;
+  transform: translateX(-50%);
 }
 
-.navigation[data-theme='light'] .navigation__logo-text {
-  font-family: "Roboto Slab", sans-serif;
-  line-height: 24px;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--color-black);
-  margin: 0;
+
+
+.navigation__saved-news-link-underline {
+  width: 160px;
+  height: 3px;
+  background-color: grey;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.navigation[data-theme='light'] .navigation__home-link-text {
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  font-family: "Roboto Slab", sans-serif;
-  line-height: 24px;
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--color-black);
-}
 
 .navigation__home-link {
   position: relative;
@@ -79,17 +70,29 @@
   background-color: white;
 }
 
-.navigation[data-theme='light'] .navigation__saved-news-link {
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  font-family: "Roboto Slab", sans-serif;
-  line-height: 24px;
-  font-size: 18px;
-  font-weight: 500;
-  color: black;
+
+.navigation__home-link-image {
+  display: none;
 }
 
+.navigation__hamburger-menu {
+  display: none;
+}
+
+.navigation[data-theme='dark'] {
+  background-color: var(--color-dark-theme-bg);
+  color: var(--color-white);
+  border-bottom: var(--color-black) solid;
+}
+
+.navigation[data-theme='dark'] .navigation__logo-text {
+  font-family: "Roboto Slab", sans-serif;
+  line-height: 24px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin: 0;
+}
 
 .navigation[data-theme='dark'] .navigation__saved-news-link {
   position: relative;
@@ -102,32 +105,10 @@
   color: white;
 }
 
-.navigation__home-link-underline {
-  height: 3px;
-  position: absolute;
-  bottom: -2px;
-  left: 55%;
-  transform: translateX(-50%);
-}
-
 .navigation[data-theme='dark'] .navigation__home-link-underline {
   width: 68px;
   margin-bottom: -10px;
   background-color: white;
-}
-
-.navigation[data-theme='light'] .navigation__home-link-underline {
-  background-color: red;
-}
-
-.navigation__saved-news-link-underline {
-  width: 160px;
-  height: 3px;
-  background-color: grey;
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .navigation[data-theme='dark'] .navigation__button.signIn {
@@ -140,24 +121,39 @@
   color: var(--btn-text-color);
 }
 
+.navigation[data-theme='light'] .navigation__logo-text {
+  font-family: "Roboto Slab", sans-serif;
+  line-height: 24px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-black);
+  margin: 0;
+}
 
+.navigation[data-theme='light'] .navigation__home-link-text {
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Roboto Slab", sans-serif;
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-black);
+}
 
 .navigation[data-theme='light'] .navigation__home-link-text {
   color: var(--color-black);
 }
 
-.navigation[data-theme='dark'] {
-  background-color: var(--color-dark-theme-bg);
-  color: var(--color-white);
-  border-bottom: var(--color-black) solid;
-}
-
-.navigation__home-link-image {
-  display: none;
-}
-
-.navigation__hamburger-menu {
-  display: none;
+.navigation[data-theme='light'] .navigation__saved-news-link {
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Roboto Slab", sans-serif;
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1439px) {
@@ -236,8 +232,8 @@
     color: black;
   }
 
-  .navigation__button.signIn {
-    width: 90%;
+  .navigation[data-theme='dark'] .navigation__button.signIn {
+    width: 320px;
   }
 
   .navigation__home-link-underline {
