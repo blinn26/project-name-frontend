@@ -233,6 +233,9 @@
 
   .navigation[data-theme='dark'] .navigation__button.signIn {
     width: 320px;
+    margin: auto;
+    display: block;
+    text-align: center;
   }
 
   .navigation__home-link-underline {

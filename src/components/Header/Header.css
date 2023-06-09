@@ -64,10 +64,10 @@
 
 @media (max-width: 320px) {
 
-  .header__content {
+  /* .header__content {
     width: 100%;
 
-  }
+  } */
 
   .header__title {
     font-family: 'Roboto Slab', serif;
