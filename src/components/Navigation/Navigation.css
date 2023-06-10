@@ -269,17 +269,20 @@
     display: none;
   }
 
-  /* .navigation[data-theme='light'] .navigation__user {
+  .navigation[data-theme='light'] .navigation__user {
     display: none;
   }
 
   .navigation[data-theme='dark'] .navigation__user {
     display: none;
-  } */
+  }
 
   .navigation[data-theme='light'] .navigation__wrapper.show__menu {
     display: none;
   }
 
 
+  .navigation[data-theme='dark'] .navigation__saved-news-link {
+    display: none;
+  }
 }

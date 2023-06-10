@@ -1,6 +1,5 @@
 .news-card {
   padding: 0 16px;
-  /* Added padding on left and right */
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 19px;
@@ -36,7 +35,6 @@
   object-fit: cover;
   cursor: pointer;
   margin-left: -16px;
-  /* Adjusted position to fit into the card layout */
 }
 
 .news-card__date {
@@ -83,7 +81,7 @@
   margin-left: 24px;
   cursor: pointer;
   visibility: visible;
-  /* Ensured visibility */
+
 }
 
 .news-card__save {
@@ -121,16 +119,6 @@
   background-image: url(../images/trash.png);
   cursor: pointer;
 }
-
-/* .news-card__list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  margin: 80px 0;
-} */
-
 
 .news-card__save:hover {
   filter: grayscale(0%);

@@ -11,8 +11,6 @@ import SignInandUpModal from '../SignInandUpModal/SignInandUpModal';
 import PageClass from '../PageClass/PageClass';
 import { fetchNews } from '../../utils/ThirdPartyApi';
 
-import './App.css';
-
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
