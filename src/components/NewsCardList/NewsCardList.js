@@ -9,7 +9,7 @@ const NewsCardList = ({ news, isLoggedIn, onDeleteNewsItem, saveNewsItem, savedN
 
   return (
     <div className='news-card__list'>
-      <h2 className='news-card__title'>News</h2>
+      <h2 className='news-card__title'>Search Results</h2>
       {isLoggedIn &&
         news.map((item) => (
           <NewsCard

@@ -1,7 +1,6 @@
 .saved-news-header {
   max-width: 1440px;
-  background-color: #F5F6F7;
-  padding: 374px 0 0 0;
+
 }
 
 .saved__title {
@@ -30,4 +29,11 @@
 
 .saved__bold {
   font-weight: 700;
+}
+
+.news-card-list-wrapper {
+
+  max-width: 1440px;
+  background-color: #F5F6F7;
+  padding: 374px 0 0 0;
 }
