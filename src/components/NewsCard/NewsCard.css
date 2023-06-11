@@ -1,3 +1,4 @@
+/* General styles for the NewsCard component */
 .news-card {
   padding: 0 16px;
   position: relative;
@@ -81,7 +82,6 @@
   margin-left: 24px;
   cursor: pointer;
   visibility: visible;
-
 }
 
 .news-card__save {
@@ -100,9 +100,6 @@
   filter: grayscale(100%);
   cursor: pointer;
 }
-
-
-
 
 .news-card__delete {
   position: absolute;
@@ -140,8 +137,37 @@
 }
 
 .news-card-list-wrapper {
-
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
   max-width: 1440px;
   background-color: #F5F6F7;
-  padding: 360px;
+}
+
+@media screen and (min-width: 1440px) {
+  .news-card {
+    width: 400px;
+    height: 576px;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .news-card {
+    width: 224px;
+    height: 420px;
+  }
+}
+
+/* Responsive styles for the NewsCard component */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .news-card {
+    width: 224px;
+    height: 420px;
+  }
+
+  .news-card-container {
+    display: none
+  }
 }
