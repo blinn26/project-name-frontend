@@ -9,6 +9,12 @@
   --btn-text-color: white;
 }
 
+.navigation.transparent {
+  background-color: transparent;
+}
+
+/* rest of your CSS stays the same */
+
 .navigation {
   display: flex;
   justify-content: space-between;
@@ -114,7 +120,9 @@
 }
 
 .navigation[data-theme='dark'] .navigation__saved-news-link {
-  position: relative;
+  left: 360px;
+  bottom: 66px;
+  position: absolute;
   text-align: center;
   text-decoration: none;
   font-family: "Roboto Slab", sans-serif;

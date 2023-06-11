@@ -17,18 +17,18 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
 
   return (
     <nav
-      className={`navigation ${menuVisible ? 'navigation_mobile' : ''}`}
+      className={`navigation ${!isLoggedIn ? 'transparent' : ''} ${menuVisible ? 'navigation_mobile' : ''}`}
       data-theme={themeChange}>
       <div className='navigation__logo'>
         <p className='navigation__logo-text'>NewsExplorer</p>
       </div>
       <Link
         to='/'
-        className='navigation__hamburger-menu'>
+        className='navigation__hamburger-menu'
+        onClick={showMenu}>
         <img
           src={menuIcon}
-          alt='Menu'
-          onClick={showMenu}></img>
+          alt='Menu'></img>
       </Link>
       <div className={`navigation__wrapper ${menuVisible ? 'show__menu' : ''}`}>
         <Link
