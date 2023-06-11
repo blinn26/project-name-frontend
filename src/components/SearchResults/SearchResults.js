@@ -1,18 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NewsCard from '../NewsCard/NewsCard';
 import Preloader from '../Preloader/Preloader';
 import notFoundImg from '../images/ImageNotFound.png';
 
-const SearchResults = ({
-  news,
-  numNewsToShow,
-  onSaveNewsItem,
-  onDeleteNewsItem,
-  isLoggedIn,
-  isLoading,
-  isError,
-  handleModalOpen,
-}) => {
+const SearchResults = ({ news, onSaveNewsItem, onDeleteNewsItem, isLoggedIn, isLoading, isError, handleModalOpen }) => {
+  const [numNewsToShow, setNumNewsToShow] = useState(3);
+
+  const handleClickShowMore = () => {
+    setNumNewsToShow(numNewsToShow + 3);
+  };
+
   return (
     <div className='news-container'>
       {isLoading ? (
@@ -38,17 +35,28 @@ const SearchResults = ({
           <p className='no-image-text'>Please try again with different keywords.</p>
         </div>
       ) : (
-        news.slice(0, numNewsToShow).map((newsItem, index) => (
-          <NewsCard
-            className='news-card'
-            key={index}
-            newsItem={newsItem}
-            onSaveNews={onSaveNewsItem}
-            onDeleteNewsItem={onDeleteNewsItem}
-            isLoggedIn={isLoggedIn}
-            handleModalOpen={handleModalOpen}
-          />
-        ))
+        <>
+          <div className='news-card-container'>
+            {news.slice(0, numNewsToShow).map((newsItem, index) => (
+              <NewsCard
+                className='news-card'
+                key={index}
+                newsItem={newsItem}
+                onSaveNews={onSaveNewsItem}
+                onDeleteNewsItem={onDeleteNewsItem}
+                isLoggedIn={isLoggedIn}
+                handleModalOpen={handleModalOpen}
+              />
+            ))}
+          </div>
+          {news.length > numNewsToShow && (
+            <button
+              className='main__show-more-button'
+              onClick={handleClickShowMore}>
+              Show More
+            </button>
+          )}
+        </>
       )}
     </div>
   );

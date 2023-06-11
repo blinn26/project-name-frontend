@@ -147,6 +147,11 @@
   cursor: pointer;
 }
 
+.invalid {
+  border: 1px solid red;
+}
+
+
 @media (max-width: 320px) {
   .modal {
     width: 100%;

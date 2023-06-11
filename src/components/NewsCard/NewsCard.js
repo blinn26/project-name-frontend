@@ -93,7 +93,7 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNews, handleModalOpen, onDeleteN
             />
             <NewsCardPopup
               isOpen={showKeywordsPopup}
-              text={title ? keywords.join(', ') : 'No keywords available'}
+              text={keywords ? keywords.join(', ') : 'No keywords available'}
             />
             <button
               className='news-card__keywords'
