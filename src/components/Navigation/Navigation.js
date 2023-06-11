@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navigation.css';
 import logout from '../images/logout.svg';
@@ -10,14 +10,36 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
   const location = useLocation();
   const textColorClass = isLoggedIn ? 'text-black' : 'text-white';
   const [menuVisible, setMenu] = useState(false);
-  const showMenu = () => setMenu(!menuVisible);
+  const [menuBackground, setMenuBackground] = useState(false);
+
+  const showMenu = () => {
+    setMenu(!menuVisible);
+    setMenuBackground(!menuVisible);
+  };
+
+  const isHomePage = location.pathname === '/';
 
   const menuIcon = themeChange === 'light' ? menuLight : menuDark;
   const logoutIcon = themeChange === 'light' ? whiteLog : logout;
 
+  const [navigationBackground, setNavigationBackground] = useState('navigation');
+  console.log('Current theme: ', themeChange);
+
+  useEffect(() => {
+    let navBackground = 'navigation';
+    if (isHomePage && !menuBackground) {
+      navBackground += ' navigation_transparent';
+    } else if (menuBackground) {
+      navBackground += ' navigation_dark';
+    } else {
+      navBackground += ' navigation_light';
+    }
+    setNavigationBackground(navBackground);
+  }, [isHomePage, menuBackground]);
+
   return (
     <nav
-      className={`navigation ${!isLoggedIn ? 'transparent' : ''} ${menuVisible ? 'navigation_mobile' : ''}`}
+      className={`${navigationBackground} ${menuVisible ? 'navigation_mobile' : ''}`}
       data-theme={themeChange}>
       <div className='navigation__logo'>
         <p className='navigation__logo-text'>NewsExplorer</p>

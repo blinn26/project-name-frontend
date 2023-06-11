@@ -196,10 +196,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
     border-bottom: 1px solid var(--color-white);
     z-index: 1;
-
   }
 
   .navigation[data-theme='dark'] {
@@ -211,14 +209,16 @@
     border-bottom: 1px solid var(--color-black);
     background-color: black;
     color: var(--color-white);
-
   }
-
-
 
   .navigation[data-theme='light'] {
     color: var(--color-black);
     border-bottom: var(--color-black) solid;
+    background-color: white;
+  }
+
+  .navigation.navigation_transparent {
+    background-color: transparent;
   }
 
   .navigation__wrapper {
