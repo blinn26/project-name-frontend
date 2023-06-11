@@ -8,11 +8,12 @@ function formatDate(isoDate) {
   return date.toLocaleDateString(undefined, options);
 }
 
-const NewsCard = ({ newsItem, isLoggedIn, onSaveNews, handleModalOpen, onDeleteNewsItem, savedNews, keywords }) => {
+const NewsCard = ({ newsItem, isLoggedIn, onSaveNews, handleModalOpen, onDeleteNewsItem, savedNews }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [showBookmarkPopup, setShowBookmarkPopup] = useState(false);
   const [showRemovePopup, setShowRemovePopup] = useState(false);
-  const [showKeywordsPopup, setShowKeywordsPopup] = useState(false);
+
+  const keyword = newsItem && newsItem.title ? newsItem.title.split(' ')[0] : 'No keyword';
 
   if (!newsItem) {
     return <div>News item is not available</div>;
@@ -33,13 +34,6 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNews, handleModalOpen, onDeleteN
     }
   };
 
-  const handleKeywordsClick = () => {
-    setShowKeywordsPopup(true);
-    setTimeout(() => {
-      setShowKeywordsPopup(false);
-    }, 3000);
-  };
-
   const handleTrashClick = () => {
     if (showRemovePopup) {
       onDeleteNewsItem(newsItem);
@@ -47,6 +41,11 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNews, handleModalOpen, onDeleteN
     } else {
       setShowRemovePopup(true);
     }
+  };
+
+  const handleSaveClick = () => {
+    handleClick();
+    onSaveNews({ ...newsItem, keyword });
   };
 
   return (
@@ -91,24 +90,13 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNews, handleModalOpen, onDeleteN
               className='news-card__delete'
               onClick={handleTrashClick}
             />
-            <NewsCardPopup
-              isOpen={showKeywordsPopup}
-              text={keywords ? keywords.join(', ') : 'No keywords available'}
-            />
-            <button
-              className='news-card__keywords'
-              onClick={handleKeywordsClick}>
-              Show Keywords
-            </button>
+            <button className='news-card__keywords'>{keyword}</button>
             {savedNews ? (
               <></>
             ) : (
               <button
                 className={`news-card__save ${isClicked ? 'news-card__save-clicked' : ''}`}
-                onClick={() => {
-                  handleClick();
-                  onSaveNews(newsItem);
-                }}
+                onClick={handleSaveClick}
               />
             )}
           </>

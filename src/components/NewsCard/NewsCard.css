@@ -138,3 +138,10 @@
   background-image: url(../images/filledBookmark.svg);
   cursor: pointer;
 }
+
+.news-card-list-wrapper {
+
+  max-width: 1440px;
+  background-color: #F5F6F7;
+  padding: 360px;
+}

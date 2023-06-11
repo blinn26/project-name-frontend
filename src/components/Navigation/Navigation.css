@@ -122,7 +122,7 @@
 .navigation[data-theme='dark'] .navigation__saved-news-link {
   left: 360px;
   bottom: 66px;
-  position: absolute;
+
   text-align: center;
   text-decoration: none;
   font-family: "Roboto Slab", sans-serif;

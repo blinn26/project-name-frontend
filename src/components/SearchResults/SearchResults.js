@@ -1,17 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import NewsCard from '../NewsCard/NewsCard';
 import Preloader from '../Preloader/Preloader';
 import notFoundImg from '../images/ImageNotFound.png';
 
-const SearchResults = ({ news, onSaveNewsItem, onDeleteNewsItem, isLoggedIn, isLoading, isError, handleModalOpen }) => {
-  const [numNewsToShow, setNumNewsToShow] = useState(3);
-
+const SearchResults = ({
+  news,
+  onSaveNewsItem,
+  onDeleteNewsItem,
+  isLoggedIn,
+  isLoading,
+  isError,
+  handleModalOpen,
+  numNewsToShow,
+  setNumNewsToShow,
+  isSavedRoute,
+}) => {
   const handleClickShowMore = () => {
-    setNumNewsToShow(numNewsToShow + 3);
+    setNumNewsToShow((prevNumNewsToShow) => {
+      console.log('Current numNewsToShow:', prevNumNewsToShow);
+      console.log('Increasing numNewsToShow by 3');
+      return prevNumNewsToShow + 3;
+    });
   };
+
+  useEffect(() => {
+    console.log('Number of news items:', news.length);
+    console.log('News items:', news);
+  }, [news]);
 
   return (
     <div className='news-container'>
+      {!isSavedRoute && <h2 className='search-results-title'>Search Results</h2>}
       {isLoading ? (
         <Preloader />
       ) : isError ? (
@@ -37,17 +56,20 @@ const SearchResults = ({ news, onSaveNewsItem, onDeleteNewsItem, isLoggedIn, isL
       ) : (
         <>
           <div className='news-card-container'>
-            {news.slice(0, numNewsToShow).map((newsItem, index) => (
-              <NewsCard
-                className='news-card'
-                key={index}
-                newsItem={newsItem}
-                onSaveNews={onSaveNewsItem}
-                onDeleteNewsItem={onDeleteNewsItem}
-                isLoggedIn={isLoggedIn}
-                handleModalOpen={handleModalOpen}
-              />
-            ))}
+            {news.slice(0, numNewsToShow).map((newsItem, index) => {
+              console.log(`Rendering news item #${index + 1}:`, newsItem);
+              return (
+                <NewsCard
+                  className='news-card'
+                  key={index}
+                  newsItem={newsItem}
+                  onSaveNews={onSaveNewsItem}
+                  onDeleteNewsItem={onDeleteNewsItem}
+                  isLoggedIn={isLoggedIn}
+                  handleModalOpen={handleModalOpen}
+                />
+              );
+            })}
           </div>
           {news.length > numNewsToShow && (
             <button

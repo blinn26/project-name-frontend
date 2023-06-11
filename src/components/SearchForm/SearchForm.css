@@ -59,6 +59,16 @@
   margin-top: 8px;
 }
 
+.search-results-title {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1A1B22;
+  width: 712px;
+  height: 46px;
+}
+
 /* Modifier: header--tablet */
 @media (min-width: 768px) and (max-width: 1439px) {
   .search-form {
@@ -93,9 +103,23 @@
     right: 2px;
     box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
   }
+
+  .search-results-title {
+    font-size: 30px;
+    line-height: 34px;
+    width: 288px;
+    height: 34px;
+  }
 }
 
 @media (max-width: 320px) {
+
+  .search-results-title {
+    font-size: 30px;
+    line-height: 34px;
+    width: 288px;
+    height: 34px;
+  }
 
   .search-form {
     width: 288px;
@@ -124,4 +148,6 @@
     right: 2px;
     box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
   }
+
+
 }
