@@ -13,7 +13,7 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNew
   const [successModal, setSuccessModal] = useState(false);
   const navigate = useNavigate();
 
-  const isFormValid = isValidEmail && isValidUsername && isValidPassword; // update isFormValid
+  const isFormValid = isValidEmail && isValidUsername && isValidPassword;
 
   const validateUsername = (username) => {
     const re = /^[a-z0-9_-]{4,30}$/i;
@@ -47,7 +47,7 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNew
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
     if (isSignUp) {
-      setIsValidPassword(validatePassword(e.target.value)); // validate password
+      setIsValidPassword(validatePassword(e.target.value));
     }
   };
 
@@ -62,7 +62,7 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNew
       const user = JSON.parse(localStorage.getItem('user'));
       if (user && user.email === email && user.password === password) {
         navigate('/');
-        setSavedNews(user.savedArticles); // Changed this line
+        setSavedNews(user.savedArticles);
       } else {
         alert('Invalid credentials');
       }

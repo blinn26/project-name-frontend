@@ -5,7 +5,6 @@ const NewsComponents = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    // Simulate API call with delay
     setTimeout(() => {
       setData(stubData);
     }, 1000);
