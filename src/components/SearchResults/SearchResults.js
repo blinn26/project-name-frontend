@@ -17,8 +17,6 @@ const SearchResults = ({
 }) => {
   const handleClickShowMore = () => {
     setNumNewsToShow((prevNumNewsToShow) => {
-      console.log('Current numNewsToShow:', prevNumNewsToShow);
-      console.log('Increasing numNewsToShow by 3');
       return prevNumNewsToShow + 3;
     });
   };
@@ -57,7 +55,6 @@ const SearchResults = ({
         <>
           <div className='news-card-container'>
             {news.slice(0, numNewsToShow).map((newsItem, index) => {
-              console.log(`Rendering news item #${index + 1}:`, newsItem);
               return (
                 <NewsCard
                   className='news-card'

@@ -2,7 +2,6 @@ import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
 
 const NewsCardList = ({ news, isLoggedIn, onDeleteNewsItem, saveNewsItem, savedNews }) => {
-  console.log(onDeleteNewsItem);
   if (!news) {
     return <p>Loading...</p>;
   }

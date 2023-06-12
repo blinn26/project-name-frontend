@@ -23,7 +23,6 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
   const logoutIcon = themeChange === 'light' ? whiteLog : logout;
 
   const [navigationBackground, setNavigationBackground] = useState('navigation');
-  console.log('Current theme: ', themeChange);
 
   useEffect(() => {
     let navBackground = 'navigation';
