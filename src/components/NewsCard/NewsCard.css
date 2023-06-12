@@ -8,6 +8,10 @@
   background: center no-repeat;
   background-color: #fff;
   cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+
 
   @media screen and (max-width: 767px) {
     width: 288px;

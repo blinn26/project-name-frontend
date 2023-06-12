@@ -13,7 +13,6 @@
   background-color: transparent;
 }
 
-/* rest of your CSS stays the same */
 
 .navigation {
   display: flex;
@@ -119,10 +118,9 @@
   color: var(--color-black);
 }
 
-.navigation[data-theme='dark'] .navigation__saved-news-link {
+.navigation__saved-news-link {
   left: 360px;
   bottom: 66px;
-
   text-align: center;
   text-decoration: none;
   font-family: "Roboto Slab", sans-serif;
@@ -316,7 +314,7 @@
     display: none;
   }
 
-  .navigation[data-theme='light'] .navigation__home-link,
+  .navigation[data-theme='light'] .navigation[data-theme='light'] .navigation__home-link,
   .navigation[data-theme='light'] .navigation__user,
   .navigation[data-theme='dark'] .navigation__user {
     display: none;
@@ -336,5 +334,19 @@
 
   .navigation[data-theme='dark'] .navigation__saved-news-link-underline {
     display: none;
+  }
+
+  .navigation[data-theme='light'] .show__title {
+    display: none;
+  }
+
+  .navigation[data-theme='light'] .navigation__saved-news-link {
+    display: none;
+  }
+
+  .navigation[data-theme='dark'] .navigation__saved-news-link {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
   }
 }
