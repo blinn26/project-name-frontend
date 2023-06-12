@@ -65,7 +65,12 @@
   line-height: 46px;
   color: #1A1B22;
   width: 712px;
-  height: 46px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: flex-start;
+  margin-left: 104px;
+
 }
 
 @media (min-width: 768px) and (max-width: 1439px) {

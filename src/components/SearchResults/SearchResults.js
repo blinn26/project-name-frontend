@@ -28,7 +28,7 @@ const SearchResults = ({
 
   return (
     <div className='news-container'>
-      {!isSavedRoute && <h2 className='search-results-title'>Search Results</h2>}
+      {!isSavedRoute && !isLoading && <h2 className='search-results-title'>Search Results</h2>}
       {isLoading ? (
         <Preloader />
       ) : isError ? (
