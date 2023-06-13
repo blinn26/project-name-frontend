@@ -1,4 +1,4 @@
-const apiKey = process.env.REACT_APP_NEWS_API_KEY;
+const apiKey = '2d8aaebdf4e54754bea929b51cca0254';
 
 export const fetchNews = async (search) => {
   if (!apiKey) {

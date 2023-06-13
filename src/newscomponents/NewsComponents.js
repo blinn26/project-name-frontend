@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import stubData from '../utils/ThirdPartyApi';
+import { fetchNews } from '../utils/ThirdPartyApi';
 
 const NewsComponents = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    setTimeout(() => {
-      setData(stubData);
-    }, 1000);
+    const fetchData = async () => {
+      const result = await fetchNews('your_search_term');
+      setData(result);
+    };
+
+    fetchData();
   }, []);
 
   return (
     <div>
-      {data.map((item) => (
-        <p key={item.id}>{item.name}</p>
+      {data.map((item, index) => (
+        <p key={index}>{item.title}</p>
       ))}
     </div>
   );
