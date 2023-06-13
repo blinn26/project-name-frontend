@@ -73,13 +73,13 @@
 
 }
 
-@media (min-width: 768px) and (max-width: 1439px) {
+@media screen and (max-width: 1439px) {
   .search-form {
     width: 80%;
   }
 }
 
-@media screen and (min-width: 321px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .search-form {
     width: 288px;
     height: 56px;

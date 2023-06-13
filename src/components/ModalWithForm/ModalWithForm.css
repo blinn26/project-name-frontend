@@ -151,6 +151,18 @@
   border: 1px solid red;
 }
 
+@media screen and (max-width: 767px) {
+  .modal__button-close {
+    position: absolute;
+    top: -45px;
+    right: 5px;
+    background: url('../images/close.svg') center no-repeat;
+    width: 24px;
+    height: 23px;
+    border: none;
+    cursor: pointer;
+  }
+}
 
 @media (max-width: 320px) {
   .modal {
@@ -162,7 +174,7 @@
   .modal__button-close {
     position: absolute;
     top: -45px;
-    right: -6px;
+    right: 5px;
     background: url('../images/close.svg') center no-repeat;
     width: 24px;
     height: 23px;

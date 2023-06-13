@@ -41,13 +41,13 @@
   padding-bottom: 30px;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1439px) {
+@media only screen and (max-width: 1439px) {
   .header__content {
     width: 80%;
   }
 }
 
-@media only screen and (min-width: 321px) and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .header__content {
     width: 90%;
     margin: 0 auto;
