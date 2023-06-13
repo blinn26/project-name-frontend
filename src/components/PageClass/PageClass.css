@@ -1,15 +1,6 @@
  .page {
    max-width: 1440px;
+   margin: 0 auto 0 auto;
    background-color: white;
-   margin: 0 auto;
 
- }
-
-
-
- @media only screen and (max-width: 767px) {
-   .page {
-     width: 100%;
-     margin: 0 auto;
-   }
  }

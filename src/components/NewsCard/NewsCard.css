@@ -1,16 +1,15 @@
 .news-card {
   position: relative;
-  display: flex;
-  flex-direction: column;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 19px;
-  width: 400px;
   background: center no-repeat;
   background-color: #fff;
-  cursor: pointer;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: normal;
+  width: 400px;
+  height: 576px;
+  margin: 64px 16px 64px 0;
+  padding: 0 0 24px;
+  background-color: var(--main-white);
+
 
 }
 
@@ -27,12 +26,13 @@
 
 .news-card__image {
   width: calc(100% + 32px);
-  height: 100%;
   border-top-left-radius: 19px;
   border-top-right-radius: 19px;
   object-fit: cover;
   cursor: pointer;
   width: 400px;
+  height: 272px;
+  margin: 0 0 20px;
 
 
 }
@@ -42,6 +42,16 @@
   color: #b6bcbf;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
+  width: 145px;
+  height: 24px;
+  flex-grow: 0;
+  margin: 20px 233px 0 22px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #b6bcbf;
   font-size: 18px;
   line-height: 1.33em;
   margin: 20px 0 0 24px;
@@ -58,11 +68,18 @@
   white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
+  height: 30px;
+  flex-grow: 0;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
   text-align: left;
-  padding: 0 12px 0 12px;
+  text-align: left;
   word-wrap: break-word;
   hyphens: auto;
-
+  display: block;
+  padding-left: 24px;
 }
 
 .news-card__description {
@@ -74,6 +91,13 @@
   white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 352px;
+  height: 88px;
+  flex-grow: 0;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  text-align: left;
   margin: 16px 24px 0 24px;
   word-wrap: break-word;
   hyphens: auto;
@@ -81,15 +105,21 @@
 }
 
 .news-card__source {
-  width: 192px;
+  width: 352px;
   height: 20px;
   font-family: 'Roboto Slab', serif;
   font-size: 16px;
-  font-weight: 700;
   color: #b6bcbf;
   margin-left: 24px;
+  flex-grow: 0;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: 0.4px;
+  text-align: left;
   cursor: pointer;
   visibility: visible;
+
 }
 
 .news-card__save {
