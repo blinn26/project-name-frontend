@@ -3,11 +3,13 @@
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 19px;
   background: center no-repeat;
+  background-size: 328px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   background-color: #fff;
   width: 400px;
   height: 576px;
-  margin: 64px 16px 64px 0;
-  padding: 0 0 24px;
   background-color: var(--main-white);
   overflow: hidden;
 
@@ -109,7 +111,6 @@
   font-family: 'Roboto Slab', serif;
   font-size: 16px;
   color: #b6bcbf;
-  margin-left: 16px;
   text-align: left;
   cursor: pointer;
   overflow: hidden;
@@ -190,6 +191,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+
+
 }
 
 
@@ -197,6 +200,7 @@
   .news-card-container {
     grid-template-columns: repeat(3, 224px);
     justify-content: space-between;
+    position: relative;
 
   }
 
@@ -245,35 +249,6 @@
 
 }
 
-/* 
-@media screen and (max-width: 320px) {
-  .news-card-container {
-    grid-template-columns: 1, 1fr;
-    grid-template-rows: auto;
-  }
-
-  .news-container {
-    width: 320px;
-    height: 1568px;
-
-    flex-shrink: 1;
-    background-color: rgba(245, 246, 247, 1)
-  }
-
-  .news-card {
-    width: 288px;
-    height: 440px;
-    flex-grow: 0;
-    background-color: var(--main-white);
-  }
-
-  .news-card__image {
-    width: 288px;
-    height: 196px;
-    margin: 0 0 16px;
-
-
-  } */
 @media screen and (max-width: 320px) {
   .news-card-container {
     grid-gap: 10px;
@@ -282,38 +257,27 @@
 
   .news-container {
     padding: 20px;
-    /* Adjust padding to ensure the cards fit within the container */
   }
 
   .news-card {
-    width: 90%;
-    /* Provide a percentage width to be responsive */
-    padding: 10px;
-    /* Add padding if needed */
+    width: 224px;
+    height: 420px;
   }
 
   .news-card__image {
-    width: 100%;
-    /* Allow image to take the full width of the card */
-    height: auto;
-    /* Use auto to keep aspect ratio of image */
+    width: 224px;
+    height: 150px;
   }
 
 
 
   .news-card__date {
-    width: 256px;
-    flex-grow: 0;
-    margin: 16px 16px 10px;
-    font-family: SourceSansPro;
-    font-size: 18px;
-
-    text-align: left;
-    color: #b6bcbf;
+    font-size: 17px;
+    margin: 16px 0 0 16px;
   }
 
   .news-card__title {
-    width: 256px;
+    width: 192px;
     flex-grow: 0;
     margin: 0px 0px -4px;
     font-size: 22px;
@@ -322,26 +286,23 @@
   }
 
   .news-card__description {
-    width: 256px;
+    width: 192px;
     flex-grow: 0;
-    margin: 14px 16px 31px;
+    /* margin: 14px 16px 31px; */
     font-family: Roboto;
     font-size: 16px;
-
     text-align: left;
     color: #1a1b22;
   }
 
   .news-card__source {
-    width: 256px;
+    width: 192px;
     flex-grow: 0;
     font-family: RobotoSlab;
     font-size: 16px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.25;
-    letter-spacing: 0.4px;
     text-align: left;
     color: #b6bcbf;
   }
