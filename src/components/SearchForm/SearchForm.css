@@ -58,7 +58,7 @@
   margin-top: 8px;
 }
 
-.search-results-title {
+/* .search-results-title {
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
   font-size: 40px;
@@ -71,7 +71,7 @@
   align-self: flex-start;
   margin-left: 104px;
 
-}
+} */
 
 @media screen and (max-width: 1439px) {
   .search-form {
@@ -107,17 +107,17 @@
     box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
   }
 
-  .search-results-title {
+  /* .search-results-title {
     font-size: 30px;
     line-height: 34px;
     width: 288px;
     height: 34px;
-  }
+  } */
 }
 
 @media (max-width: 320px) {
 
-  .search-results-title {
+  /* .search-results-title {
     width: 288px;
     height: 34px;
     flex-grow: 0;
@@ -131,7 +131,7 @@
     letter-spacing: normal;
     text-align: left;
     color: #1a1b22;
-  }
+  } */
 
   .search-form {
     width: 288px;

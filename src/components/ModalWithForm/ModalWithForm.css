@@ -152,6 +152,8 @@
 }
 
 @media screen and (max-width: 767px) {
+
+
   .modal__button-close {
     position: absolute;
     top: -45px;
@@ -166,9 +168,9 @@
 
 @media (max-width: 320px) {
   .modal {
-    width: 100%;
     max-width: 320px;
-    max-height: 560px;
+
+
   }
 
   .modal__button-close {

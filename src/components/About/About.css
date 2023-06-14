@@ -43,9 +43,7 @@
 }
 
 @media screen and (max-width: 1439px) {
-  .about {
-    padding: 30px;
-  }
+
 
   .about__image {
     width: 232px;
@@ -93,5 +91,6 @@
 
   .about__text {
     font-size: 14px;
+    margin-right: 20px;
   }
 }

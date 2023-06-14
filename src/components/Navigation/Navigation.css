@@ -196,7 +196,7 @@
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .navigation {
     padding: 0 20px;
     flex-wrap: wrap;
@@ -238,10 +238,11 @@
     position: absolute;
     top: 81px;
     left: 0;
-    width: 100vw;
+    right: 0;
     flex-direction: column;
     display: block;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
+
     background-color: var(--color-light-theme-bg);
   }
 
@@ -309,7 +310,173 @@
   }
 
   .navigation[data-theme='dark'] .navigation__button.signIn {
-    width: 320px;
+    width: 300px;
+    margin: auto;
+    display: block;
+    text-align: center;
+  }
+
+  .navigation__home-link {
+    display: flex;
+    padding: 0 20px;
+  }
+
+  .navigation__home-link-underline {
+    display: none;
+  }
+
+  .navigation[data-theme='light'] .navigation[data-theme='light'] .navigation__home-link,
+  .navigation[data-theme='light'] .navigation__user,
+  .navigation[data-theme='dark'] .navigation__user {
+    display: none;
+  }
+
+  .navigation[data-theme='light'] .navigation__wrapper.show__menu {
+    background: var(--color-light-theme-bg);
+  }
+
+  .navigation[data-theme='dark'] .navigation__wrapper.show__menu {
+    background: var(--color-dark-theme-bg);
+  }
+
+  .navigation[data-theme='light'] .navigation__saved-news-link-underline {
+    display: none;
+  }
+
+  .navigation[data-theme='dark'] .navigation__saved-news-link-underline {
+    display: none;
+  }
+
+  .navigation[data-theme='light'] .show__title {
+    display: none;
+  }
+
+  .navigation[data-theme='light'] .navigation__saved-news-link {
+    display: none;
+  }
+
+  .navigation[data-theme='dark'] .navigation__saved-news-link {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .navigation {
+    padding: 0 20px;
+    flex-wrap: wrap;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-white);
+    z-index: 1;
+  }
+
+  .navigation[data-theme='dark'] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: -3px 50px;
+    border-bottom: 1px solid var(--color-black);
+    background-color: black;
+    color: var(--color-white);
+  }
+
+  .navigation[data-theme='light'] {
+    color: var(--color-black);
+    border-bottom: var(--color-black) solid;
+    background-color: white;
+  }
+
+  .navigation.navigation_transparent {
+    background-color: transparent;
+  }
+
+  .navigation__wrapper {
+    display: none;
+  }
+
+  .navigation[data-theme='dark'] .navigation__wrapper.show__menu,
+  .navigation[data-theme='light'] .navigation__wrapper.show__menu {
+    position: absolute;
+    top: 81px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    display: block;
+    margin-bottom: 20px;
+
+    background-color: var(--color-light-theme-bg);
+  }
+
+  .navigation__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navigation__hamburger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navigation__hamburger-menu {
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navigation[data-theme='dark'] {
+
+    border-bottom: 1px solid var(--color-white);
+  }
+
+  .navigation[data-theme='light'] {
+    border-bottom: 1px solid var(--color-black);
+  }
+
+  .navigation__hamburger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navigation[data-theme='dark'] .navigation__hamburger-menu {
+    color: var(--color-white);
+  }
+
+  .navigation[data-theme='light'] .navigation__hamburger-menu {
+    color: var(--color-black);
+  }
+
+  .navigation__log {
+    display: block;
+    color: var(--color-white);
+  }
+
+  .navigation[data-theme='dark'] .navigation__log img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .navigation[data-theme='light'] .navigation__log {
+    color: var(--color-black);
+  }
+
+  .navigation[data-theme='dark'] .navigation__log,
+  .navigation[data-theme='light'] .navigation__log {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+
+  .navigation[data-theme='dark'] .navigation__button.signIn {
+    width: 300px;
     margin: auto;
     display: block;
     text-align: center;

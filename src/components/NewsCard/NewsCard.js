@@ -66,18 +66,20 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNews, handleModalOpen, onDeleteN
           />
         </a>
       ) : (
-        <h3 className='news-card__placeholder'>Image could not be found</h3>
+        <h3 className='news-card__placeholder'>No Image Found</h3>
       )}
       <div className='news-card__content'>
-        <p className='news-card__date'>{publishedAt ? formatDate(publishedAt) : 'Date not available'}</p>
-        <a
-          href={url}
-          target='_blank'
-          rel='noreferrer'
-          className='news-card__title'>
-          {title || 'Title not available'}
-        </a>
-        <p className='news-card__description'>{description || 'Description not available'}</p>
+        <div>
+          <p className='news-card__date'>{publishedAt ? formatDate(publishedAt) : 'Date not available'}</p>
+          <a
+            href={url}
+            target='_blank'
+            rel='noreferrer'
+            className='news-card__title'>
+            {title || 'Title not available'}
+          </a>
+          <p className='news-card__description'>{description || 'Description not available'}</p>
+        </div>
         <h4 className='news-card__source'>{sourceName}</h4>
 
         {isLoggedIn ? (

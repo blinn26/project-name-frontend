@@ -3,6 +3,8 @@
   justify-content: center;
   align-items: center;
   background-color: #F5F6F7;
+  padding: 80px;
+  min-height: 240px;
 }
 
 .circle-preloader {
