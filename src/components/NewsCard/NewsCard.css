@@ -217,7 +217,7 @@
   padding-top: 20px
 }
 
-@media screen and (min-width: 881px) and (max-width: 1439px) {
+@media screen and (min-width: 768px) and (max-width: 1439px) {
   .news-card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -255,7 +255,7 @@
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 880px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .search-results-title {
     font: size 40px;
     margin-left: 25px;
@@ -263,7 +263,7 @@
 
   .news-card-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
 
 
