@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navigation.css';
-import logout from '../images/logout.svg';
-import menuDark from '../images/menu.svg';
-import menuLight from '../images/menuBlack.svg';
-import whiteLog from '../images/whiteLog.svg';
+import logout from '../../images/logout.svg';
+import menuDark from '../../images/menu.svg';
+import menuLight from '../../images/menuBlack.svg';
+import whiteLog from '../../images/whiteLog.svg';
 
 const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) => {
   const location = useLocation();

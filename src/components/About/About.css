@@ -3,9 +3,6 @@
   padding: 86px 0;
   padding-right: 50px;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  cursor: pointer;
 }
 
 .about__image {
@@ -18,8 +15,7 @@
 }
 
 .about__text-container {
-  width: 600px;
-  margin: 50px 0 0 56px;
+  padding: 20px 20px 20px 20px;
   font-weight: 400;
   color: #1a1b22;
   cursor: pointer;
@@ -51,10 +47,7 @@
     border-radius: 200px;
   }
 
-  .about__text-container {
-    width: 80%;
-    padding: 20px 0;
-  }
+
 
   .about__title {
     font-size: 30px;
@@ -67,7 +60,6 @@
 
 @media screen and (max-width: 767px) {
   .about {
-    padding: 30px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -82,6 +74,7 @@
   .about__text-container {
     width: 100%;
     margin-top: 20px;
+    margin-left: 20px;
   }
 
   .about__title {

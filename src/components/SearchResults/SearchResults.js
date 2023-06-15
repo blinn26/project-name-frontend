@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import NewsCard from '../NewsCard/NewsCard';
 import Preloader from '../Preloader/Preloader';
-import notFoundImg from '../images/ImageNotFound.png';
+import notFoundImg from '../../images/ImageNotFound.png';
 
 const SearchResults = ({
   news,

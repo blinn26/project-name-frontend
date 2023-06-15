@@ -1,5 +1,5 @@
 import React from 'react';
-import spinningCircle from '../images/Ellipse.png';
+import spinningCircle from '../../images/Ellipse.png';
 import './Preloader.css';
 
 const Preloader = () => (
