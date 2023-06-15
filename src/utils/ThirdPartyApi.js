@@ -1,3 +1,5 @@
+import templateData from './templateData.json';
+
 const apiKey = '2d8aaebdf4e54754bea929b51cca0254';
 
 export const fetchNews = async (search) => {
@@ -16,6 +18,13 @@ export const fetchNews = async (search) => {
     return data.articles;
   } catch (error) {
     console.error('Error fetching news:', error);
-    throw error;
+
+    console.warn('Falling back to local JSON data');
+
+    if (templateData && templateData.articles && Array.isArray(templateData.articles)) {
+      return templateData.articles;
+    } else {
+      throw new Error('Local JSON data is not in correct format');
+    }
   }
 };
