@@ -95,7 +95,7 @@
   position: absolute;
   top: -30px;
   right: -30px;
-  background: url('../images/close.svg') center no-repeat;
+  background: url('../../images/closeButton.svg') center no-repeat;
   width: 24px;
   height: 23px;
   border: none;
@@ -158,7 +158,7 @@
     position: absolute;
     top: -45px;
     right: 5px;
-    background: url('') center no-repeat;
+    background: url('../../images/closeButton.svg') center no-repeat;
     width: 24px;
     height: 23px;
     border: none;
@@ -177,7 +177,7 @@
     position: absolute;
     top: -45px;
     right: 5px;
-    background: url('') center no-repeat;
+    background: url('../../images/closeButton.svg') center no-repeat;
     width: 24px;
     height: 23px;
     border: none;
