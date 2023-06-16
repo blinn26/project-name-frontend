@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <footer className='footer'>
       <div className='footer__left'>
-        <p className='footer__copyright'>© 2023 Ben Linn</p>
+        <p className='footer__copyright'>© 2023 SuperSite, Powered by News API Ben Linn</p>
       </div>
       <div className='footer__links'>
         <Link
