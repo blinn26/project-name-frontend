@@ -196,7 +196,7 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .navigation {
     padding: 0 20px;
     flex-wrap: wrap;
