@@ -4,9 +4,9 @@ import './Footer.css';
 import github from '../../images/github.svg';
 import linkedIn from '../../images/linkedin.svg';
 import twitter from '../../images/twitter.svg';
-import tripleten from '../../images/tripleten.png';
+import tripleten from '../../images/trip10.svg';
 import home from '../../images/home.svg';
-import apiLogo from '../../images/news.jpeg';
+import apiLogo from '../../images/NewsAPILogo.svg';
 
 const Footer = () => {
   const handleNavigation = (url) => {
