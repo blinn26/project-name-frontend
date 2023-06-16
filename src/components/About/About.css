@@ -11,14 +11,12 @@
   border-radius: 400px;
   border: 5px solid #1A1B22;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
 }
 
 .about__text-container {
   padding: 20px 20px 20px 20px;
   font-weight: 400;
   color: #1a1b22;
-  cursor: pointer;
 }
 
 .about__title {
@@ -27,7 +25,6 @@
   line-height: 1.15em;
   font-weight: 400;
   margin: 0;
-  cursor: pointer;
 }
 
 .about__text {
@@ -35,7 +32,6 @@
   font-style: normal;
   font-size: 18px;
   line-height: 1.33em;
-  cursor: pointer;
 }
 
 @media screen and (max-width: 1439px) {

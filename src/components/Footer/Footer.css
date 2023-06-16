@@ -29,6 +29,10 @@
   background-color: transparent;
 }
 
+.footer__icon-twitter {
+  height: 24px;
+}
+
 .footer__icon,
 .footer__home-icon,
 .footer__tripleten-icon,
@@ -53,8 +57,9 @@
 
 .footer__home-icon:hover,
 .footer__icon:hover,
-.footer__footer__tripleten-icon,
-.footer__api-button:hover {
+.footer__tripleten-icon:hover,
+.footer__api-button:hover,
+.footer__icon-twitter:hover {
   opacity: 0.6;
   cursor: pointer;
 }

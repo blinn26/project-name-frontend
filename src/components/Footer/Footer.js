@@ -37,6 +37,7 @@ const Footer = () => {
             className='footer__icon-twitter'
           />
         </button>
+
         <button
           onClick={() => handleNavigation('https://www.linkedin.com/in/ben-linn-coding4l/')}
           className='footer__button'>
