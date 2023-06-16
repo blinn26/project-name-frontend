@@ -39,6 +39,7 @@
 .footer__icon-twitter {
   height: 24px;
   margin-right: 40px;
+
 }
 
 .footer__api-icon {
@@ -47,6 +48,10 @@
 
 .footer__home-icon {
   width: 49px;
+  font-family: "Roboto",
+    sans-serif;
+  font-size: 18px;
+  color: #1A1B22;
 }
 
 .footer__tripleten-icon {
