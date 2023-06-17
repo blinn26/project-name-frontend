@@ -56,10 +56,6 @@
   margin-top: 8px;
 }
 
-
-/*... your existing styles ...*/
-
-/* Input field hover state */
 .search-form__input:hover {
   background-color: #B6BCBF;
   color: black;
@@ -69,14 +65,13 @@
   background-color: white;
   color: black;
 
-  ;
+
 }
 
 .search-form__button.typing {
   color: black;
 }
 
-/* Button result state */
 .search-form__button.done {
   background-color: grey;
 
