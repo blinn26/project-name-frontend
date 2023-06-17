@@ -4,9 +4,11 @@ import './SearchForm.css';
 const SearchForm = ({ handleSearchSubmit }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [error, setError] = useState('');
+  const [searchDone, setSearchDone] = useState(false);
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
+    setSearchDone(false);
   };
 
   const handleSubmit = (event) => {
@@ -17,6 +19,7 @@ const SearchForm = ({ handleSearchSubmit }) => {
       handleSearchSubmit(searchTerm);
       setSearchTerm('');
       setError('');
+      setSearchDone(true);
     }
   };
 
@@ -30,12 +33,12 @@ const SearchForm = ({ handleSearchSubmit }) => {
           value={searchTerm}
           onChange={handleChange}
           placeholder='Enter topic'
-          className='search-form__input'
+          className={`search-form__input ${searchTerm && 'typing'}`}
         />
         {error && <span className='search-form__error'>{error}</span>}
         <button
           type='submit'
-          className='search-form__button'>
+          className={`search-form__button ${searchTerm && 'typing'} ${searchDone && 'done'}`}>
           Search
         </button>
       </div>

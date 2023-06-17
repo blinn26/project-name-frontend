@@ -22,7 +22,7 @@
   border: none;
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
-  color: #182188;
+  color: black;
   border-radius: 100px;
   outline: none;
   flex-grow: 1;
@@ -34,11 +34,11 @@
 }
 
 .search-form__button {
-  background: gray;
+  background: white;
   width: 168px;
   height: 64px;
   border: none;
-  color: white;
+  color: black;
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
   cursor: pointer;
@@ -56,6 +56,37 @@
   margin-top: 8px;
 }
 
+
+/*... your existing styles ...*/
+
+/* Input field hover state */
+.search-form__input:hover {
+  background-color: #B6BCBF;
+  color: black;
+}
+
+.search-form__button:hover {
+  background-color: white;
+  color: black;
+
+  ;
+}
+
+.search-form__button.typing {
+  color: black;
+}
+
+/* Button result state */
+.search-form__button.done {
+  background-color: grey;
+
+  ;
+}
+
+.search-form__input--error,
+.search-form__button.error {
+  color: red;
+}
 
 @media screen and (max-width: 1439px) {
   .search-form {
@@ -91,6 +122,11 @@
   }
 
 
+  .search-form__button.typing {
+    background-color: white;
+    color: black;
+
+  }
 }
 
 @media (max-width: 320px) {

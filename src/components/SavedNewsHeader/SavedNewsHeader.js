@@ -14,15 +14,17 @@ const SavedNewsHeader = ({ username, savedArticlesCount, keywords, savedNews, is
           By keywords: <span className='saved__bold'>{keywords.join(', ')}</span>
         </p>
       </div>
-      <div className='news-card-list-wrapper'>
-        <NewsCardList
-          news={savedNews}
-          isLoggedIn={isLoggedIn}
-          onDeleteNewsItem={onDeleteNewsItem}
-          keywords={keywords}
-          savedNews
-        />
-      </div>
+      {savedNews && savedNews.length > 0 && (
+        <div className='news-card-list-wrapper'>
+          <NewsCardList
+            news={savedNews}
+            isLoggedIn={isLoggedIn}
+            onDeleteNewsItem={onDeleteNewsItem}
+            keywords={keywords}
+            savedNews
+          />
+        </div>
+      )}
     </>
   );
 };
