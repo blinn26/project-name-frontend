@@ -154,6 +154,7 @@
   margin-right: 20px;
   background-color: var(--btn-bg-color);
   color: var(--btn-text-color);
+  cursor: pointer;
 }
 
 .navigation[data-theme='light'] .navigation__home-link-text {
@@ -242,7 +243,7 @@
     flex-direction: column;
     display: block;
     margin-bottom: 20px;
-
+    padding-bottom: 20px;
     background-color: var(--color-light-theme-bg);
   }
 
@@ -337,6 +338,7 @@
 
   .navigation[data-theme='dark'] .navigation__wrapper.show__menu {
     background: var(--color-dark-theme-bg);
+
   }
 
   .navigation[data-theme='light'] .navigation__saved-news-link-underline {

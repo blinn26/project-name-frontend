@@ -83,6 +83,7 @@
 }
 
 .modal__button-submit_disabled {
+  cursor: pointer;
   background-color: #E6E8EB;
   cursor: not-allowed;
   color: gray;
@@ -109,8 +110,7 @@
   cursor: pointer;
 }
 
-.modal__label,
-.modal__error-message {
+.modal__label {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 12px;
@@ -131,6 +131,11 @@
   display: flex;
   justify-content: center;
   width: auto;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  cursor: pointer;
 }
 
 .input-group {
