@@ -18,7 +18,7 @@ const Footer = () => {
       <div className='footer__left'>
         <p className='footer__copyright'>© 2023 SuperSite, Powered by News API Ben Linn</p>
       </div>
-      <div className='footer__links'>
+      <nav className='footer__links'>
         <Link
           to='/'
           className='footer__button footer__home-button'>
@@ -74,7 +74,7 @@ const Footer = () => {
             className='footer__api-icon'
           />
         </button>
-      </div>
+      </nav>
     </footer>
   );
 };

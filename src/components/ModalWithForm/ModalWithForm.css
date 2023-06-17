@@ -27,8 +27,6 @@
 .modal {
   box-sizing: border-box;
   max-width: 430px;
-  max-height: 458px;
-  width: 80%;
   background: #FFFFFF;
   border: 1px solid #CFCFCF;
   border-radius: 16px;
@@ -124,14 +122,15 @@
   color: #2F71E5;
   margin-bottom: 5px;
   cursor: pointer;
+  margin-left: 5px;
 }
 
 .modal__error-message {
   color: #FF0000;
   text-align: center;
-  width: 200px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  width: auto;
 }
 
 .input-group {
@@ -149,6 +148,14 @@
 
 .invalid {
   border: 1px solid red;
+}
+
+
+.input-and-error {
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 @media screen and (max-width: 767px) {

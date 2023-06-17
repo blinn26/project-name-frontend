@@ -1,40 +1,87 @@
 import React, { useState } from 'react';
 import ModalWithForm from '../ModalWithForm/ModalWithForm';
 import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
 
 function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNews }) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [isSignUp, setIsSignUp] = useState(true);
+  const [isValidEmail, setIsValidEmail] = useState(true);
+  const [isValidUsername, setIsValidUsername] = useState(true);
+  const [isValidPassword, setIsValidPassword] = useState(true);
   const [successModal, setSuccessModal] = useState(false);
   const navigate = useNavigate();
 
-  const isValid = Object.keys(errors).length === 0;
+  const isFormValid = isValidEmail && isValidUsername && isValidPassword;
 
-  const onSubmit = (data) => {
+  const validateUsername = (username) => {
+    const re = /^[a-z0-9_-]{4,30}$/i;
+    return re.test(username);
+  };
+
+  const validateEmail = (email) => {
+    const re = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/gim;
+    return re.test(email);
+  };
+
+  const validatePassword = (password) => {
+    const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,30}$/;
+    return re.test(password);
+  };
+
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
     if (isSignUp) {
-      localStorage.setItem('user', JSON.stringify({ ...data, savedArticles: [] }));
+      setIsValidUsername(validateUsername(e.target.value));
+    }
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    if (isSignUp) {
+      setIsValidEmail(validateEmail(e.target.value));
+    }
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    if (isSignUp) {
+      setIsValidPassword(validatePassword(e.target.value));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (isSignUp) {
+      localStorage.setItem('user', JSON.stringify({ username, email, password, savedArticles: [] }));
       setSuccessModal(true);
       navigate('/');
       handleLogin();
+      setIsOpen(false);
     } else {
       const user = JSON.parse(localStorage.getItem('user'));
-      if (user && user.email === data.email && user.password === data.password) {
+      if (user && user.email === email && user.password === password) {
         navigate('/');
         setSavedNews(user.savedArticles);
+        setIsOpen(false);
       } else {
         alert('Invalid credentials');
       }
     }
+    setUsername('');
+    setEmail('');
+    setPassword('');
     onClose();
   };
 
   const toggleForm = () => {
     setIsSignUp(!isSignUp);
+    setUsername('');
+    setEmail('');
+    setPassword('');
+    setIsValidEmail(true);
+    setIsValidUsername(true);
   };
 
   return (
@@ -42,59 +89,79 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNew
       <ModalWithForm
         title={isSignUp ? 'Sign Up' : 'Sign In'}
         isOpen={isOpen}
-        onClose={onClose}
-        onSubmit={handleSubmit(onSubmit)}>
-        <label className='modal__label'>Email</label>
-        <input
-          className={`modal__input ${errors.email ? 'invalid' : ''}`}
-          type='email'
-          {...register('email', {
-            required: 'This field is required',
-            pattern: {
-              value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/gim,
-              message: 'Invalid email format',
-            },
-          })}
-          placeholder='Email'
-        />
-        {errors.email && <span className='modal__error-message'>{errors.email.message}</span>}
-        <label className='modal__label'>Password</label>
-        <input
-          className={`modal__input ${errors.password ? 'invalid' : ''}`}
-          type='password'
-          {...register('password', {
-            required: 'This field is required',
-            pattern: {
-              value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,30}$/,
-              message: 'Invalid password format',
-            },
-          })}
-          placeholder='Password'
-        />
-        {errors.password && <span className='modal__error-message'>{errors.password.message}</span>}
+        onClose={() => setIsOpen(false)}
+        onSubmit={handleSubmit}>
+        <label
+          className='modal__label'
+          htmlFor='email-input'>
+          Email
+        </label>
+        <div className='input-group'>
+          <div className='input-and-error'>
+            <input
+              id='email-input'
+              className={`modal__input ${!isValidEmail ? 'invalid' : ''}`}
+              type='email'
+              value={email}
+              onChange={handleEmailChange}
+              placeholder='Email'
+              required
+            />
+            {!isValidEmail && <span className='modal__error-message'>This email is not available</span>}
+          </div>
+        </div>
+        <label
+          className='modal__label'
+          htmlFor='password-input'>
+          Password
+        </label>
+        <div className='input-group'>
+          <div className='input-and-error'>
+            <input
+              id='password-input'
+              className={`modal__input ${!isValidPassword ? 'invalid' : ''}`}
+              type='password'
+              value={password}
+              onChange={handlePasswordChange}
+              placeholder='Password'
+              required
+            />
+            {!isValidPassword && (
+              <span className='modal__error-message'>
+                Invalid password. It must be 8-30 characters long, include at least one upper case letter, one lower
+                case letter, one digit, and one special character.
+              </span>
+            )}
+          </div>
+        </div>
         {isSignUp && (
           <>
-            <label className='modal__label'>Username</label>
-            <input
-              className={`modal__input ${errors.username ? 'invalid' : ''}`}
-              type='text'
-              {...register('username', {
-                required: 'This field is required',
-                pattern: {
-                  value: /^[a-z0-9_-]{4,30}$/i,
-                  message: 'Invalid username format',
-                },
-              })}
-              placeholder='Username'
-            />
-            {errors.username && <span className='modal__error-message'>{errors.username.message}</span>}
+            <label
+              className='modal__label'
+              htmlFor='username-input'>
+              Username
+            </label>
+            <div className='input-group'>
+              <div className='input-and-error'>
+                <input
+                  id='username-input'
+                  className={`modal__input ${!isValidUsername ? 'invalid' : ''}`}
+                  type='text'
+                  value={username}
+                  onChange={handleUsernameChange}
+                  placeholder='Username'
+                  required
+                />
+                {!isValidUsername && <span className='modal__error-message'>This username is not available</span>}
+              </div>
+            </div>
           </>
         )}
         <button
-          className={`modal__button-submit ${!isValid ? 'modal__button-submit_disabled' : ''}`}
+          className={`modal__button-submit ${!isFormValid ? 'modal__button-submit_disabled' : ''}`}
           type='submit'
-          disabled={!isValid}>
-          {isSignUp ? 'Sign Up' : 'Sign In'}
+          disabled={!isFormValid}>
+          {isSignUp ? ' Sign Up' : ' Sign In'}
         </button>
         <p className='modal__alternative'>
           <span className='modal__alternative-or'> or </span>
@@ -109,14 +176,16 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNew
         title='Success'
         className='modal__success'
         isOpen={successModal}
-        onClose={() => setSuccessModal(false)}>
+        onClose={() => {
+          setSuccessModal(false);
+          setIsOpen(false);
+        }}>
         <h1 className='modal__title-success'>Registration Successfully completed!</h1>
         <p className='modal__alternative'>
           <span
             className='modal__alternative-action'
             onClick={() => {
               setSuccessModal(false);
-              setIsSignUp(false);
               setIsOpen(true);
             }}>
             Sign in
