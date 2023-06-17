@@ -29,26 +29,19 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNew
     const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,30}$/;
     return re.test(password);
   };
-
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
-    if (isSignUp) {
-      setIsValidUsername(validateUsername(e.target.value));
-    }
+    setIsValidUsername(validateUsername(e.target.value));
   };
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
-    if (isSignUp) {
-      setIsValidEmail(validateEmail(e.target.value));
-    }
+    setIsValidEmail(validateEmail(e.target.value));
   };
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
-    if (isSignUp) {
-      setIsValidPassword(validatePassword(e.target.value));
-    }
+    setIsValidPassword(validatePassword(e.target.value));
   };
 
   const handleSubmit = async (e) => {
