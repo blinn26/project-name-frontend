@@ -32,7 +32,7 @@ const SearchForm = ({ handleSearchSubmit }) => {
           type='text'
           value={searchTerm}
           onChange={handleChange}
-          placeholder='Enter topic'
+          placeholder='Text not entered'
           className={`search-form__input ${error && 'search-form__input--error'} ${searchTerm && 'typing'}`}
         />
         {error && <span className='search-form__error'>{error}</span>}

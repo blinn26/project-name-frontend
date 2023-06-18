@@ -6,7 +6,7 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNew
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isSignUp, setIsSignUp] = useState(true);
+  const [isSignUp, setIsSignUp] = useState(false);
   const [isValidEmail, setIsValidEmail] = useState(true);
   const [isValidUsername, setIsValidUsername] = useState(true);
   const [isValidPassword, setIsValidPassword] = useState(true);
@@ -78,11 +78,14 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNew
   };
 
   return (
-    <div>
+    <>
       <ModalWithForm
         title={isSignUp ? 'Sign Up' : 'Sign In'}
         isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
+        onClose={() => {
+          setIsOpen(false);
+          setIsSignUp(false);
+        }}
         onSubmit={handleSubmit}>
         <label
           className='modal__label'
@@ -157,14 +160,15 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNew
           {isSignUp ? ' Sign Up' : ' Sign In'}
         </button>
         <p className='modal__alternative'>
-          <span className='modal__alternative-or'> or </span>
+          <span className='modal__alternative-or'>or</span>&nbsp;
           <span
             className='modal__alternative-action'
             onClick={toggleForm}>
-            {isSignUp ? ' Sign In' : ' Sign Up'}
+            {isSignUp ? 'Sign In' : 'Sign Up'}
           </span>
         </p>
       </ModalWithForm>
+
       <ModalWithForm
         title='Success'
         className='modal__success'
@@ -185,7 +189,7 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNew
           </span>
         </p>
       </ModalWithForm>
-    </div>
+    </>
   );
 }
 
