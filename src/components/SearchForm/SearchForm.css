@@ -29,7 +29,7 @@
 }
 
 .search-form__input::placeholder {
-  color: #ffffff;
+  color: gray;
   cursor: pointer;
 }
 
@@ -59,7 +59,7 @@
 .search-form__input:hover,
 .search-form__input:focus {
   background-color: #ffffff;
-  color: #B6BCBF;
+  color: black;
 }
 
 .search-form__button.typing {
@@ -88,13 +88,14 @@
     width: 288px;
     height: 56px;
     background-color: white;
+    color: black;
     position: relative;
     border-radius: 100px;
     box-shadow: 0px 0px 0px 1px rgba(209, 210, 214, 1);
   }
 
   .search-form__button {
-    background: black;
+    background: #347EFF;
     width: 288px;
     height: 56px;
     border: none;
@@ -132,7 +133,7 @@
   }
 
   .search-form__button {
-    background: black;
+    background: #2F71E5;
     width: 288px;
     height: 56px;
     border: none;
