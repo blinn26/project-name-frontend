@@ -24,7 +24,7 @@
 }
 
 .header__title {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Roboto Slab', 'Arial', serif;
   font-size: 60px;
   line-height: 64px;
   font-weight: 400;
@@ -33,7 +33,7 @@
 }
 
 .header__description {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
@@ -58,7 +58,7 @@
   }
 
   .header__title {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto Slab', 'Arial', serif;
     font-size: 36px;
     line-height: 40px;
     font-weight: 400;
@@ -75,7 +75,7 @@
   }
 
   .header__title {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto Slab', 'Arial', serif;
     font-size: 36px;
     line-height: 40px;
     font-weight: 400;

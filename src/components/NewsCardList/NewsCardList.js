@@ -7,8 +7,7 @@ const NewsCardList = ({ news, isLoggedIn, onDeleteNewsItem, saveNewsItem, savedN
   }
 
   return (
-    <div className='news-card__list'>
-      {/*  */}
+    <section className='news-card__list'>
       {isLoggedIn &&
         news.map((item) => (
           <NewsCard
@@ -21,7 +20,7 @@ const NewsCardList = ({ news, isLoggedIn, onDeleteNewsItem, saveNewsItem, savedN
             isLoggedIn={isLoggedIn}
           />
         ))}
-    </div>
+    </section>
   );
 };
 

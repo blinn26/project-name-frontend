@@ -5,7 +5,7 @@ import NewsCardList from '../NewsCardList/NewsCardList';
 const SavedNewsHeader = ({ username, savedArticlesCount, keywords, savedNews, isLoggedIn, onDeleteNewsItem }) => {
   return (
     <>
-      <div className='saved-news-header'>
+      <section className='saved-news-header'>
         <p className='saved__title'>Saved Articles</p>
         <h2 className='saved__header'>
           {username}, you have {savedArticlesCount} saved articles
@@ -13,9 +13,9 @@ const SavedNewsHeader = ({ username, savedArticlesCount, keywords, savedNews, is
         <p className='saved__keywords'>
           By keywords: <span className='saved__bold'>{keywords.join(', ')}</span>
         </p>
-      </div>
+      </section>
       {savedNews && savedNews.length > 0 && (
-        <div className='news-card-list-wrapper'>
+        <section className='news-card-list-wrapper'>
           <NewsCardList
             news={savedNews}
             isLoggedIn={isLoggedIn}
@@ -23,7 +23,7 @@ const SavedNewsHeader = ({ username, savedArticlesCount, keywords, savedNews, is
             keywords={keywords}
             savedNews
           />
-        </div>
+        </section>
       )}
     </>
   );

@@ -25,7 +25,7 @@
 }
 
 .newscard-popup__text {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 12px;
   color: #1a1b22;
   cursor: pointer;
@@ -43,7 +43,7 @@
   background: #FFFFFF;
   border-radius: 10px;
   height: 40px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-style: medium;
   font-weight: 500;
   font-size: 14px;

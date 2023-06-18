@@ -24,14 +24,16 @@ function SavedNews({ isLoggedIn, savedNews, onDeleteNewsItem }) {
   }
 
   return (
-    <SavedNewsHeader
-      username={username}
-      savedArticlesCount={savedArticlesCount}
-      keywords={keywords}
-      savedNews={savedNews}
-      isLoggedIn={isLoggedIn}
-      onDeleteNewsItem={onDeleteNewsItem}
-    />
+    <main>
+      <SavedNewsHeader
+        username={username}
+        savedArticlesCount={savedArticlesCount}
+        keywords={keywords}
+        savedNews={savedNews}
+        isLoggedIn={isLoggedIn}
+        onDeleteNewsItem={onDeleteNewsItem}
+      />
+    </main>
   );
 }
 

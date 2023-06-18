@@ -78,7 +78,7 @@
 .no-image-text {
   width: 356px;
   height: 48px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -90,7 +90,7 @@
 .searching-text {
   width: 280px;
   height: 24px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;

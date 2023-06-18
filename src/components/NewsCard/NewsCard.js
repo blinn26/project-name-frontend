@@ -49,7 +49,7 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNews, handleModalOpen, onDeleteN
   };
 
   return (
-    <div className='news-card'>
+    <article className='news-card'>
       {urlToImage ? (
         <a
           href={url}
@@ -115,7 +115,7 @@ const NewsCard = ({ newsItem, isLoggedIn, onSaveNews, handleModalOpen, onDeleteN
           </>
         )}
       </div>
-    </div>
+    </article>
   );
 };
 
