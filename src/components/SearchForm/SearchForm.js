@@ -9,6 +9,7 @@ const SearchForm = ({ handleSearchSubmit }) => {
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
     setSearchDone(false);
+    setError(''); // Clear the error when user starts typing
   };
 
   const handleSubmit = (event) => {
@@ -18,7 +19,6 @@ const SearchForm = ({ handleSearchSubmit }) => {
     } else {
       handleSearchSubmit(searchTerm);
       setSearchTerm('');
-      setError('');
       setSearchDone(true);
     }
   };
@@ -33,7 +33,7 @@ const SearchForm = ({ handleSearchSubmit }) => {
           value={searchTerm}
           onChange={handleChange}
           placeholder='Enter topic'
-          className={`search-form__input ${searchTerm && 'typing'}`}
+          className={`search-form__input ${error && 'search-form__input--error'} ${searchTerm && 'typing'}`}
         />
         {error && <span className='search-form__error'>{error}</span>}
         <button
