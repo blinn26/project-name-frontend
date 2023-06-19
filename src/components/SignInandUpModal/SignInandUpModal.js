@@ -29,6 +29,7 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNew
     const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,30}$/;
     return re.test(password);
   };
+
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
     setIsValidUsername(validateUsername(e.target.value));
@@ -159,14 +160,15 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNew
           disabled={!isFormValid}>
           {isSignUp ? ' Sign Up' : ' Sign In'}
         </button>
-        <p className='modal__alternative'>
+        <div className='modal__alternative'>
           <span className='modal__alternative-or'>or</span>&nbsp;
-          <span
+          <button
             className='modal__alternative-action'
+            type='button'
             onClick={toggleForm}>
             {isSignUp ? 'Sign In' : 'Sign Up'}
-          </span>
-        </p>
+          </button>
+        </div>
       </ModalWithForm>
 
       <ModalWithForm
@@ -179,14 +181,15 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNew
         }}>
         <h1 className='modal__title-success'>Registration Successfully completed!</h1>
         <p className='modal__alternative'>
-          <span
+          <button
             className='modal__alternative-action'
+            type='button'
             onClick={() => {
               setSuccessModal(false);
               setIsOpen(true);
             }}>
             Sign in
-          </span>
+          </button>
         </p>
       </ModalWithForm>
     </>
