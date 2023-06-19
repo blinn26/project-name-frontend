@@ -17,9 +17,12 @@ const About = () => {
       <section className='about__text-container'>
         <h2 className='about__title'>About the author</h2>
         <p className='about__text'>
-          My name is Ben Linn. I'm a passionate software developer skilled in numerous development technologies. Through
-          my experience with TripleTen, I've honed my skills and expanded my knowledge, ready to create value for
-          potential customers.
+          This block describes the project author. Here you should indicate your name, what you do, and which
+          development technologies you know.
+        </p>
+        <p className='about__text'>
+          You can also talk about your experience with TripleTen, what you learned there, and how you can help potential
+          customers.
         </p>
       </section>
     </main>

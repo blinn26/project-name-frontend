@@ -1,8 +1,8 @@
 .about {
   max-width: 1440px;
-  padding: 86px 0;
-  padding-right: 50px;
+  padding: 104px 80px 80px 80px;
   display: flex;
+  margin: 0;
 }
 
 .about__image-wrapper {
@@ -32,9 +32,10 @@
 }
 
 .about__text-container {
-  padding: 75px 20px 20px 20px;
+  padding: 75px 20px 20px 50px;
   font-weight: 400;
   color: #1a1b22;
+  width: 600px;
 }
 
 .about__title {
@@ -49,7 +50,9 @@
   font-family: 'Roboto', 'Arial', sans-serif;
   font-style: normal;
   font-size: 18px;
-  line-height: 1.33em;
+  font-weight: 400;
+  line-height: 24px;
+  color: #1A1B22;
 }
 
 
@@ -69,11 +72,11 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .about {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    margin-left: 50px;
+
   }
 
   .about__image-wrapper {
@@ -85,6 +88,7 @@
     width: 100%;
     margin-top: 20px;
     margin-left: 20px;
+    width: 424px;
   }
 
   .about__title {
