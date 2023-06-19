@@ -1,9 +1,12 @@
 :root {
   --font-primary: "Roboto", sans-serif;
+  --color-transparent: transparent;
   --color-black: black;
   --color-white: white;
+  --color-transparent-theme-bg: transparent;
   --color-dark-theme-bg: black;
   --color-light-theme-bg: white;
+  --btn-bg-color: transparent;
   --btn-bg-color: black;
   --btn-border-color: black;
   --btn-text-color: white;
@@ -20,7 +23,7 @@
   align-items: center;
   height: 80px;
   padding: 0 104px;
-  border-bottom: 1px solid var(--color-black);
+  border-bottom: 1px solid #C4C4C4;
   background-color: transparent;
   color: var(--color-white);
 }
@@ -53,13 +56,26 @@
   width: 112px;
   height: 48px;
   background-color: transparent;
+  border: 2px solid white;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+}
+
+.navigation[data-theme='light'] .navigation__user {
+  width: 112px;
+  height: 48px;
+  background-color: transparent;
   border: 2px solid black;
   border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-color: white;
+  color: black;
 }
 
 .navigation__log {
@@ -77,23 +93,12 @@
 .navigation__saved-news-link-underline {
   width: 160px;
   height: 3px;
-  background-color: grey;
+  background-color: #1A1B22;
   position: relative;
   top: 30px;
 }
 
-.navigation__user {
-  width: 112px;
-  height: 48px;
-  background-color: transparent;
-  border: 2px solid black;
-  border-radius: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  background-color: white;
-}
+
 
 .navigation__home-link-image {
   display: none;
@@ -152,7 +157,7 @@
   padding: 12px;
   border-radius: 100px;
   margin-right: 20px;
-  background-color: var(--btn-bg-color);
+  background-color: transparent;
   color: var(--btn-text-color);
   cursor: pointer;
 }
