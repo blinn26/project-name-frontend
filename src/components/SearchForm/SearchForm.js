@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './SearchForm.css';
 
 const SearchForm = ({ handleSearchSubmit }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [error, setError] = useState('');
   const [searchDone, setSearchDone] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
+
+  useEffect(() => {
+    if (searchTerm.length > 0) {
+      setIsTyping(true);
+    } else {
+      setIsTyping(false);
+    }
+  }, [searchTerm]);
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -33,12 +42,12 @@ const SearchForm = ({ handleSearchSubmit }) => {
           value={searchTerm}
           onChange={handleChange}
           placeholder='Text not entered'
-          className={`search-form__input ${error && 'search-form__input--error'} ${searchTerm && 'typing'}`}
+          className={`search-form__input ${error && 'search-form__input--error'} ${isTyping && 'typing'}`}
         />
         {error && <span className='search-form__error'>{error}</span>}
         <button
           type='submit'
-          className={`search-form__button ${searchTerm && 'typing'} ${searchDone && 'done'}`}>
+          className={`search-form__button ${searchDone && 'done'}`}>
           Search
         </button>
       </div>
