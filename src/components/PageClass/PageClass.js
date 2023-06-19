@@ -3,9 +3,9 @@ import './PageClass.css';
 
 const PageClass = ({ children }) => {
   return (
-    <div className='page'>
-      <div className='page__wrapper'>{children}</div>
-    </div>
+    <main className='page'>
+      <section className='page__wrapper'>{children}</section>
+    </main>
   );
 };
 
