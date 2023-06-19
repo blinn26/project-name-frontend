@@ -13,6 +13,12 @@
   border: 5px solid #1A1B22;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
   margin: 0;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .about__image {
@@ -26,7 +32,7 @@
 }
 
 .about__text-container {
-  padding: 20px 20px 20px 20px;
+  padding: 75px 20px 20px 20px;
   font-weight: 400;
   color: #1a1b22;
 }
