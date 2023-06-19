@@ -1,6 +1,3 @@
-/* -------------------------------------------------------------------------- */
-/*                        IMPORTS AND CONST FOR APP.JS                        */
-/* -------------------------------------------------------------------------- */
 import React, { useState, useCallback, useEffect } from 'react';
 import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
 import Main from '../Main/Main';
@@ -108,55 +105,56 @@ function App() {
     console.log(savedNews);
   }, [savedNews]);
 
-  /* -------------------------------------------------------------------------- */
-  /*                     ROUTES, PATHS, CLASSNAMES AND SETUP                    */
-  /* -------------------------------------------------------------------------- */
   return (
     <PageClass className={theme}>
-      {error && <div>Error: {error}</div>}
-      <Header
-        toggleTheme={toggleTheme}
-        theme={theme}
-        handleSearchSubmit={handleSearchSubmit}
-        handleModalOpen={handleModalOpen}
-        news={news}
-        isLoggedIn={isLoggedIn}
-        handleLogOut={handleLogOut}
-      />
-      <Routes>
-        <Route
-          path='/'
-          element={
-            <Main
-              isLoading={isLoading}
-              isError={error !== null}
-              news={news}
-              onSaveNewsItem={handleSaveNews}
-              onDeleteNewsItem={handleDeleteNews}
-              numNewsToShow={numNewsToShow}
-              setNumNewsToShow={setNumNewsToShow}
-              isLoggedIn={isLoggedIn}
-              handleLogin={handleLogin}
-              handleModalOpen={handleModalOpen}
-              hasSearched={hasSearched}
-            />
-          }
+      {error && <section>Error: {error}</section>}
+      <header>
+        <Header
+          toggleTheme={toggleTheme}
+          theme={theme}
+          handleSearchSubmit={handleSearchSubmit}
+          handleModalOpen={handleModalOpen}
+          news={news}
+          isLoggedIn={isLoggedIn}
+          handleLogOut={handleLogOut}
         />
-        <Route
-          path='/saved-news'
-          element={
-            isLoggedIn ? (
-              <SavedNews
-                isLoggedIn={isLoggedIn}
-                savedNews={savedNews}
+      </header>
+      <main>
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <Main
+                isLoading={isLoading}
+                isError={error !== null}
+                news={news}
+                onSaveNewsItem={handleSaveNews}
                 onDeleteNewsItem={handleDeleteNews}
+                numNewsToShow={numNewsToShow}
+                setNumNewsToShow={setNumNewsToShow}
+                isLoggedIn={isLoggedIn}
+                handleLogin={handleLogin}
+                handleModalOpen={handleModalOpen}
+                hasSearched={hasSearched}
               />
-            ) : (
-              <Navigate to='/' />
-            )
-          }
-        />
-      </Routes>
+            }
+          />
+          <Route
+            path='/saved-news'
+            element={
+              isLoggedIn ? (
+                <SavedNews
+                  isLoggedIn={isLoggedIn}
+                  savedNews={savedNews}
+                  onDeleteNewsItem={handleDeleteNews}
+                />
+              ) : (
+                <Navigate to='/' />
+              )
+            }
+          />
+        </Routes>
+      </main>
       <SignInandUpModal
         isOpen={isOpen}
         setIsOpen={setIsOpen}
