@@ -35,7 +35,7 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
     }
     setNavigationBackground(navBackground);
   }, [isHomePage, menuBackground]);
-
+  console.log(navigationBackground);
   return (
     <nav
       className={`${navigationBackground} ${menuVisible ? 'navigation_mobile' : ''}`}
