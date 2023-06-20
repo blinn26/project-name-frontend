@@ -71,7 +71,7 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
             <button
               className='navigation__user'
               onClick={handleLogOut}>
-              Ben{' '}
+              Elise{' '}
               <img
                 src={logoutIcon}
                 alt='Logout'></img>
