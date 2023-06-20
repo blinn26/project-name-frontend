@@ -18,7 +18,7 @@ const SearchForm = ({ handleSearchSubmit }) => {
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
     setSearchDone(false);
-    setError(''); // Clear the error when user starts typing
+    setError('');
   };
 
   const handleSubmit = (event) => {

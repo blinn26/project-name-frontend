@@ -30,6 +30,7 @@
   font-weight: 400;
   color: #FFFFFF;
   width: 608px;
+  height: 103px;
 }
 
 .header__description {
@@ -38,20 +39,34 @@
   line-height: 24px;
   font-weight: 400;
   color: #FFFFFF;
-  padding-bottom: 30px;
+  padding-bottom: 59px;
 }
 
-@media only screen and (max-width: 1439px) {
+/* Styles for devices with width greater than or equal to 1440px (desktops) */
+@media screen and (min-width: 1440px) {
+  /* Desktop-specific styles go here */
+}
+
+/* Styles for devices with width between 768px and 1439px (tablets) */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
   .header__content {
     width: 80%;
   }
 
   .header__title {
     font-size: 36px;
+    width: 385px;
+    margin-right: 59px;
+  }
+
+  .header__description {
+    width: 452px;
+    font-size: 18px;
   }
 }
 
-@media only screen and (max-width: 767px) {
+/* Styles for devices with width between 320px and 767px (phones) */
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .header__content {
     width: 90%;
     margin: 0 auto;
@@ -63,22 +78,14 @@
     line-height: 40px;
     font-weight: 400;
     color: #FFFFFF;
-  }
-}
-
-
-@media (max-width: 320px) {
-
-  .header__content {
-    width: 90%;
-
+    width: 285px;
+    height: 85px;
   }
 
-  .header__title {
-    font-family: 'Roboto Slab', 'Arial', serif;
-    font-size: 36px;
-    line-height: 40px;
+  .header__description {
+    width: 288px;
+    font-size: 18px;
+    height: 72px;
     font-weight: 400;
-    color: #FFFFFF;
   }
 }

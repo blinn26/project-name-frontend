@@ -28,7 +28,6 @@ const SearchResults = ({
 
   return (
     <div className='news-container'>
-      {!isSavedRoute && !isLoading && <h2 className='search-results-title'>Search Results</h2>}
       {isLoading ? (
         <Preloader />
       ) : isError ? (
@@ -41,39 +40,44 @@ const SearchResults = ({
           <h3 className='no-image-title'>Sorry, something went wrong.</h3>
           <p className='no-image-text'>Please try again later.</p>
         </div>
-      ) : news.length === 0 ? (
-        <div className='no-image-container'>
-          <img
-            className='no-image-image'
-            src={notFoundImg}
-            alt='Not found'
-          />
-          <h3 className='no-image-title'>Nothing found</h3>
-          <p className='no-image-text'>Please try again with different keywords.</p>
-        </div>
       ) : (
         <>
-          <div className='news-card-container'>
-            {news.slice(0, numNewsToShow).map((newsItem, index) => {
-              return (
-                <NewsCard
-                  className='news-card'
-                  key={index}
-                  newsItem={newsItem}
-                  onSaveNews={onSaveNewsItem}
-                  onDeleteNewsItem={onDeleteNewsItem}
-                  isLoggedIn={isLoggedIn}
-                  handleModalOpen={handleModalOpen}
-                />
-              );
-            })}
-          </div>
-          {news.length > numNewsToShow && (
-            <button
-              className='main__show-more-button'
-              onClick={handleClickShowMore}>
-              Show More
-            </button>
+          {news.length > 0 && !isSavedRoute && <h2 className='search-results-title'>Search Results</h2>}
+          {news.length === 0 ? (
+            <div className='no-image-container'>
+              <img
+                className='no-image-image'
+                src={notFoundImg}
+                alt='Not found'
+              />
+              <h3 className='no-image-title'>Nothing found</h3>
+              <p className='no-image-text'>Please try again with different keywords.</p>
+            </div>
+          ) : (
+            <>
+              <div className='news-card-container'>
+                {news.slice(0, numNewsToShow).map((newsItem, index) => {
+                  return (
+                    <NewsCard
+                      className='news-card'
+                      key={index}
+                      newsItem={newsItem}
+                      onSaveNews={onSaveNewsItem}
+                      onDeleteNewsItem={onDeleteNewsItem}
+                      isLoggedIn={isLoggedIn}
+                      handleModalOpen={handleModalOpen}
+                    />
+                  );
+                })}
+              </div>
+              {news.length > numNewsToShow && (
+                <button
+                  className='main__show-more-button'
+                  onClick={handleClickShowMore}>
+                  Show More
+                </button>
+              )}
+            </>
           )}
         </>
       )}
