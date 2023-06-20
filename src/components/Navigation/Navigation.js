@@ -86,7 +86,7 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
           </>
         ) : (
           <button
-            className='navigation__button signIn'
+            className='navigation__button sign-in'
             onClick={handleModalOpen}>
             Sign In
           </button>
