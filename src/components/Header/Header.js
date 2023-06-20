@@ -9,7 +9,7 @@ function Header({ handleModalOpen, handleSearchSubmit, isLoggedIn, news, theme, 
   const isSavedNewsPage = location.pathname === '/saved-news';
 
   return (
-    <header className={`header ${isSavedNewsPage ? '' : 'header_image'}`}>
+    <header className={`header ${isSavedNewsPage ? '' : 'header__image'}`}>
       <Navigation
         toggleTheme={toggleTheme}
         theme={theme}
