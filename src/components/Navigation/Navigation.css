@@ -364,9 +364,7 @@
   }
 
   .navigation[data-theme='dark'] .navigation__saved-news-link {
-    /*  display: flex;
-    align-items: flex-end;
-    justify-content: flex-end; */
+
     margin-left: 20px;
   }
 }
@@ -532,6 +530,6 @@
 
   .navigation[data-theme='dark'] .navigation__saved-news-link {
 
-    margin-left: 0px;
+    margin-left: 20px;
   }
 }
