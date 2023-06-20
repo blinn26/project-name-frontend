@@ -48,7 +48,7 @@
 }
 
 .news-card__title {
-  font-family: 'Roboto Slab', 'Arial', serif;
+  font-family: 'Roboto Slab', 'Arial', sans-serif;
   font-size: 25px;
   font-weight: 400;
   color: #1a1b22;
@@ -92,7 +92,7 @@
 
 .news-card__source {
   height: 20px;
-  font-family: 'Roboto Slab', 'Arial', serif;
+  font-family: 'Roboto Slab', 'Arial', sans-serif;
   font-size: 16px;
   color: #b6bcbf;
   text-align: left;

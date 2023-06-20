@@ -27,11 +27,11 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
   useEffect(() => {
     let navBackground = 'navigation';
     if (isHomePage && !menuBackground) {
-      navBackground += ' navigation_transparent';
+      navBackground += ' navigation--transparent';
     } else if (menuBackground) {
-      navBackground += ' navigation_dark';
+      navBackground += ' navigation--dark';
     } else {
-      navBackground += ' navigation_light';
+      navBackground += ' navigation--light';
     }
     setNavigationBackground(navBackground);
   }, [isHomePage, menuBackground]);

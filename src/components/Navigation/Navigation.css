@@ -12,7 +12,7 @@
   --btn-text-color: white;
 }
 
-.navigation.transparent {
+.navigation--transparent {
   background-color: transparent;
 }
 
@@ -215,7 +215,7 @@
     z-index: 1;
   }
 
-  .navigation[data-theme='dark'] {
+  .navigation--dark {
     display: flex;
     justify-content: space-between;
     align-items: center;
