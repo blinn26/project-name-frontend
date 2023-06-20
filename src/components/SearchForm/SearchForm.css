@@ -85,19 +85,13 @@
   color: red;
 }
 
-/* Styles for devices with width greater than or equal to 1440px (desktops) */
-@media screen and (min-width: 1440px) {
-  /* Desktop-specific styles go here */
-}
 
-/* Styles for devices with width between 768px and 1439px (tablets) */
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .search-form {
     width: 80%;
   }
 }
 
-/* Styles for devices with width between 320px and 767px (phones) */
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .search-form {
     width: 288px;

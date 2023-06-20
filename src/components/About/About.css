@@ -79,22 +79,25 @@
   .about {
     flex-direction: column;
     align-items: center;
+    padding: 40px 80px 80px 80px;
   }
 
   .about__image-wrapper {
-    width: 264px;
-    height: 264px;
+    width: 262px;
+    height: 262px;
   }
 
   .about__text-container {
-    width: 100%;
-    margin-top: 20px;
-    margin-left: 20px;
-    width: 424px;
+    width: 288px;
+    height: 240px;
+    padding: 13px 0 0 12px;
+
   }
 
   .about__title {
-    font-size: 26px;
+    font-size: 30px;
+    width: 288px;
+    height: 40px;
   }
 
   .about__text {
