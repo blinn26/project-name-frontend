@@ -406,6 +406,10 @@
     display: none;
   }
 
+  .navigation__logo-text {
+    font-size: 16px;
+  }
+
   .navigation[data-theme='dark'] .navigation__wrapper.show__menu,
   .navigation[data-theme='light'] .navigation__wrapper.show__menu {
     position: absolute;
