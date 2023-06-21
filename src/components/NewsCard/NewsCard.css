@@ -68,6 +68,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  text-decoration: none;
 }
 
 .news-card__description {
@@ -195,6 +196,9 @@
 
 }
 
+.news-container__preloader {
+  padding: 0
+}
 
 .news-card-container {
   display: grid;
@@ -371,7 +375,9 @@
   .news-card__source {
     width: 192px;
     flex-grow: 0;
-    font-family: RobotoSlab;
+    font-family: 'Roboto Slab',
+      'Arial',
+      sans-serif;
     font-size: 16px;
     font-weight: bold;
     font-stretch: normal;

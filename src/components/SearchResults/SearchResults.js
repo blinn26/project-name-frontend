@@ -27,7 +27,7 @@ const SearchResults = ({
   }, [news]);
 
   return (
-    <div className='news-container'>
+    <section className={`news-container ${isLoading && 'news-container__preloader'}`}>
       {isLoading ? (
         <Preloader />
       ) : isError ? (
@@ -81,7 +81,7 @@ const SearchResults = ({
           )}
         </>
       )}
-    </div>
+    </section>
   );
 };
 

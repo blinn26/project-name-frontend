@@ -46,17 +46,20 @@
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .header__content {
-    width: 80%;
+    width: 385px;
   }
 
   .header__title {
     font-size: 36px;
-    width: 385px;
-    margin-right: 59px;
+    width: 100%;
+    /* margin-right: 59px; */
+    line-height: 40px;
+    margin: 20px 0 0 0;
   }
 
   .header__description {
-    width: 452px;
+    margin: 0 0 0 0;
+    width: 100%;
     font-size: 18px;
   }
 }

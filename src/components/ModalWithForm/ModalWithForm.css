@@ -35,7 +35,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 15px;
   position: relative;
   width: 90%;
   cursor: pointer;
@@ -83,6 +83,7 @@
   font-size: 18px;
   font-weight: 500;
   font-family: "Roboto", 'Arial', sans-serif;
+  border: none;
 }
 
 .modal__button-submit_disabled {
@@ -253,8 +254,7 @@
     justify-content: center;
     align-items: center;
     height: 64px;
-    position: relative;
-    width: 288px;
+    width: 100%;
     right: 23px;
 
   }

@@ -16,8 +16,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.5);
+  background: #F5F6F7;
   cursor: pointer;
+  margin: 0;
+  width: 100%;
+  padding: 0;
 }
 
 .circle-preloader {
@@ -49,6 +52,7 @@
   font-size: 16px;
   transition-duration: 0.4s;
   cursor: pointer;
+  border: none;
 
 }
 
