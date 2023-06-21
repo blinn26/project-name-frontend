@@ -12,12 +12,17 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
   const [menuVisible, setMenu] = useState(false);
   const [menuBackground, setMenuBackground] = useState(false);
 
-  const showMenu = () => {
-    setMenu(!menuVisible);
-    setMenuBackground(!menuVisible);
-  };
-
   const isHomePage = location.pathname === '/';
+
+  const showMenu = () => {
+    if (!isHomePage) {
+      setMenu(false);
+      setMenuBackground(false);
+    } else {
+      setMenu(!menuVisible);
+      setMenuBackground(!menuBackground);
+    }
+  };
 
   const menuIcon = themeChange === 'light' ? menuLight : menuDark;
   const logoutIcon = themeChange === 'light' ? whiteLog : logout;
@@ -35,7 +40,7 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
     }
     setNavigationBackground(navBackground);
   }, [isHomePage, menuBackground]);
-  console.log(navigationBackground);
+
   return (
     <nav
       className={`${navigationBackground} ${menuVisible ? 'navigation_mobile' : ''}`}
