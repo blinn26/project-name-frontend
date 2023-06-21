@@ -12,17 +12,12 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
   const [menuVisible, setMenu] = useState(false);
   const [menuBackground, setMenuBackground] = useState(false);
 
-  const isHomePage = location.pathname === '/';
-
   const showMenu = () => {
-    if (!isHomePage) {
-      setMenu(false);
-      setMenuBackground(false);
-    } else {
-      setMenu(!menuVisible);
-      setMenuBackground(!menuBackground);
-    }
+    setMenu(!menuVisible);
+    setMenuBackground(!menuVisible);
   };
+
+  const isHomePage = location.pathname === '/';
 
   const menuIcon = themeChange === 'light' ? menuLight : menuDark;
   const logoutIcon = themeChange === 'light' ? whiteLog : logout;
@@ -32,11 +27,11 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
   useEffect(() => {
     let navBackground = 'navigation';
     if (isHomePage && !menuBackground) {
-      navBackground += ' navigation--transparent';
+      navBackground += ' navigation_transparent';
     } else if (menuBackground) {
-      navBackground += ' navigation--dark';
+      navBackground += ' navigation_dark';
     } else {
-      navBackground += ' navigation--light';
+      navBackground += ' navigation_light';
     }
     setNavigationBackground(navBackground);
   }, [isHomePage, menuBackground]);
