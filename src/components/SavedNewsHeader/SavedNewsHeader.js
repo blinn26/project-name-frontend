@@ -5,7 +5,7 @@ import NewsCardList from '../NewsCardList/NewsCardList';
 const SavedNewsHeader = ({ username, savedArticlesCount, keywords, savedNews, isLoggedIn, onDeleteNewsItem }) => {
   return (
     <>
-      <section className='saved-news-header'>
+      <section className='saved-news__container'>
         <p className='saved__title'>Saved Articles</p>
         <h2 className='saved__header'>
           {username}, you have {savedArticlesCount} saved articles
