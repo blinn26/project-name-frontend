@@ -201,7 +201,8 @@
 
 @media only screen and (max-width: 1439px) {
   .navigation {
-    padding: 0 20px;
+    padding: 0 35px;
+
   }
 
   .navigation__wrapper {
