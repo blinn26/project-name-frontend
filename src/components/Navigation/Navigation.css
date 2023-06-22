@@ -371,11 +371,12 @@
   }
 
   .navigation[data-theme='light'] .navigation__saved-news-link {
-    color: rgba(26, 27, 34, 0.50);
+    /*  color: rgba(26, 27, 34, 0.50);
     font-size: 12px;
     font-family: Roboto;
     line-height: 24px;
-    margin-left: 20px;
+    margin-left: 20px; */
+    display: none;
   }
 
   .navigation[data-theme='dark'] .navigation__saved-news-link {

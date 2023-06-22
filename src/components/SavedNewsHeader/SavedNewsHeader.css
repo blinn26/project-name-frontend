@@ -72,9 +72,20 @@
 }
 
 @media screen and (max-width: 320px) {
+  .saved-news__container {
+    padding: 12px;
+  }
+
   .saved__title {
+    display: flex;
+    width: 288px;
+    height: 24px;
+    flex-direction: column;
+    flex-shrink: 0;
+    color: rgba(26, 27, 34, 0.50);
     font-size: 12px;
-    color: rgba(26, 27, 34, 0.5);
+    font-family: Roboto;
+    line-height: 24px;
   }
 
   .saved__header {
