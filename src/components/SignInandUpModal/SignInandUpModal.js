@@ -172,15 +172,16 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNew
       </ModalWithForm>
 
       <ModalWithForm
-        title='Success'
+        title='Registration Successfully completed!'
         className='modal__success'
         isOpen={successModal}
         onClose={() => {
           setSuccessModal(false);
           setIsOpen(false);
         }}>
-        <h1 className='modal__title-success'>Registration Successfully completed!</h1>
-        <p className='modal__alternative'>
+        <div
+          className='modal__alternative'
+          style={{ justifyContent: 'flex-start' }}>
           <button
             className='modal__alternative-action'
             type='button'
@@ -190,10 +191,9 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNew
             }}>
             Sign in
           </button>
-        </p>
+        </div>
       </ModalWithForm>
     </>
   );
 }
-
 export default SignInandUpModal;

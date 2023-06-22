@@ -27,11 +27,11 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
   useEffect(() => {
     let navBackground = 'navigation';
     if (isHomePage && !menuBackground) {
-      navBackground += ' navigation_transparent';
+      navBackground += ' navigation_theme_transparent';
     } else if (menuBackground) {
-      navBackground += ' navigation_dark';
+      navBackground += ' navigation_theme_dark';
     } else {
-      navBackground += ' navigation_light';
+      navBackground += ' navigation_theme_light';
     }
     setNavigationBackground(navBackground);
   }, [isHomePage, menuBackground]);
@@ -40,31 +40,36 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
     <nav
       className={`${navigationBackground} ${menuVisible ? 'navigation_mobile' : ''}`}
       data-theme={themeChange}>
-      <div className='navigation__logo'>
-        <p className='navigation__logo-text'>NewsExplorer</p>
-      </div>
       <Link
         to='/'
+        className='navigation__logo'>
+        <a className='navigation__logo-text'>NewsExplorer</a>
+      </Link>
+      <button
         className='navigation__hamburger-menu'
         onClick={showMenu}>
         <img
           src={menuIcon}
           alt='Menu'></img>
-      </Link>
-      <div className={`navigation__wrapper ${menuVisible ? 'show__menu' : ''}`}>
-        <Link
-          to='/'
-          className={`navigation__home-link ${textColorClass}`}>
-          <p className='navigation__home-link-text'>Home</p>
-          {location.pathname === '/' && <div className='navigation__home-link-underline'></div>}
-        </Link>
-        {isLoggedIn && (
+      </button>
+      <div className={`navigation__container ${menuVisible ? 'show__menu navigation__container--dark-theme' : ''}`}>
+        <div className='navigation__link-container'>
           <Link
-            to='/saved-news'
-            className={`navigation__saved-news-link ${textColorClass}`}>
-            Saved articles
-            {location.pathname === '/saved-news' && <div className='navigation__saved-news-link-underline'></div>}
+            to='/'
+            className={`navigation__home-link ${textColorClass}`}>
+            Home
+            {location.pathname === '/' && <div className='navigation__home-link-underline'></div>}
           </Link>
+        </div>
+        {isLoggedIn && (
+          <div className='navigation__link-container'>
+            <Link
+              to='/saved-news'
+              className={`navigation__saved-news-link ${textColorClass}`}>
+              Saved articles
+              {location.pathname === '/saved-news' && <div className='navigation__saved-news-link-underline'></div>}
+            </Link>
+          </div>
         )}
         {isLoggedIn ? (
           <>
