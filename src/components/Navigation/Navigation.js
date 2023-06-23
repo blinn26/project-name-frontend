@@ -37,7 +37,7 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
     }
     setNavigationBackground(navBackground);
 
-    setMenuIcon(themeChange === 'light' && isLoggedIn ? closeburgerLight : closeburgerDark);
+    setMenuIcon(themeChange === 'light' && isLoggedIn ? closeburgerLight : closeburgerLight);
     setCloseIcon(themeChange === 'dark' ? closeHamburger : menuIcon);
   }, [isHomePage, menuBackground, themeChange, isLoggedIn]);
 
