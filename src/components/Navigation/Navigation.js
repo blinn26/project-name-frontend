@@ -6,45 +6,33 @@ import menuDark from '../../images/menu.svg';
 import menuLight from '../../images/menuBlack.svg';
 import whiteLog from '../../images/whiteLog.svg';
 
-const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) => {
+const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen }) => {
   const location = useLocation();
-  const textColorClass = isLoggedIn ? 'text-black' : 'text-white';
   const [menuVisible, setMenu] = useState(false);
-  const [menuBackground, setMenuBackground] = useState(false);
+  const isHomePage = location.pathname === '/';
 
   const showMenu = () => {
     setMenu(!menuVisible);
-    setMenuBackground(!menuVisible);
   };
 
-  const isHomePage = location.pathname === '/';
-  const menuIcon = themeChange === 'light' ? menuLight : menuDark;
-  const logoutIcon = themeChange === 'light' ? whiteLog : logout;
-  const [navigationBackground, setNavigationBackground] = useState('navigation');
-
   useEffect(() => {
-    let navBackground = 'navigation';
-    if (isHomePage && !menuBackground) {
-      navBackground += ' navigation_theme_transparent';
-    } else if (menuBackground) {
-      navBackground += ' navigation_theme_dark';
-    } else {
-      navBackground += ' navigation_theme_light';
-    }
-    setNavigationBackground(navBackground);
-  }, [isHomePage, menuBackground]);
+    setMenu(false);
+  }, [location]);
+
+  let navigationClass = 'navigation';
+  if (isHomePage) navigationClass += ' navigation_theme_transparent';
+  else if (!menuVisible) navigationClass += ' navigation_theme_light';
+  else navigationClass += ' navigation_theme_dark';
 
   return (
-    <nav
-      className={`${navigationBackground} ${menuVisible ? 'navigation_mobile' : ''}`}
-      data-theme={themeChange}>
+    <nav className={navigationClass}>
       <div className='navigation__logo-container'>
         <Link
           to='/'
           className='navigation__logo'>
           <p className='navigation__logo-text'>NewsExplorer</p>
         </Link>
-        {menuVisible && themeChange === 'dark' && (
+        {menuVisible && (
           <button
             className='modal__button-close-menu'
             onClick={showMenu}></button>
@@ -54,15 +42,15 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
         className='navigation__hamburger-menu'
         onClick={showMenu}>
         <img
-          src={menuIcon}
+          src={menuVisible ? menuDark : menuLight}
           alt='Menu'
         />
       </button>
-      <div className={`navigation__container ${menuVisible ? 'show__menu navigation__container--dark-theme' : ''}`}>
+      <div className={`navigation__container ${menuVisible ? 'show__menu' : ''}`}>
         <div className='navigation__link-container'>
           <Link
             to='/'
-            className={`navigation__home-link ${textColorClass}`}>
+            className={`navigation__home-link ${isLoggedIn ? 'text-black' : 'text-white'}`}>
             Home
             {location.pathname === '/' && <div className='navigation__home-link-underline' />}
           </Link>
@@ -71,7 +59,7 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
           <div className='navigation__link-container'>
             <Link
               to='/saved-news'
-              className={`navigation__saved-news-link ${textColorClass}`}>
+              className={`navigation__saved-news-link ${isLoggedIn ? 'text-black' : 'text-white'}`}>
               Saved articles
               {location.pathname === '/saved-news' && <div className='navigation__saved-news-link-underline' />}
             </Link>
@@ -84,7 +72,7 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
               onClick={handleLogOut}>
               Elise{' '}
               <img
-                src={logoutIcon}
+                src={logout}
                 alt='Logout'
               />
             </button>
