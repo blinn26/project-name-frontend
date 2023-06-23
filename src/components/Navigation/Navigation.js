@@ -6,6 +6,8 @@ import menuDark from '../../images/menu.svg';
 import menuLight from '../../images/menuBlack.svg';
 import whiteLog from '../../images/whiteLog.svg';
 import closeHamburger from '../../images/closeButton.svg';
+import closeburgerDark from '../../images/closeButtonDark.svg';
+import closeburgerLight from '../../images/closeButtonLight.svg';
 
 const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) => {
   const location = useLocation();
@@ -15,13 +17,14 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
 
   const showMenu = () => {
     setMenu(!menuVisible);
-    setMenuBackground(!menuVisible);
+    setMenuBackground(!menuBackground);
   };
 
   const isHomePage = location.pathname === '/';
-
-  const menuIcon = themeChange === 'light' ? menuLight : menuDark;
+  const menuIcon = themeChange === 'light' && isLoggedIn ? menuLight : menuDark;
   const logoutIcon = themeChange === 'light' ? whiteLog : logout;
+  const closeIcon =
+    themeChange === 'dark' ? closeHamburger : themeChange === 'light' ? closeburgerDark : closeburgerLight;
 
   const [navigationBackground, setNavigationBackground] = useState('navigation');
 
@@ -50,8 +53,10 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
           className='navigation__hamburger-menu'
           onClick={showMenu}>
           <img
-            src={closeHamburger}
-            alt='Menu'></img>
+            src={closeIcon}
+            alt='Menu'
+            className='navigation__hamburger-close-button'
+          />
         </Link>
       ) : (
         <Link
@@ -60,7 +65,9 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
           onClick={showMenu}>
           <img
             src={menuIcon}
-            alt='Menu'></img>
+            alt='Menu'
+            className='navigation__hamburger-icon'
+          />
         </Link>
       )}
       <div className={`navigation__wrapper ${menuVisible ? 'show__menu' : ''}`}>
@@ -86,14 +93,16 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
               Elise{' '}
               <img
                 src={logoutIcon}
-                alt='Logout'></img>
+                alt='Logout'
+              />
             </button>
             <button
               className='navigation__log'
               onClick={handleLogOut}>
               <img
                 src={whiteLog}
-                alt='Logout'></img>
+                alt='Logout'
+              />
             </button>
           </>
         ) : (
