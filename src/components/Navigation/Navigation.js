@@ -5,6 +5,7 @@ import logout from '../../images/logout.svg';
 import menuDark from '../../images/menu.svg';
 import menuLight from '../../images/menuBlack.svg';
 import whiteLog from '../../images/whiteLog.svg';
+import closeHamburger from '../../images/closeButton.svg';
 
 const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) => {
   const location = useLocation();
@@ -43,14 +44,25 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
       <div className='navigation__logo'>
         <p className='navigation__logo-text'>NewsExplorer</p>
       </div>
-      <Link
-        to='/'
-        className='navigation__hamburger-menu'
-        onClick={showMenu}>
-        <img
-          src={menuIcon}
-          alt='Menu'></img>
-      </Link>
+      {menuVisible ? (
+        <Link
+          to='/'
+          className='navigation__hamburger-menu'
+          onClick={showMenu}>
+          <img
+            src={closeHamburger}
+            alt='Menu'></img>
+        </Link>
+      ) : (
+        <Link
+          to='/'
+          className='navigation__hamburger-menu'
+          onClick={showMenu}>
+          <img
+            src={menuIcon}
+            alt='Menu'></img>
+        </Link>
+      )}
       <div className={`navigation__wrapper ${menuVisible ? 'show__menu' : ''}`}>
         <Link
           to='/'
