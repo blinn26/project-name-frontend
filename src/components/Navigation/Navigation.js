@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navigation.css';
 import logout from '../../images/logout.svg';
-import menuDark from '../../images/menu.svg';
-import menuLight from '../../images/menuBlack.svg';
 import whiteLog from '../../images/whiteLog.svg';
 import closeHamburger from '../../images/closeButton.svg';
 import closeburgerDark from '../../images/closeButtonDark.svg';
@@ -21,10 +19,10 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
   };
 
   const isHomePage = location.pathname === '/';
-  const menuIcon = themeChange === 'light' && isLoggedIn ? menuLight : menuDark;
   const logoutIcon = themeChange === 'light' ? whiteLog : logout;
-  const closeIcon =
-    themeChange === 'dark' ? closeHamburger : themeChange === 'light' ? closeburgerDark : closeburgerLight;
+
+  const [menuIcon, setMenuIcon] = useState(closeburgerDark);
+  const [closeIcon, setCloseIcon] = useState(closeHamburger);
 
   const [navigationBackground, setNavigationBackground] = useState('navigation');
 
@@ -38,7 +36,10 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
       navBackground += ' navigation__light';
     }
     setNavigationBackground(navBackground);
-  }, [isHomePage, menuBackground]);
+
+    setMenuIcon(themeChange === 'light' && isLoggedIn ? closeburgerLight : closeburgerDark);
+    setCloseIcon(themeChange === 'dark' ? closeHamburger : menuIcon);
+  }, [isHomePage, menuBackground, themeChange, isLoggedIn]);
 
   return (
     <nav
