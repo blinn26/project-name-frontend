@@ -6,64 +6,65 @@ import menuDark from '../../images/menu.svg';
 import menuLight from '../../images/menuBlack.svg';
 import whiteLog from '../../images/whiteLog.svg';
 
-const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen }) => {
+const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) => {
   const location = useLocation();
+  const textColorClass = isLoggedIn ? 'text-black' : 'text-white';
   const [menuVisible, setMenu] = useState(false);
-  const isHomePage = location.pathname === '/';
+  const [menuBackground, setMenuBackground] = useState(false);
 
   const showMenu = () => {
     setMenu(!menuVisible);
+    setMenuBackground(!menuVisible);
   };
 
-  useEffect(() => {
-    setMenu(false);
-  }, [location]);
+  const isHomePage = location.pathname === '/';
 
-  let navigationClass = 'navigation';
-  if (isHomePage) navigationClass += ' navigation_theme_transparent';
-  else if (!menuVisible) navigationClass += ' navigation_theme_light';
-  else navigationClass += ' navigation_theme_dark';
+  const menuIcon = themeChange === 'light' ? menuLight : menuDark;
+  const logoutIcon = themeChange === 'light' ? whiteLog : logout;
+
+  const [navigationBackground, setNavigationBackground] = useState('navigation');
+
+  useEffect(() => {
+    let navBackground = 'navigation';
+    if (isHomePage && !menuBackground) {
+      navBackground += ' navigation__transparent';
+    } else if (menuBackground) {
+      navBackground += ' navigation__dark';
+    } else {
+      navBackground += ' navigation__light';
+    }
+    setNavigationBackground(navBackground);
+  }, [isHomePage, menuBackground]);
 
   return (
-    <nav className={navigationClass}>
-      <div className='navigation__logo-container'>
-        <Link
-          to='/'
-          className='navigation__logo'>
-          <p className='navigation__logo-text'>NewsExplorer</p>
-        </Link>
-        {menuVisible && (
-          <button
-            className='modal__button-close-menu'
-            onClick={showMenu}></button>
-        )}
+    <nav
+      className={`${navigationBackground} ${menuVisible ? 'navigation_mobile' : ''}`}
+      data-theme={themeChange}>
+      <div className='navigation__logo'>
+        <p className='navigation__logo-text'>NewsExplorer</p>
       </div>
-      <button
+      <Link
+        to='/'
         className='navigation__hamburger-menu'
         onClick={showMenu}>
         <img
-          src={menuVisible ? menuDark : menuLight}
-          alt='Menu'
-        />
-      </button>
-      <div className={`navigation__container ${menuVisible ? 'show__menu' : ''}`}>
-        <div className='navigation__link-container'>
-          <Link
-            to='/'
-            className={`navigation__home-link ${isLoggedIn ? 'text-black' : 'text-white'}`}>
-            Home
-            {location.pathname === '/' && <div className='navigation__home-link-underline' />}
-          </Link>
-        </div>
+          src={menuIcon}
+          alt='Menu'></img>
+      </Link>
+      <div className={`navigation__wrapper ${menuVisible ? 'show__menu' : ''}`}>
+        <Link
+          to='/'
+          className={`navigation__home-link ${textColorClass}`}>
+          <p className='navigation__home-link-text'>Home</p>
+          {location.pathname === '/' && <div className='navigation__home-link-underline'></div>}
+        </Link>
         {isLoggedIn && (
-          <div className='navigation__link-container'>
-            <Link
-              to='/saved-news'
-              className={`navigation__saved-news-link ${isLoggedIn ? 'text-black' : 'text-white'}`}>
-              Saved articles
-              {location.pathname === '/saved-news' && <div className='navigation__saved-news-link-underline' />}
-            </Link>
-          </div>
+          <Link
+            to='/saved-news'
+            className={`navigation__saved-news-link ${textColorClass}`}>
+            Saved articles
+            {location.pathname === '/saved-news' && <div className='navigation__saved-news-link-underline'></div>}
+          </Link>
         )}
         {isLoggedIn ? (
           <>
@@ -72,17 +73,15 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen }) => {
               onClick={handleLogOut}>
               Elise{' '}
               <img
-                src={logout}
-                alt='Logout'
-              />
+                src={logoutIcon}
+                alt='Logout'></img>
             </button>
             <button
               className='navigation__log'
               onClick={handleLogOut}>
               <img
                 src={whiteLog}
-                alt='Logout'
-              />
+                alt='Logout'></img>
             </button>
           </>
         ) : (
