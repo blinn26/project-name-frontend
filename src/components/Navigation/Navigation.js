@@ -18,10 +18,8 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
   };
 
   const isHomePage = location.pathname === '/';
-
   const menuIcon = themeChange === 'light' ? menuLight : menuDark;
   const logoutIcon = themeChange === 'light' ? whiteLog : logout;
-
   const [navigationBackground, setNavigationBackground] = useState('navigation');
 
   useEffect(() => {
@@ -40,17 +38,25 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
     <nav
       className={`${navigationBackground} ${menuVisible ? 'navigation_mobile' : ''}`}
       data-theme={themeChange}>
-      <Link
-        to='/'
-        className='navigation__logo'>
-        <a className='navigation__logo-text'>NewsExplorer</a>
-      </Link>
+      <div className='navigation__logo-container'>
+        <Link
+          to='/'
+          className='navigation__logo'>
+          <p className='navigation__logo-text'>NewsExplorer</p>
+        </Link>
+        {menuVisible && themeChange === 'dark' && (
+          <button
+            className='modal__button-close-menu'
+            onClick={showMenu}></button>
+        )}
+      </div>
       <button
         className='navigation__hamburger-menu'
         onClick={showMenu}>
         <img
           src={menuIcon}
-          alt='Menu'></img>
+          alt='Menu'
+        />
       </button>
       <div className={`navigation__container ${menuVisible ? 'show__menu navigation__container--dark-theme' : ''}`}>
         <div className='navigation__link-container'>
@@ -58,7 +64,7 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
             to='/'
             className={`navigation__home-link ${textColorClass}`}>
             Home
-            {location.pathname === '/' && <div className='navigation__home-link-underline'></div>}
+            {location.pathname === '/' && <div className='navigation__home-link-underline' />}
           </Link>
         </div>
         {isLoggedIn && (
@@ -67,7 +73,7 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
               to='/saved-news'
               className={`navigation__saved-news-link ${textColorClass}`}>
               Saved articles
-              {location.pathname === '/saved-news' && <div className='navigation__saved-news-link-underline'></div>}
+              {location.pathname === '/saved-news' && <div className='navigation__saved-news-link-underline' />}
             </Link>
           </div>
         )}
@@ -79,14 +85,16 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
               Elise{' '}
               <img
                 src={logoutIcon}
-                alt='Logout'></img>
+                alt='Logout'
+              />
             </button>
             <button
               className='navigation__log'
               onClick={handleLogOut}>
               <img
                 src={whiteLog}
-                alt='Logout'></img>
+                alt='Logout'
+              />
             </button>
           </>
         ) : (
