@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Main from '../Main/Main';
 import Header from '../Header/Header';
 import SavedNews from '../SavedNews/SavedNews';
@@ -104,7 +104,6 @@ function App() {
   useEffect(() => {
     console.log(savedNews);
   }, [savedNews]);
-
   return (
     <PageClass className={theme}>
       {error && <section>Error: {error}</section>}
@@ -142,15 +141,11 @@ function App() {
           <Route
             path='/saved-news'
             element={
-              isLoggedIn ? (
-                <SavedNews
-                  isLoggedIn={isLoggedIn}
-                  savedNews={savedNews}
-                  onDeleteNewsItem={handleDeleteNews}
-                />
-              ) : (
-                <Navigate to='/' />
-              )
+              <SavedNews
+                isLoggedIn={isLoggedIn}
+                savedNews={savedNews}
+                onDeleteNewsItem={handleDeleteNews}
+              />
             }
           />
         </Routes>

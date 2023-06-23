@@ -4,7 +4,7 @@ import BenImage from '../../images/BenImage.svg';
 
 const About = () => {
   return (
-    <main className='about'>
+    <section className='about'>
       <div className='about__image-container'>
         <figure className='about__image-wrapper'>
           <img
@@ -25,7 +25,7 @@ const About = () => {
           customers.
         </p>
       </div>
-    </main>
+    </section>
   );
 };
 
