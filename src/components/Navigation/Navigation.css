@@ -377,6 +377,13 @@
   }
 }
 
+.navigation[data-theme='dark'] .navigation__hamburger-close-button {
+  width: 24px;
+  height: 24px;
+  color: black;
+  background-color: transparent;
+}
+
 @media only screen and (max-width: 320px) {
   .navigation {
     padding: 0 20px;
@@ -537,10 +544,6 @@
     background-color: transparent;
   }
 
-  .navigation[data-theme='light'] .navigation__hamburger-menu {
-    background-color: violet;
-    color: chartreuse;
-  }
 
   .navigation__transparent .navigation__hamburger-icon {
     width: 24px;

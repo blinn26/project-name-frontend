@@ -36,9 +36,9 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
       navBackground += ' navigation__light';
     }
     setNavigationBackground(navBackground);
-
-    setMenuIcon(themeChange === 'light' && isLoggedIn ? darkButtonBurger : whiteButtonBurger);
-    setCloseIcon(themeChange === 'dark' ? closeHamburger : menuIcon);
+    const newBurger = themeChange === 'light' && isLoggedIn ? darkButtonBurger : whiteButtonBurger;
+    setMenuIcon(newBurger);
+    setCloseIcon(themeChange === 'dark' ? closeHamburger : newBurger);
   }, [isHomePage, menuBackground, themeChange, isLoggedIn]);
 
   const closeMenuAndLogOut = () => {
