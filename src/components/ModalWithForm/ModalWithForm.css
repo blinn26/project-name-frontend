@@ -48,6 +48,7 @@
   align-items: flex-start;
   width: 100%;
   cursor: pointer;
+
 }
 
 .modal__input {
@@ -222,7 +223,7 @@
   color: #2F71E5;
   font-size: 18px;
   font-family: Inter;
-  height: 18px;
+  line-height: 18px;
 }
 
 @media screen and (max-width: 767px) {

@@ -32,22 +32,67 @@
   display: flex;
 }
 
-.footer__home-icon,
-.footer__icon,
-.footer__tripleten-icon,
-.footer__icon-twitter,
-.footer__api-icon {
+.footer__home-button {
+  font-family: "Roboto Slab", sans-serif;
+  text-decoration: none;
+  margin-right: 40px;
+  transition: opacity 0.3s;
+  color: #1A1B22;
+  text-align: center;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.footer__home-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.footer__icon-linkedin {
   width: 24px;
   height: 24px;
   margin-right: 40px;
   transition: opacity 0.3s;
 }
 
-.footer__home-icon:hover,
-.footer__icon:hover,
-.footer__tripleten-icon:hover,
-.footer__api-icon:hover,
-.footer__icon-twitter:hover {
+.footer__icon-linkedin:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.footer__icon-github {
+  width: 24px;
+  height: 24px;
+  margin-right: 40px;
+  transition: opacity 0.3s;
+}
+
+.footer__icon-github:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.footer__icon-tripleten {
+  width: 24px;
+  height: 24px;
+  margin-right: 40px;
+  transition: opacity 0.3s;
+}
+
+.footer__icon-tripleten:hover {
+  opacity: 0.6;
+  cursor: pointer;
+
+}
+
+.footer__icon-github {
+  width: 24px;
+  height: 24px;
+  margin-right: 40px;
+  transition: opacity 0.3s;
+}
+
+.footer__icon-github:hover {
   opacity: 0.6;
   cursor: pointer;
 }
@@ -84,11 +129,18 @@
     margin-left: 5px;
   }
 
-  .footer__home-icon,
-  .footer__icon,
-  .footer__tripleten-icon,
-  .footer__icon-twitter,
-  .footer__api-icon {
+  .footer__home-button {
+    font-size: 16px;
+  }
+
+  .footer__icon-linkedin,
+  .footer__icon-github,
+  .footer__icon-tripleten {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer__icon-github {
     width: 20px;
     height: 20px;
   }
