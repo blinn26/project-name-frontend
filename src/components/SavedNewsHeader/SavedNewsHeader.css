@@ -57,8 +57,10 @@
     font-size: 30px;
     width: 336px;
     color: #1A1B22;
-    font-family: Roboto Slab;
+    font-family: 'Roboto Slab', 'Arial', sans-serif;
     line-height: 34px;
+    flex-direction: column;
+
   }
 
   .saved__keywords {
@@ -81,7 +83,6 @@
     width: 288px;
     height: 24px;
     flex-direction: column;
-    flex-shrink: 0;
     color: rgba(26, 27, 34, 0.50);
     font-size: 12px;
     font-family: Roboto;
@@ -102,10 +103,11 @@
     width: 288px;
     height: 48px;
     flex-direction: column;
-    flex-shrink: 0;
-
+    font-family: 'Roboto', 'Arial', sans-serif;
     font-size: 18px;
-
     line-height: 24px;
+    display: flex;
+    color: #1A1B22;
+
   }
 }

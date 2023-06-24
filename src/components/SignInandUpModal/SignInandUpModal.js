@@ -173,7 +173,7 @@ function SignInandUpModal({ isOpen, setIsOpen, onClose, handleLogin, setSavedNew
 
       <ModalWithForm
         title='Registration Successfully completed!'
-        className='modal__success'
+        additionalClass='modal__success' // <-- Replace className with additionalClass
         isOpen={successModal}
         onClose={() => {
           setSuccessModal(false);
