@@ -108,6 +108,8 @@
     flex-shrink: 0;
     font-size: 30px;
     line-height: 34px;
+    margin-top: 5px;
+
   }
 
   .saved__keywords {
@@ -121,5 +123,9 @@
     display: flex;
     color: #1A1B22;
 
+  }
+
+  .saved-news__container {
+    margin-bottom: 17px;
   }
 }
