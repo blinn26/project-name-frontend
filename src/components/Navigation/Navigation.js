@@ -4,8 +4,8 @@ import './Navigation.css';
 import logout from '../../images/logout.svg';
 import whiteLog from '../../images/whiteLog.svg';
 import closeHamburger from '../../images/closeButton.svg';
-import closeburgerDark from '../../images/closeButtonDark.svg';
-import closeburgerLight from '../../images/closeButtonLight.svg';
+import darkButtonBurger from '../../images/darkButtonBurger.svg';
+import whiteButtonBurger from '../../images/whiteButtonBurger.svg';
 
 const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) => {
   const location = useLocation();
@@ -21,7 +21,7 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
   const isHomePage = location.pathname === '/';
   const logoutIcon = themeChange === 'light' ? whiteLog : logout;
 
-  const [menuIcon, setMenuIcon] = useState(closeburgerDark);
+  const [menuIcon, setMenuIcon] = useState(darkButtonBurger);
   const [closeIcon, setCloseIcon] = useState(closeHamburger);
 
   const [navigationBackground, setNavigationBackground] = useState('navigation');
@@ -37,7 +37,7 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
     }
     setNavigationBackground(navBackground);
 
-    setMenuIcon(themeChange === 'light' && isLoggedIn ? closeburgerLight : closeburgerLight);
+    setMenuIcon(themeChange === 'light' && isLoggedIn ? darkButtonBurger : whiteButtonBurger);
     setCloseIcon(themeChange === 'dark' ? closeHamburger : menuIcon);
   }, [isHomePage, menuBackground, themeChange, isLoggedIn]);
 
