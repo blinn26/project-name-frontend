@@ -76,22 +76,24 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
           />
         </Link>
       )}
-      <div className={`navigation__wrapper ${menuVisible ? 'show__menu' : ''}`}>
-        <Link
-          to='/'
-          className={`navigation__home-link ${textColorClass}`}>
-          <p className='navigation__home-link-text'>Home</p>
-          {location.pathname === '/' && <div className='navigation__home-link-underline'></div>}
-        </Link>
-        {isLoggedIn && (
+      <ul className={`navigation__wrapper ${menuVisible ? 'show__menu' : ''}`}>
+        <li className={`navigation__item ${location.pathname === '/' && `navigation__item--active`}`}>
           <Link
-            to='/saved-news'
-            className={`navigation__saved-news-link ${textColorClass}`}>
-            Saved articles
-            {location.pathname === '/saved-news' && <div className='navigation__saved-news-link-underline'></div>}
+            to='/'
+            className={`navigation__home-link ${textColorClass}`}>
+            <p className='navigation__home-link-text'>Home</p>
           </Link>
+        </li>
+        {isLoggedIn && (
+          <li className={`navigation__item ${location.pathname === '/saved-news' && `navigation__item--active`}`}>
+            <Link
+              to='/saved-news'
+              className={`navigation__saved-news-link ${textColorClass}`}>
+              Saved articles
+            </Link>
+          </li>
         )}
-        {isLoggedIn ? (
+        {isLoggedIn && (
           <>
             <button
               className='navigation__user'
@@ -111,7 +113,10 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
               />
             </button>
           </>
-        ) : (
+        )}
+      </ul>
+      <div className='navigation__controls'>
+        {!isLoggedIn && (
           <button
             className='navigation__button sign-in'
             onClick={handleModalOpen}>
