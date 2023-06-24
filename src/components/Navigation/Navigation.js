@@ -41,6 +41,11 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
     setCloseIcon(themeChange === 'dark' ? closeHamburger : menuIcon);
   }, [isHomePage, menuBackground, themeChange, isLoggedIn]);
 
+  const closeMenuAndLogOut = () => {
+    showMenu();
+    handleLogOut();
+  };
+
   return (
     <nav
       className={`${navigationBackground} ${menuVisible ? 'navigation_mobile' : ''}`}
@@ -52,7 +57,7 @@ const Navigation = ({ isLoggedIn, handleLogOut, handleModalOpen, themeChange }) 
         <Link
           to='/'
           className='navigation__hamburger-menu'
-          onClick={showMenu}>
+          onClick={isLoggedIn && themeChange === 'dark' ? closeMenuAndLogOut : showMenu}>
           <img
             src={closeIcon}
             alt='Menu'
