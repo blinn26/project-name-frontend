@@ -51,6 +51,7 @@
 @media screen and (max-width: 768px) {
   .saved-news__container {
     padding: 40px 30px 40px;
+    height: 204px;
   }
 
   .saved__header {
@@ -61,6 +62,17 @@
     line-height: 34px;
     flex-direction: column;
 
+  }
+
+  .saved__title {
+    color: rgba(26, 27, 34, 0.50);
+    font-size: 14px;
+    font-family: Roboto;
+    line-height: 24px;
+    display: flex;
+    width: 712px;
+    height: 24px;
+    flex-direction: column;
   }
 
   .saved__keywords {
