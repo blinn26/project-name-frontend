@@ -79,6 +79,9 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    margin-left: 5px;
   }
 
   .footer__home-icon,
