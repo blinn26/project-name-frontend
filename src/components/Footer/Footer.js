@@ -17,68 +17,64 @@ const Footer = () => {
   return (
     <footer className='footer'>
       <div className='footer__left'>
-        <p className='footer__copyright'>©2023 Supersite, Powered by NewsAPI</p>
+        <p className='footer__copyright'>© 2023 SuperSite, Powered by News API</p>
       </div>
       <nav className='footer__links'>
-        <div className='footer__links-left'>
-          <Link
-            to='/'
-            className='footer__button footer__home-button'>
-            <img
-              alt='Home'
-              src={home}
-              className='footer__home-icon'
-            />
-          </Link>
-          <a
-            onClick={(event) => handleNavigation('https://practicum.com', event)}
-            className='footer__button'>
-            <img
-              alt='tripleten logo'
-              src={tripleten}
-              className='footer__tripleten-icon'
-            />
-          </a>
-        </div>
-        <div className='footer__links-right'>
-          <a
-            onClick={(event) => handleNavigation('https://twitter.com/createdbyben26', event)}
-            className='footer__button'>
-            <img
-              alt='Twitter logo'
-              src={twitter}
-              className='footer__icon-twitter'
-            />
-          </a>
+        <Link
+          to='/'
+          className='footer__button footer__home-button'>
+          <img
+            alt='Home'
+            src={home}
+            className='footer__home-icon'
+          />
+        </Link>
+        <a
+          onClick={(event) => handleNavigation('https://twitter.com/createdbyben26', event)}
+          className='footer__button'>
+          <img
+            alt='Twitter logo'
+            src={twitter}
+            className='footer__icon-twitter'
+          />
+        </a>
 
-          <a
-            onClick={(event) => handleNavigation('https://www.linkedin.com/in/ben-linn-coding4l/', event)}
-            className='footer__button'>
-            <img
-              alt='LinkedIn logo'
-              src={linkedIn}
-              className='footer__icon'
-            />
-          </a>
-          <a
-            onClick={(event) => handleNavigation('https://github.com/blinn26', event)}
-            className='footer__button'>
-            <img
-              alt='Github logo'
-              src={github}
-              className='footer__icon'
-            />
-          </a>
-          <a
-            onClick={(event) => handleNavigation('https://newsapi.org', event)}
-            className='footer__button footer__api-button'>
-            <img
-              alt='nlogo'
-              src={apiLogo}
-              className='footer__api-icon'
-            />
-          </a>
-        </div>
+        <a
+          onClick={(event) => handleNavigation('https://www.linkedin.com/in/ben-linn-coding4l/', event)}
+          className='footer__button'>
+          <img
+            alt='LinkedIn logo'
+            src={linkedIn}
+            className='footer__icon'
+          />
+        </a>
+        <a
+          onClick={(event) => handleNavigation('https://github.com/blinn26', event)}
+          className='footer__button'>
+          <img
+            alt='Github logo'
+            src={github}
+            className='footer__icon'
+          />
+        </a>
+        <a
+          onClick={(event) => handleNavigation('https://practicum.com', event)}
+          className='footer__button'>
+          <img
+            alt='tripleten logo'
+            src={tripleten}
+            className='footer__tripleten-icon'
+          />
+        </a>
+        <a
+          onClick={(event) => handleNavigation('https://newsapi.org', event)}
+          className='footer__button footer__api-button'>
+          <img
+            alt='nlogo'
+            src={apiLogo}
+            className='footer__api-icon'
+          />
+        </a>
       </nav>
     </footer>
   );
