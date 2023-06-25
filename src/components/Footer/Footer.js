@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer className='footer'>
       <div className='footer__left'>
-        <p className='footer__copyright'>© 2021 Supersite, Powered by News API</p>
+        <p className='footer__copyright'>© 2023 Supersite, Powered by News API</p>
       </div>
       <nav className='footer__links'>
         <Link
