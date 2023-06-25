@@ -48,12 +48,12 @@
 
 
 .navigation__item--active {
-  border-bottom: 2px solid white;
+  border-bottom: 3px solid white;
 
 }
 
 .navigation[data-theme='light'] .navigation__item--active {
-  border-bottom: 2px solid black;
+  border-bottom: 3px solid black;
 }
 
 .navigation__controls {
