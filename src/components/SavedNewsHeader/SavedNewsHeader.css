@@ -38,7 +38,7 @@
 .news-card-list-wrapper {
   max-width: 1440px;
   background-color: #F5F6F7;
-  padding: 40px;
+  padding-top: 35px;
 }
 
 .news-card__list {
