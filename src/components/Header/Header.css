@@ -1,0 +1,108 @@
+.header {
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.header__image {
+  height: 567px;
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../../images/geo.svg');
+}
+
+.header__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 44%;
+  margin: 0 auto;
+  padding: 3px;
+  align-items: center;
+}
+
+.header__title {
+  font-family: 'Roboto Slab', 'Arial', serif;
+  font-size: 60px;
+  line-height: 64px;
+  font-weight: 400;
+  color: #FFFFFF;
+  width: 608px;
+  height: 103px;
+}
+
+.header__description {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #FFFFFF;
+  padding-bottom: 59px;
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+
+
+  .header__image {
+    height: 400px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../../images/geo.svg');
+  }
+
+
+  .header__content {
+    width: 448px;
+  }
+
+  .header__title {
+    font-size: 36px;
+    width: 100%;
+    line-height: 40px;
+    margin: 20px 0 0 0;
+  }
+
+  .header__description {
+    margin: 0 0 0 0;
+    width: 100%;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+  .header__image {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../../images/geo.svg');
+  }
+
+  .header__content {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .header__title {
+    font-family: 'Roboto Slab', 'Arial', serif;
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 400;
+    color: #FFFFFF;
+    width: 285px;
+    height: 85px;
+  }
+
+  .header__description {
+    width: 288px;
+    font-size: 18px;
+    height: 72px;
+    font-weight: 400;
+    margin-top: 6px;
+  }
+}

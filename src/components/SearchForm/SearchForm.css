@@ -1,0 +1,135 @@
+.search-form {
+  width: 100%;
+  max-width: 608px;
+  height: 64px;
+  background-color: #ffffff;
+  border-radius: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-form__field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.search-form__input {
+  border: none;
+  font-size: 16px;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  color: #B6BCBF;
+  border-radius: 100px;
+  outline: none;
+  flex-grow: 1;
+  padding-left: 20px;
+  background-color: #ffffff;
+}
+
+.search-form__input::placeholder {
+  color: gray;
+  cursor: pointer;
+}
+
+.search-form__input.typing {
+  color: black;
+}
+
+.search-form__input--error {
+  border: 2px solid red;
+}
+
+.search-form__input:hover,
+.search-form__input:focus {
+  background-color: white;
+  color: #1A1B22;
+}
+
+.search-form__error {
+  color: red;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.search-form__button {
+  background: #2F71E5;
+  width: 168px;
+  height: 64px;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  cursor: pointer;
+  border-radius: 100px;
+  outline: none;
+}
+
+.search-form__button:hover {
+  background-color: #347EFF;
+  color: #ffffff;
+}
+
+.search-form__button:active {
+  background-color: #2A65CC;
+  color: #ffffff;
+}
+
+.search-form__button.done {
+  background-color: #2A65CC;
+  color: #ffffff;
+}
+
+.search-form__button.error {
+  color: red;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .search-form {
+    width: 100%;
+    height: 56px;
+  }
+
+  .search-form__button {
+
+    height: 56px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .search-form {
+    width: 288px;
+    height: 56px;
+    background-color: white;
+    color: black;
+    position: relative;
+    border-radius: 100px;
+    box-shadow: 0px 0px 0px 1px rgba(209, 210, 214, 1);
+    right: 8px;
+  }
+
+  .search-form__button {
+    background: #347EFF;
+    width: 288px;
+    height: 56px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    border-radius: 100px;
+    outline: none;
+    position: absolute;
+    bottom: 200px;
+    top: 80px;
+    right: 3px;
+    box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+  }
+
+  .search-form__button.typing {
+    background-color: white;
+    color: black;
+  }
+}

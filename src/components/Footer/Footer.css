@@ -1,0 +1,147 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 60px;
+  background-color: #fff;
+}
+
+.footer__left {
+  display: flex;
+  align-items: center;
+}
+
+.footer__copyright {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #b6bcbf;
+  margin: 0;
+  line-height: 1.375;
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+}
+
+.footer__button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  height: fit-content;
+  display: flex;
+}
+
+.footer__home-button {
+  font-family: "Roboto Slab", sans-serif;
+  text-decoration: none;
+  margin-right: 40px;
+  transition: opacity 0.3s;
+  color: #1A1B22;
+  text-align: center;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.footer__home-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.footer__icon-linkedin {
+  width: 24px;
+  height: 24px;
+  margin-right: 40px;
+  transition: opacity 0.3s;
+}
+
+.footer__icon-linkedin:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.footer__icon-github {
+  width: 24px;
+  height: 24px;
+  margin-right: 40px;
+  transition: opacity 0.3s;
+}
+
+.footer__icon-github:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.footer__icon-tripleten {
+  width: 24px;
+  height: 24px;
+  margin-right: 40px;
+  transition: opacity 0.3s;
+}
+
+.footer__icon-tripleten:hover {
+  opacity: 0.6;
+  cursor: pointer;
+
+}
+
+.footer__icon-github {
+  width: 24px;
+  height: 24px;
+  margin-right: 40px;
+  transition: opacity 0.3s;
+}
+
+.footer__icon-github:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .footer__copyright {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    width: 288px;
+    height: 22px;
+    flex-direction: column;
+    flex-shrink: 0;
+    color: var(--simulator-gray-text, #B6BCBF);
+    font-size: 16px;
+    font-family: Roboto;
+    line-height: 22px;
+    white-space: nowrap;
+  }
+
+  .footer__links {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+  }
+
+  .footer__home-button {
+    font-size: 16px;
+  }
+
+  .footer__icon-linkedin,
+  .footer__icon-github,
+  .footer__icon-tripleten {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer__icon-github {
+    width: 20px;
+    height: 20px;
+  }
+}

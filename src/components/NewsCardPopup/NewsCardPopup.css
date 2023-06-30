@@ -1,0 +1,93 @@
+.newscard-popup {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1;
+  top: 16px;
+  right: 70px;
+  width: 182px;
+  height: 40px;
+  cursor: pointer;
+
+}
+
+.newscard-popup_open {
+  opacity: 1;
+}
+
+.newscard-popup__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.newscard-popup__text {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 12px;
+  color: #1a1b22;
+  cursor: pointer;
+  font-weight: 500;
+  align-items: center;
+  text-align: center;
+  font-style: medium;
+
+}
+
+.news-card__keywords {
+  position: absolute;
+  top: 18px;
+  left: 24px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  height: 40px;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-style: medium;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #000000;
+  cursor: pointer;
+  visibility: visible;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .news-card__keywords {
+    border-radius: 8px;
+    top: 16px;
+    left: 16px;
+
+  }
+
+  .newscard-popup {
+    width: 117px;
+    left: 15px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .newscard-popup {
+    width: 90px;
+    left: 5px;
+
+  }
+
+
+
+
+}
+
+@media screen and (max-width: 320px) {
+  .newscard-popup {
+    width: 80px;
+    right: 5px;
+  }
+
+  .news-card__keywords {
+    top: 15px;
+    left: 5px;
+  }
+}

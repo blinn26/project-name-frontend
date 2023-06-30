@@ -1,0 +1,33 @@
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F5F6F7;
+  padding: 80px;
+  min-height: 240px;
+}
+
+.circle-preloader {
+  display: block;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  animation: spin .75s infinite linear, colorchange 3s infinite;
+  background-color: #F5F6F7;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes colorchange {
+  0% {
+    background: #1A1B22;
+  }
+
+  100% {
+    background: rgba(209, 210, 214, 0);
+  }
+}
